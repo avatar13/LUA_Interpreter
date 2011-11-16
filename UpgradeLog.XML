@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="LUA_Interpreter">
+</Property><Property Name="Файл решения" Value="C:\LUAProject\LUA_Interpreter\LUA_Interpreter.sln">
+</Property><Property Name="Date" Value="16 ноября 2011 г.">
+</Property><Property Name="Time" Value="15:24">
+</Property></Properties><Event ErrorLevel="0" Project="LUA_Interpreter" Source="LUA_Interpreter\LUA_Interpreter.csproj" Description="Проект успешно преобразован">
+</Event><Event ErrorLevel="3" Project="LUA_Interpreter" Source="LUA_Interpreter\LUA_Interpreter.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="LUA_Interpreter.sln" Description="Преобразование решения успешно завершено">
+</Event><Event ErrorLevel="3" Project="" Source="LUA_Interpreter.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="LUA_Interpreter" Source="LUA_Interpreter\LUA_Interpreter.csproj" Description="Сканирование завершено: обновление для файлов проекта не требуется.">
+</Event></UpgradeLog>
