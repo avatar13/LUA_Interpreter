@@ -1,0 +1,7 @@
+function TestMath()
+	x = math.sqrt(49); 	-- 7
+	y = 12 + 4; 		-- Result = 16
+	y = math.sqrt(y); 	-- 4
+	z = x + y; 			-- 7 + 4 = 11
+	return y;
+end

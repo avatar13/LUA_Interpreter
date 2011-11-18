@@ -2,6 +2,8 @@
 // Copyright (c) Wayne Kelly, QUT 2005-2009
 // (see accompanying GPPGcopyright.rtf)
 #define EXPORT_GPPG
+#define TRACE_ACTIONS
+
 using System;
 using System.Text;
 using System.Globalization;
@@ -431,7 +433,7 @@ namespace QUT.Gppg
                     return true;
 
 #if TRACE_ACTIONS
-					Console.Error.WriteLine("Error: popping state {0}", StateStack.Top().number);
+					//Console.Error.WriteLine("Error: popping state {0}", StateStack.Top().number);
 #endif
                 StateStack.Pop();
                 valueStack.Pop();

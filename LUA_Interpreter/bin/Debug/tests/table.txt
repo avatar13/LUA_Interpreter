@@ -1,0 +1,8 @@
+function TestTable()
+	tbl = {};
+	tbl['id'] = 1;
+	tbl['key'] = "Name";
+	tbl['val'] = "Nikita";
+	str = tbl['key'] + " = " + tbl['val'];
+	return str;
+end

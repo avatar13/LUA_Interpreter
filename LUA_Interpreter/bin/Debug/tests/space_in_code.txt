@@ -1,0 +1,8 @@
+
+
+
+
+
+function lol(a)
+	return a;
+end

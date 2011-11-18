@@ -1,0 +1,4 @@
+function TestPrint()
+	str = "Hello world";
+	print(str);
+end

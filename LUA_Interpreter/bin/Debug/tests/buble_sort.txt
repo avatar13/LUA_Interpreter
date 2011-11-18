@@ -1,0 +1,16 @@
+function TestBubbleSort
+	arr = {1, 4, 2, 3, 5, 7, 6}
+	next_needed = true;
+	while next_needed do
+		next_needed = false;
+		for i=1, i<8, 1 do
+			if(arr[i+1] < arr[i])
+				tmp = arr[i];
+				arr[i] = arr[i+1];
+				arr[i+1] = tmp;
+				next_needed = true
+			end
+		end
+	end
+	return arr;
+end

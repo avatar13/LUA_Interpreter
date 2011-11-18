@@ -1,0 +1,5 @@
+function TestStringOps()
+	str1 = "Hello";
+	str2 = "world!";
+	return str1 + " " + str2;
+end

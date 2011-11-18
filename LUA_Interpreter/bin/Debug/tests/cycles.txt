@@ -1,0 +1,10 @@
+function TestCycles()
+	arr = {1, 2, 3, 4, 7, 10, 15};
+	res = 0;
+	i = 1;
+	while(i < 8) do
+		res = res + arr[i];
+		i = i + 1;
+	end
+	return res;
+end

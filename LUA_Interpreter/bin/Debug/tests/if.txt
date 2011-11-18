@@ -1,0 +1,19 @@
+function TestBranches()
+	a = 4;
+	b = 20;
+	x = 0; 
+	y = 0;
+	if a > b
+		x = a;
+	else
+		y = b;
+	end
+	
+	if a > b
+		y = b;
+	else
+		y = a;
+	end
+	
+	return (x / y);
+end

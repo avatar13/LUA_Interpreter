@@ -1,0 +1,4 @@
+function TestPriority()
+	y = 5 + (4 * 2 + 2 * 5) / 6; -- Result = 8
+	return y;
+end
