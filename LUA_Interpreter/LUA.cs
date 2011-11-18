@@ -449,17 +449,17 @@ public class Lexer : QUT.Gppg.AbstractScanner<int, LexLocation>
         }
         // Don't use IsLetter here!
         else if ((ch >= 'a' && ch <= 'z') ||
-                    (ch >= 'A' && ch <= 'Z') || ch == '.' || ch == '\"')
+                    (ch >= 'A' && ch <= 'Z') || ch == '.' || ch == '\"' || ch == '\'')
         {
             str = "";
             int i = 0;
             bool probablyString = false;
-            if (ch == '\"')
+            if (ch == '\"' || ch == '\'')
             {
                 probablyString = true;
             }
             while ((ch >= 'a' && ch <= 'z') ||
-                    (ch >= 'A' && ch <= 'Z') || ch == '.' || ch == '\"' || (probablyString && char.IsWhiteSpace(ch)))
+                    (ch >= 'A' && ch <= 'Z') || ch == '.' || ch == '\'' || ch == '\"' || (probablyString && char.IsWhiteSpace(ch)))
             {
                 str = str.Insert(i, ch.ToString());
                 int ord = reader.Read();
@@ -477,80 +477,86 @@ public class Lexer : QUT.Gppg.AbstractScanner<int, LexLocation>
             mem = ch;
             if (str.Equals("function"))
             {
-                str = "";
                 return (int)Tokens.functionT;
             }
             else if (str.Equals("do"))
             {
-                str = "";
                 return (int)Tokens.doT;
             }
             else if (str.Equals("elseif"))
             {
-                str = "";
                 return (int)Tokens.elseifT;
             }
             else if (str.Equals("if"))
             {
-                str = "";
                 return (int)Tokens.ifT;
             }
             else if (str.Equals("else"))
             {
-                str = "";
                 return (int)Tokens.elseT;
             }
             else if (str.Equals("return"))
             {
-                str = "";
                 return (int)Tokens.returnT;
             }
             else if (str.Equals("repeat"))
             {
-                str = "";
                 return (int)Tokens.repeatT;
             }
             else if (str.Equals("then"))
             {
-                str = "";
                 return (int)Tokens.then;
             }
             else if (str.Equals("true"))
             {
-                str = "";
                 return (int)Tokens.trueT;
             }
             else if (str.Equals("false"))
             {
-                str = "";
                 return (int)Tokens.falseT;
             }
             else if (str.Equals("for"))
             {
-                str = "";
                 return (int)Tokens.forT;
             }
             else if (str.Equals("while"))
             {
-                str = "";
                 return (int)Tokens.whileT;
             }
             else if (str.Equals("until"))
-            {
-                str = "";
+            {                
                 return (int)Tokens.untilT;
+            }
+            else if (str.Equals(".."))
+            {
+                return (int)Tokens.doublePoint;
             }
             else if (str.Equals("..."))
             {
-                str = "";
                 return (int)Tokens.SMTH;
+            }
+            else if (str.Equals("break"))
+            {
+                return (int)Tokens.breakT;
             }
             else if (str.Equals("end"))
             {
                 str = "";
                 return (int)Tokens.end;
             }
-            else if (str[0] == '\"' && str[str.Length - 1] == '\"')
+            else if (str.Equals("and"))
+            {
+                return (int)Tokens.and;
+            }
+            else if (str.Equals("or"))
+            {
+                return (int)Tokens.or;
+            }
+            else if (str.Equals("not"))
+            {
+                return (int)Tokens.not;
+            }
+            else if ((str[0] == '\"' && str[str.Length - 1] == '\"') || (str[0] == '\'' && str[str.Length - 1] == '\''))
             {
                 //yylval = char.ToLower(str[0]) - 'a';
                 Console.Error.WriteLine("Строка опознана: {0}", str);
@@ -563,11 +569,41 @@ public class Lexer : QUT.Gppg.AbstractScanner<int, LexLocation>
                 Console.Error.WriteLine("Идентификатор опознан: {0}", str);
                 return (int)Tokens.identifer;
             }
+            return (int)Tokens.error;
+        }
+        else if (ch == '>' || ch == '<' || ch == '=' || ch == '~')
+        {
+            int ord = reader.Read();
+            if (ord == -1)
+            {
+                m_isEOF = true;
+                return ch;
+            }
             else
             {
-                return (int)Tokens.error;
+                mem = (char)ord;
+                if (ch == '>' && mem == '=')
+                {
+                    mem = '`';
+                    return (int)Tokens.ge;
+                }
+                else if (ch == '<' && mem == '=')
+                {
+                    mem = '`';
+                    return (int)Tokens.le;
+                }
+                else if (ch == '=' && mem == '=')
+                {
+                    mem = '`';
+                    return (int)Tokens.e;
+                }
+                else if (ch == '~' && mem == '=')
+                {
+                    mem = '`';
+                    return (int)Tokens.ne;
+                }
+                return ch;
             }
-
         }
         else
             switch (ch)
