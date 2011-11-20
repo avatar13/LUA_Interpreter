@@ -393,6 +393,7 @@ public class Lexer : QUT.Gppg.AbstractScanner<int, LexLocation>
     private string str;
     private char mem;
     private bool m_isEOF;
+    private bool m_isLineComment;
 
     //
     // Version 1.2.0 needed the following code.
@@ -410,13 +411,14 @@ public class Lexer : QUT.Gppg.AbstractScanner<int, LexLocation>
         mem = '`';
         m_isEOF = false;
         this.reader = reader;
+        m_isLineComment = false;
     }
 
     public override int yylex()
     {        
         char ch;
         if (m_isEOF)
-            return (int)Tokens.EOF;
+            return (int)Tokens.EOF;        
         if (mem != '`')
         {
             ch = mem;
@@ -435,9 +437,16 @@ public class Lexer : QUT.Gppg.AbstractScanner<int, LexLocation>
         }
         Console.Error.WriteLine("—˜ËÚ‡ÌÌ˚È ÒËÏ‚ÓÎ: {0}", ch);
         if (ch == '\n')
+        {
+            m_isLineComment = false;
             //return ch;
             return yylex();
-        else if (char.IsWhiteSpace(ch))
+        }
+        if (m_isLineComment)
+        {
+            return yylex();
+        }        
+        if (char.IsWhiteSpace(ch))
         {
             //Console.Error.WriteLine("œ–Œ¡≈À");
             return yylex();
@@ -449,7 +458,7 @@ public class Lexer : QUT.Gppg.AbstractScanner<int, LexLocation>
         }
         // Don't use IsLetter here!
         else if ((ch >= 'a' && ch <= 'z') ||
-                    (ch >= 'A' && ch <= 'Z') || ch == '.' || ch == '\"' || ch == '\'')
+                    (ch >= 'A' && ch <= 'Z') || ch == '.' || ch == '\"' || ch == '\'' || ch == '_')
         {
             str = "";
             int i = 0;
@@ -459,7 +468,8 @@ public class Lexer : QUT.Gppg.AbstractScanner<int, LexLocation>
                 probablyString = true;
             }
             while ((ch >= 'a' && ch <= 'z') ||
-                    (ch >= 'A' && ch <= 'Z') || ch == '.' || ch == '\'' || ch == '\"' || (probablyString && char.IsWhiteSpace(ch)))
+                    (ch >= 'A' && ch <= 'Z') || ch == '.' || ch == '\'' || ch == '\"' || 
+                    (probablyString && char.IsWhiteSpace(ch)) || ch == '_' || char.IsDigit(ch))
             {
                 str = str.Insert(i, ch.ToString());
                 int ord = reader.Read();
@@ -524,7 +534,7 @@ public class Lexer : QUT.Gppg.AbstractScanner<int, LexLocation>
                 return (int)Tokens.whileT;
             }
             else if (str.Equals("until"))
-            {                
+            {
                 return (int)Tokens.untilT;
             }
             else if (str.Equals(".."))
@@ -605,6 +615,23 @@ public class Lexer : QUT.Gppg.AbstractScanner<int, LexLocation>
                 return ch;
             }
         }
+        else if (ch == '-')
+        {
+            int ord = reader.Read();
+            if (ord == -1)
+            {
+                m_isEOF = true;
+                return ch;
+            }
+            mem = (char)ord;
+            if (mem == '-')
+            {
+                mem = '`';
+                m_isLineComment = true;
+                return yylex();
+            }
+            return ch;
+        }
         else
             switch (ch)
             {
@@ -618,11 +645,12 @@ public class Lexer : QUT.Gppg.AbstractScanner<int, LexLocation>
                 case '=':
                 case ';':
                 case '{':
-                case '}': 
+                case '}':
                 case '<':
                 case '>':
                 case '[':
                 case ']':
+                case ',':
                     return ch;
                 default:
                     Console.Error.WriteLine("Illegal character '{0}'", ch);
