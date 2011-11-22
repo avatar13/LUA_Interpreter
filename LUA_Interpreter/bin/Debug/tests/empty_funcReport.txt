@@ -1,0 +1,57 @@
+Entering state 0 
+Reducing stack by rule 4, /* empty */ -> CHUNK
+State now 0
+Entering state 3 
+Reading a token: functionT
+Next token is functionT
+Shifting token functionT, Entering state 162 
+Reading a token: Identifer lol
+Next token is identifer
+Shifting token identifer, Entering state 52 
+Reducing stack by rule 108, identifer -> NAME
+State now 0 3 162
+Entering state 177 
+Reading a token: (
+Next token is '('
+Reducing stack by rule 31, NAME -> FUNCNAME
+State now 0 3 162
+Entering state 163 
+Next token is '('
+Shifting token '(', Entering state 164 
+Reading a token: )
+Next token is ')'
+Reducing stack by rule 24, /* empty */ -> PL_OPT
+State now 0 3 162 163 164
+Entering state 165 
+Next token is ')'
+Shifting token ')', Entering state 166 
+Reducing stack by rule 4, /* empty */ -> CHUNK
+State now 0 3 162 163 164 165 166
+Entering state 66 
+Reading a token: eol
+end
+Next token is end
+Reducing stack by rule 7, CHUNK -> BLOCK
+State now 0 3 162 163 164 165 166
+Entering state 167 
+Next token is end
+Shifting token end, Entering state 168 
+Reducing stack by rule 19, functionT FUNCNAME '(' PL_OPT ')' BLOCK end -> STAT
+State now 0 3
+Entering state 5 
+Reading a token: Next token is EOF
+Reducing stack by rule 6, /* empty */ -> COMMA
+State now 0 3 5
+Entering state 6 
+Reducing stack by rule 3, CHUNK STAT COMMA -> CHUNK
+State now 0
+Entering state 3 
+Next token is EOF
+Shifting token EOF, Entering state 4 
+Reducing stack by rule 2, CHUNK EOF -> PROGRAM
+State now 0
+Entering state 1 
+Next token is EOF
+Shifting token EOF, Entering state 2 
+Reducing stack by rule 1, PROGRAM EOF -> $accept
+State now 0

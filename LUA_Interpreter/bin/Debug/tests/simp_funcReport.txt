@@ -2,26 +2,23 @@ Entering state 0
 Reducing stack by rule 4, /* empty */ -> CHUNK
 State now 0
 Entering state 3 
-Reading a token: Считанный символ: f
+Reading a token: functionT
 Next token is functionT
 Shifting token functionT, Entering state 162 
-Reading a token: Считанный символ:  
-Считанный символ: l
-Идентификатор опознан: lol
+Reading a token: Identifer lol
 Next token is identifer
 Shifting token identifer, Entering state 52 
 Reducing stack by rule 108, identifer -> NAME
 State now 0 3 162
 Entering state 177 
-Reading a token: Считанный символ: (
+Reading a token: (
 Next token is '('
 Reducing stack by rule 31, NAME -> FUNCNAME
 State now 0 3 162
 Entering state 163 
 Next token is '('
 Shifting token '(', Entering state 164 
-Reading a token: Считанный символ: a
-Идентификатор опознан: a
+Reading a token: Identifer a
 Next token is identifer
 Shifting token identifer, Entering state 52 
 Reducing stack by rule 108, identifer -> NAME
@@ -30,7 +27,7 @@ Entering state 171
 Reducing stack by rule 44, /* empty */ -> NAME_LIST
 State now 0 3 162 163 164 171
 Entering state 172 
-Reading a token: Считанный символ: )
+Reading a token: )
 Next token is ')'
 Reducing stack by rule 87, /* empty */ -> SMTH_OPT
 State now 0 3 162 163 164 171 172
@@ -46,16 +43,11 @@ Shifting token ')', Entering state 166
 Reducing stack by rule 4, /* empty */ -> CHUNK
 State now 0 3 162 163 164 165 166
 Entering state 66 
-Reading a token: Считанный символ: 
-Считанный символ: 
-
-Считанный символ: 	
-Считанный символ: r
+Reading a token: eol
+returnT
 Next token is returnT
 Shifting token returnT, Entering state 139 
-Reading a token: Считанный символ:  
-Считанный символ: a
-Идентификатор опознан: a
+Reading a token: Identifer a
 Next token is identifer
 Shifting token identifer, Entering state 52 
 Reducing stack by rule 108, identifer -> NAME
@@ -64,7 +56,7 @@ Entering state 51
 Reducing stack by rule 37, NAME -> VAR
 State now 0 3 162 163 164 165 166 66 139
 Entering state 50 
-Reading a token: Считанный символ: ;
+Reading a token: ;
 Next token is ';'
 Reducing stack by rule 52, VAR -> EXP
 State now 0 3 162 163 164 165 166 66 139
@@ -85,10 +77,8 @@ Entering state 6
 Reducing stack by rule 3, CHUNK STAT COMMA -> CHUNK
 State now 0 3 162 163 164 165 166
 Entering state 66 
-Reading a token: Считанный символ: 
-Считанный символ: 
-
-Считанный символ: e
+Reading a token: eol
+end
 Next token is end
 Reducing stack by rule 7, CHUNK -> BLOCK
 State now 0 3 162 163 164 165 166

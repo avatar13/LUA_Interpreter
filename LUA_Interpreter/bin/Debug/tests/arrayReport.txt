@@ -2,25 +2,23 @@ Entering state 0
 Reducing stack by rule 4, /* empty */ -> CHUNK
 State now 0
 Entering state 3 
-Reading a token: Считанный символ: f
+Reading a token: functionT
 Next token is functionT
 Shifting token functionT, Entering state 162 
-Reading a token: Считанный символ:  
-Считанный символ: T
-Идентификатор опознан: TestArray
+Reading a token: Identifer TestArray
 Next token is identifer
 Shifting token identifer, Entering state 52 
 Reducing stack by rule 108, identifer -> NAME
 State now 0 3 162
 Entering state 177 
-Reading a token: Считанный символ: (
+Reading a token: (
 Next token is '('
 Reducing stack by rule 31, NAME -> FUNCNAME
 State now 0 3 162
 Entering state 163 
 Next token is '('
 Shifting token '(', Entering state 164 
-Reading a token: Считанный символ: )
+Reading a token: )
 Next token is ')'
 Reducing stack by rule 24, /* empty */ -> PL_OPT
 State now 0 3 162 163 164
@@ -30,12 +28,8 @@ Shifting token ')', Entering state 166
 Reducing stack by rule 4, /* empty */ -> CHUNK
 State now 0 3 162 163 164 165 166
 Entering state 66 
-Reading a token: Считанный символ: 
-Считанный символ: 
-
-Считанный символ: 	
-Считанный символ: a
-Идентификатор опознан: arr
+Reading a token: eol
+Identifer arr
 Next token is identifer
 Shifting token identifer, Entering state 52 
 Reducing stack by rule 108, identifer -> NAME
@@ -44,8 +38,7 @@ Entering state 51
 Reducing stack by rule 37, NAME -> VAR
 State now 0 3 162 163 164 165 166 66
 Entering state 67 
-Reading a token: Считанный символ:  
-Считанный символ: =
+Reading a token: =
 Next token is '='
 Reducing stack by rule 36, /* empty */ -> VAR_LIST
 State now 0 3 162 163 164 165 166 66 67
@@ -56,19 +49,19 @@ State now 0 3 162 163 164 165 166 66
 Entering state 8 
 Next token is '='
 Shifting token '=', Entering state 9 
-Reading a token: Считанный символ:  
-Считанный символ: {
+Reading a token: {
 Next token is '{'
 Shifting token '{', Entering state 85 
-Reading a token: Считанный символ: 1
+Reading a token: Digit:1
 Next token is digit
 Shifting token digit, Entering state 48 
 Reducing stack by rule 111, digit -> NUMBER
 State now 0 3 162 163 164 165 166 66 8 9 85
 Entering state 44 
-Reading a token: Считанный символ: ,
+Reading a token: ,
 Next token is ','
 Reducing stack by rule 50, NUMBER -> EXP
+?enei naiaioeea: 0
 State now 0 3 162 163 164 165 166 66 8 9 85
 Entering state 114 
 Next token is ','
@@ -77,16 +70,16 @@ State now 0 3 162 163 164 165 166 66 8 9 85 114
 Entering state 115 
 Next token is ','
 Shifting token ',', Entering state 116 
-Reading a token: Считанный символ:  
-Считанный символ: 3
+Reading a token: Digit:3
 Next token is digit
 Shifting token digit, Entering state 48 
 Reducing stack by rule 111, digit -> NUMBER
 State now 0 3 162 163 164 165 166 66 8 9 85 114 115 116
 Entering state 44 
-Reading a token: Считанный символ: ,
+Reading a token: ,
 Next token is ','
 Reducing stack by rule 50, NUMBER -> EXP
+?enei naiaioeea: 0
 State now 0 3 162 163 164 165 166 66 8 9 85 114 115 116
 Entering state 117 
 Next token is ','
@@ -95,16 +88,16 @@ State now 0 3 162 163 164 165 166 66 8 9 85 114
 Entering state 115 
 Next token is ','
 Shifting token ',', Entering state 116 
-Reading a token: Считанный символ:  
-Считанный символ: 5
+Reading a token: Digit:5
 Next token is digit
 Shifting token digit, Entering state 48 
 Reducing stack by rule 111, digit -> NUMBER
 State now 0 3 162 163 164 165 166 66 8 9 85 114 115 116
 Entering state 44 
-Reading a token: Считанный символ: ,
+Reading a token: ,
 Next token is ','
 Reducing stack by rule 50, NUMBER -> EXP
+?enei naiaioeea: 0
 State now 0 3 162 163 164 165 166 66 8 9 85 114 115 116
 Entering state 117 
 Next token is ','
@@ -113,16 +106,16 @@ State now 0 3 162 163 164 165 166 66 8 9 85 114
 Entering state 115 
 Next token is ','
 Shifting token ',', Entering state 116 
-Reading a token: Считанный символ:  
-Считанный символ: 7
+Reading a token: Digit:7
 Next token is digit
 Shifting token digit, Entering state 48 
 Reducing stack by rule 111, digit -> NUMBER
 State now 0 3 162 163 164 165 166 66 8 9 85 114 115 116
 Entering state 44 
-Reading a token: Считанный символ: ,
+Reading a token: ,
 Next token is ','
 Reducing stack by rule 50, NUMBER -> EXP
+?enei naiaioeea: 0
 State now 0 3 162 163 164 165 166 66 8 9 85 114 115 116
 Entering state 117 
 Next token is ','
@@ -131,16 +124,16 @@ State now 0 3 162 163 164 165 166 66 8 9 85 114
 Entering state 115 
 Next token is ','
 Shifting token ',', Entering state 116 
-Reading a token: Считанный символ:  
-Считанный символ: 9
+Reading a token: Digit:9
 Next token is digit
 Shifting token digit, Entering state 48 
 Reducing stack by rule 111, digit -> NUMBER
 State now 0 3 162 163 164 165 166 66 8 9 85 114 115 116
 Entering state 44 
-Reading a token: Считанный символ: }
+Reading a token: }
 Next token is '}'
 Reducing stack by rule 50, NUMBER -> EXP
+?enei naiaioeea: 0
 State now 0 3 162 163 164 165 166 66 8 9 85 114 115 116
 Entering state 117 
 Next token is '}'
@@ -166,7 +159,7 @@ Entering state 84
 Reducing stack by rule 56, TABLE_CONSTRUCTOR -> EXP
 State now 0 3 162 163 164 165 166 66 8 9
 Entering state 141 
-Reading a token: Считанный символ: ;
+Reading a token: ;
 Next token is ';'
 Reducing stack by rule 46, EXP -> EXPLIST1
 State now 0 3 162 163 164 165 166 66 8 9
@@ -183,12 +176,8 @@ Entering state 6
 Reducing stack by rule 3, CHUNK STAT COMMA -> CHUNK
 State now 0 3 162 163 164 165 166
 Entering state 66 
-Reading a token: Считанный символ: 
-Считанный символ: 
-
-Считанный символ: 	
-Считанный символ: a
-Идентификатор опознан: arr2
+Reading a token: eol
+Identifer arr2
 Next token is identifer
 Shifting token identifer, Entering state 52 
 Reducing stack by rule 108, identifer -> NAME
@@ -197,8 +186,7 @@ Entering state 51
 Reducing stack by rule 37, NAME -> VAR
 State now 0 3 162 163 164 165 166 66
 Entering state 67 
-Reading a token: Считанный символ:  
-Считанный символ: =
+Reading a token: =
 Next token is '='
 Reducing stack by rule 36, /* empty */ -> VAR_LIST
 State now 0 3 162 163 164 165 166 66 67
@@ -209,22 +197,22 @@ State now 0 3 162 163 164 165 166 66
 Entering state 8 
 Next token is '='
 Shifting token '=', Entering state 9 
-Reading a token: Считанный символ:  
-Считанный символ: {
+Reading a token: {
 Next token is '{'
 Shifting token '{', Entering state 85 
-Reading a token: Считанный символ: {
+Reading a token: {
 Next token is '{'
 Shifting token '{', Entering state 85 
-Reading a token: Считанный символ: 2
+Reading a token: Digit:2
 Next token is digit
 Shifting token digit, Entering state 48 
 Reducing stack by rule 111, digit -> NUMBER
 State now 0 3 162 163 164 165 166 66 8 9 85 85
 Entering state 44 
-Reading a token: Считанный символ: ,
+Reading a token: ,
 Next token is ','
 Reducing stack by rule 50, NUMBER -> EXP
+?enei naiaioeea: 0
 State now 0 3 162 163 164 165 166 66 8 9 85 85
 Entering state 114 
 Next token is ','
@@ -233,16 +221,16 @@ State now 0 3 162 163 164 165 166 66 8 9 85 85 114
 Entering state 115 
 Next token is ','
 Shifting token ',', Entering state 116 
-Reading a token: Считанный символ:  
-Считанный символ: 6
+Reading a token: Digit:6
 Next token is digit
 Shifting token digit, Entering state 48 
 Reducing stack by rule 111, digit -> NUMBER
 State now 0 3 162 163 164 165 166 66 8 9 85 85 114 115 116
 Entering state 44 
-Reading a token: Считанный символ: }
+Reading a token: }
 Next token is '}'
 Reducing stack by rule 50, NUMBER -> EXP
+?enei naiaioeea: 0
 State now 0 3 162 163 164 165 166 66 8 9 85 85 114 115 116
 Entering state 117 
 Next token is '}'
@@ -268,26 +256,26 @@ Entering state 84
 Reducing stack by rule 56, TABLE_CONSTRUCTOR -> EXP
 State now 0 3 162 163 164 165 166 66 8 9 85
 Entering state 114 
-Reading a token: Считанный символ: ,
+Reading a token: ,
 Next token is ','
 Reducing stack by rule 103, /* empty */ -> LST
 State now 0 3 162 163 164 165 166 66 8 9 85 114
 Entering state 115 
 Next token is ','
 Shifting token ',', Entering state 116 
-Reading a token: Считанный символ:  
-Считанный символ: {
+Reading a token: {
 Next token is '{'
 Shifting token '{', Entering state 85 
-Reading a token: Считанный символ: 4
+Reading a token: Digit:4
 Next token is digit
 Shifting token digit, Entering state 48 
 Reducing stack by rule 111, digit -> NUMBER
 State now 0 3 162 163 164 165 166 66 8 9 85 114 115 116 85
 Entering state 44 
-Reading a token: Считанный символ: ,
+Reading a token: ,
 Next token is ','
 Reducing stack by rule 50, NUMBER -> EXP
+?enei naiaioeea: 0
 State now 0 3 162 163 164 165 166 66 8 9 85 114 115 116 85
 Entering state 114 
 Next token is ','
@@ -296,16 +284,16 @@ State now 0 3 162 163 164 165 166 66 8 9 85 114 115 116 85 114
 Entering state 115 
 Next token is ','
 Shifting token ',', Entering state 116 
-Reading a token: Считанный символ:  
-Считанный символ: 2
+Reading a token: Digit:2
 Next token is digit
 Shifting token digit, Entering state 48 
 Reducing stack by rule 111, digit -> NUMBER
 State now 0 3 162 163 164 165 166 66 8 9 85 114 115 116 85 114 115 116
 Entering state 44 
-Reading a token: Считанный символ: }
+Reading a token: }
 Next token is '}'
 Reducing stack by rule 50, NUMBER -> EXP
+?enei naiaioeea: 0
 State now 0 3 162 163 164 165 166 66 8 9 85 114 115 116 85 114 115 116
 Entering state 117 
 Next token is '}'
@@ -331,26 +319,26 @@ Entering state 84
 Reducing stack by rule 56, TABLE_CONSTRUCTOR -> EXP
 State now 0 3 162 163 164 165 166 66 8 9 85 114 115 116
 Entering state 117 
-Reading a token: Считанный символ: ,
+Reading a token: ,
 Next token is ','
 Reducing stack by rule 102, LST ',' EXP -> LST
 State now 0 3 162 163 164 165 166 66 8 9 85 114
 Entering state 115 
 Next token is ','
 Shifting token ',', Entering state 116 
-Reading a token: Считанный символ:  
-Считанный символ: {
+Reading a token: {
 Next token is '{'
 Shifting token '{', Entering state 85 
-Reading a token: Считанный символ: 1
+Reading a token: Digit:1
 Next token is digit
 Shifting token digit, Entering state 48 
 Reducing stack by rule 111, digit -> NUMBER
 State now 0 3 162 163 164 165 166 66 8 9 85 114 115 116 85
 Entering state 44 
-Reading a token: Считанный символ: ,
+Reading a token: ,
 Next token is ','
 Reducing stack by rule 50, NUMBER -> EXP
+?enei naiaioeea: 0
 State now 0 3 162 163 164 165 166 66 8 9 85 114 115 116 85
 Entering state 114 
 Next token is ','
@@ -359,16 +347,16 @@ State now 0 3 162 163 164 165 166 66 8 9 85 114 115 116 85 114
 Entering state 115 
 Next token is ','
 Shifting token ',', Entering state 116 
-Reading a token: Считанный символ:  
-Считанный символ: 7
+Reading a token: Digit:7
 Next token is digit
 Shifting token digit, Entering state 48 
 Reducing stack by rule 111, digit -> NUMBER
 State now 0 3 162 163 164 165 166 66 8 9 85 114 115 116 85 114 115 116
 Entering state 44 
-Reading a token: Считанный символ: }
+Reading a token: }
 Next token is '}'
 Reducing stack by rule 50, NUMBER -> EXP
+?enei naiaioeea: 0
 State now 0 3 162 163 164 165 166 66 8 9 85 114 115 116 85 114 115 116
 Entering state 117 
 Next token is '}'
@@ -394,7 +382,7 @@ Entering state 84
 Reducing stack by rule 56, TABLE_CONSTRUCTOR -> EXP
 State now 0 3 162 163 164 165 166 66 8 9 85 114 115 116
 Entering state 117 
-Reading a token: Считанный символ: }
+Reading a token: }
 Next token is '}'
 Reducing stack by rule 102, LST ',' EXP -> LST
 State now 0 3 162 163 164 165 166 66 8 9 85 114
@@ -418,7 +406,7 @@ Entering state 84
 Reducing stack by rule 56, TABLE_CONSTRUCTOR -> EXP
 State now 0 3 162 163 164 165 166 66 8 9
 Entering state 141 
-Reading a token: Считанный символ: ;
+Reading a token: ;
 Next token is ';'
 Reducing stack by rule 46, EXP -> EXPLIST1
 State now 0 3 162 163 164 165 166 66 8 9
@@ -435,12 +423,8 @@ Entering state 6
 Reducing stack by rule 3, CHUNK STAT COMMA -> CHUNK
 State now 0 3 162 163 164 165 166
 Entering state 66 
-Reading a token: Считанный символ: 
-Считанный символ: 
-
-Считанный символ: 	
-Считанный символ: y
-Идентификатор опознан: y
+Reading a token: eol
+Identifer y
 Next token is identifer
 Shifting token identifer, Entering state 52 
 Reducing stack by rule 108, identifer -> NAME
@@ -449,8 +433,7 @@ Entering state 51
 Reducing stack by rule 37, NAME -> VAR
 State now 0 3 162 163 164 165 166 66
 Entering state 67 
-Reading a token: Считанный символ:  
-Считанный символ: =
+Reading a token: =
 Next token is '='
 Reducing stack by rule 36, /* empty */ -> VAR_LIST
 State now 0 3 162 163 164 165 166 66 67
@@ -461,9 +444,7 @@ State now 0 3 162 163 164 165 166 66
 Entering state 8 
 Next token is '='
 Shifting token '=', Entering state 9 
-Reading a token: Считанный символ:  
-Считанный символ: a
-Идентификатор опознан: arr
+Reading a token: Identifer arr
 Next token is identifer
 Shifting token identifer, Entering state 52 
 Reducing stack by rule 108, identifer -> NAME
@@ -472,44 +453,59 @@ Entering state 51
 Reducing stack by rule 37, NAME -> VAR
 State now 0 3 162 163 164 165 166 66 8 9
 Entering state 50 
-Reading a token: Считанный символ: [
-Next token is '['
+Reading a token: [
+Next token is '{'
 Reducing stack by rule 40, VAR -> VARORFUNC
 State now 0 3 162 163 164 165 166 66 8 9
 Entering state 53 
-Next token is '['
-Shifting token '[', Entering state 54 
-Reading a token: Считанный символ: 2
+Next token is '{'
+Shifting token '{', Entering state 85 
+Reading a token: Digit:2
 Next token is digit
 Shifting token digit, Entering state 48 
 Reducing stack by rule 111, digit -> NUMBER
-State now 0 3 162 163 164 165 166 66 8 9 53 54
+State now 0 3 162 163 164 165 166 66 8 9 53 85
 Entering state 44 
-Reading a token: Считанный символ: ]
-Next token is ']'
+Reading a token: ]
+Next token is '}'
 Reducing stack by rule 50, NUMBER -> EXP
-State now 0 3 162 163 164 165 166 66 8 9 53 54
-Entering state 57 
-Next token is ']'
-Reducing stack by rule 48, EXP -> EXP1
-State now 0 3 162 163 164 165 166 66 8 9 53 54
-Entering state 55 
-Next token is ']'
-Shifting token ']', Entering state 56 
-Reducing stack by rule 38, VARORFUNC '[' EXP1 ']' -> VAR
+?enei naiaioeea: 0
+State now 0 3 162 163 164 165 166 66 8 9 53 85
+Entering state 114 
+Next token is '}'
+Reducing stack by rule 103, /* empty */ -> LST
+State now 0 3 162 163 164 165 166 66 8 9 53 85 114
+Entering state 115 
+Next token is '}'
+Reducing stack by rule 99, EXP LST -> LFIELDLIST1
+State now 0 3 162 163 164 165 166 66 8 9 53 85
+Entering state 113 
+Reducing stack by rule 94, LFIELDLIST1 -> LFIELDLIST
+State now 0 3 162 163 164 165 166 66 8 9 53 85
+Entering state 88 
+Next token is '}'
+Reducing stack by rule 90, LFIELDLIST -> FIELDLIST
+State now 0 3 162 163 164 165 166 66 8 9 53 85
+Entering state 86 
+Next token is '}'
+Shifting token '}', Entering state 87 
+Reducing stack by rule 89, '{' FIELDLIST '}' -> TABLE_CONSTRUCTOR
+State now 0 3 162 163 164 165 166 66 8 9 53
+Entering state 201 
+Reducing stack by rule 79, TABLE_CONSTRUCTOR -> ARGS
+State now 0 3 162 163 164 165 166 66 8 9 53
+Entering state 193 
+Reducing stack by rule 76, VARORFUNC ARGS -> FUNCTION_CALL
 State now 0 3 162 163 164 165 166 66 8 9
-Entering state 50 
-Reading a token: Считанный символ:  
-Считанный символ: +
+Entering state 58 
+Reading a token: +
 Next token is '+'
-Reducing stack by rule 52, VAR -> EXP
+Reducing stack by rule 55, FUNCTION_CALL -> EXP
 State now 0 3 162 163 164 165 166 66 8 9
 Entering state 141 
 Next token is '+'
 Shifting token '+', Entering state 19 
-Reading a token: Считанный символ:  
-Считанный символ: a
-Идентификатор опознан: arr
+Reading a token: Identifer arr
 Next token is identifer
 Shifting token identifer, Entering state 52 
 Reducing stack by rule 108, identifer -> NAME
@@ -518,37 +514,54 @@ Entering state 51
 Reducing stack by rule 37, NAME -> VAR
 State now 0 3 162 163 164 165 166 66 8 9 141 19
 Entering state 50 
-Reading a token: Считанный символ: [
-Next token is '['
+Reading a token: [
+Next token is '{'
 Reducing stack by rule 40, VAR -> VARORFUNC
 State now 0 3 162 163 164 165 166 66 8 9 141 19
 Entering state 53 
-Next token is '['
-Shifting token '[', Entering state 54 
-Reading a token: Считанный символ: 4
+Next token is '{'
+Shifting token '{', Entering state 85 
+Reading a token: Digit:4
 Next token is digit
 Shifting token digit, Entering state 48 
 Reducing stack by rule 111, digit -> NUMBER
-State now 0 3 162 163 164 165 166 66 8 9 141 19 53 54
+State now 0 3 162 163 164 165 166 66 8 9 141 19 53 85
 Entering state 44 
-Reading a token: Считанный символ: ]
-Next token is ']'
+Reading a token: ]
+Next token is '}'
 Reducing stack by rule 50, NUMBER -> EXP
-State now 0 3 162 163 164 165 166 66 8 9 141 19 53 54
-Entering state 57 
-Next token is ']'
-Reducing stack by rule 48, EXP -> EXP1
-State now 0 3 162 163 164 165 166 66 8 9 141 19 53 54
-Entering state 55 
-Next token is ']'
-Shifting token ']', Entering state 56 
-Reducing stack by rule 38, VARORFUNC '[' EXP1 ']' -> VAR
+?enei naiaioeea: 0
+State now 0 3 162 163 164 165 166 66 8 9 141 19 53 85
+Entering state 114 
+Next token is '}'
+Reducing stack by rule 103, /* empty */ -> LST
+State now 0 3 162 163 164 165 166 66 8 9 141 19 53 85 114
+Entering state 115 
+Next token is '}'
+Reducing stack by rule 99, EXP LST -> LFIELDLIST1
+State now 0 3 162 163 164 165 166 66 8 9 141 19 53 85
+Entering state 113 
+Reducing stack by rule 94, LFIELDLIST1 -> LFIELDLIST
+State now 0 3 162 163 164 165 166 66 8 9 141 19 53 85
+Entering state 88 
+Next token is '}'
+Reducing stack by rule 90, LFIELDLIST -> FIELDLIST
+State now 0 3 162 163 164 165 166 66 8 9 141 19 53 85
+Entering state 86 
+Next token is '}'
+Shifting token '}', Entering state 87 
+Reducing stack by rule 89, '{' FIELDLIST '}' -> TABLE_CONSTRUCTOR
+State now 0 3 162 163 164 165 166 66 8 9 141 19 53
+Entering state 201 
+Reducing stack by rule 79, TABLE_CONSTRUCTOR -> ARGS
+State now 0 3 162 163 164 165 166 66 8 9 141 19 53
+Entering state 193 
+Reducing stack by rule 76, VARORFUNC ARGS -> FUNCTION_CALL
 State now 0 3 162 163 164 165 166 66 8 9 141 19
-Entering state 50 
-Reading a token: Считанный символ:  
-Считанный символ: +
+Entering state 58 
+Reading a token: +
 Next token is '+'
-Reducing stack by rule 52, VAR -> EXP
+Reducing stack by rule 55, FUNCTION_CALL -> EXP
 State now 0 3 162 163 164 165 166 66 8 9 141 19
 Entering state 20 
 Next token is '+'
@@ -557,9 +570,7 @@ State now 0 3 162 163 164 165 166 66 8 9
 Entering state 141 
 Next token is '+'
 Shifting token '+', Entering state 19 
-Reading a token: Считанный символ:  
-Считанный символ: a
-Идентификатор опознан: arr2
+Reading a token: Identifer arr2
 Next token is identifer
 Shifting token identifer, Entering state 52 
 Reducing stack by rule 108, identifer -> NAME
@@ -568,63 +579,99 @@ Entering state 51
 Reducing stack by rule 37, NAME -> VAR
 State now 0 3 162 163 164 165 166 66 8 9 141 19
 Entering state 50 
-Reading a token: Считанный символ: [
-Next token is '['
+Reading a token: [
+Next token is '{'
 Reducing stack by rule 40, VAR -> VARORFUNC
 State now 0 3 162 163 164 165 166 66 8 9 141 19
 Entering state 53 
-Next token is '['
-Shifting token '[', Entering state 54 
-Reading a token: Считанный символ: 3
+Next token is '{'
+Shifting token '{', Entering state 85 
+Reading a token: Digit:3
 Next token is digit
 Shifting token digit, Entering state 48 
 Reducing stack by rule 111, digit -> NUMBER
-State now 0 3 162 163 164 165 166 66 8 9 141 19 53 54
+State now 0 3 162 163 164 165 166 66 8 9 141 19 53 85
 Entering state 44 
-Reading a token: Считанный символ: ]
-Next token is ']'
+Reading a token: ]
+Next token is '}'
 Reducing stack by rule 50, NUMBER -> EXP
-State now 0 3 162 163 164 165 166 66 8 9 141 19 53 54
-Entering state 57 
-Next token is ']'
-Reducing stack by rule 48, EXP -> EXP1
-State now 0 3 162 163 164 165 166 66 8 9 141 19 53 54
-Entering state 55 
-Next token is ']'
-Shifting token ']', Entering state 56 
-Reducing stack by rule 38, VARORFUNC '[' EXP1 ']' -> VAR
+?enei naiaioeea: 0
+State now 0 3 162 163 164 165 166 66 8 9 141 19 53 85
+Entering state 114 
+Next token is '}'
+Reducing stack by rule 103, /* empty */ -> LST
+State now 0 3 162 163 164 165 166 66 8 9 141 19 53 85 114
+Entering state 115 
+Next token is '}'
+Reducing stack by rule 99, EXP LST -> LFIELDLIST1
+State now 0 3 162 163 164 165 166 66 8 9 141 19 53 85
+Entering state 113 
+Reducing stack by rule 94, LFIELDLIST1 -> LFIELDLIST
+State now 0 3 162 163 164 165 166 66 8 9 141 19 53 85
+Entering state 88 
+Next token is '}'
+Reducing stack by rule 90, LFIELDLIST -> FIELDLIST
+State now 0 3 162 163 164 165 166 66 8 9 141 19 53 85
+Entering state 86 
+Next token is '}'
+Shifting token '}', Entering state 87 
+Reducing stack by rule 89, '{' FIELDLIST '}' -> TABLE_CONSTRUCTOR
+State now 0 3 162 163 164 165 166 66 8 9 141 19 53
+Entering state 201 
+Reducing stack by rule 79, TABLE_CONSTRUCTOR -> ARGS
+State now 0 3 162 163 164 165 166 66 8 9 141 19 53
+Entering state 193 
+Reducing stack by rule 76, VARORFUNC ARGS -> FUNCTION_CALL
 State now 0 3 162 163 164 165 166 66 8 9 141 19
-Entering state 50 
-Reading a token: Считанный символ: [
-Next token is '['
-Reducing stack by rule 40, VAR -> VARORFUNC
+Entering state 58 
+Reading a token: [
+Next token is '{'
+Reducing stack by rule 41, FUNCTION_CALL -> VARORFUNC
 State now 0 3 162 163 164 165 166 66 8 9 141 19
 Entering state 53 
-Next token is '['
-Shifting token '[', Entering state 54 
-Reading a token: Считанный символ: 1
+Next token is '{'
+Shifting token '{', Entering state 85 
+Reading a token: Digit:1
 Next token is digit
 Shifting token digit, Entering state 48 
 Reducing stack by rule 111, digit -> NUMBER
-State now 0 3 162 163 164 165 166 66 8 9 141 19 53 54
+State now 0 3 162 163 164 165 166 66 8 9 141 19 53 85
 Entering state 44 
-Reading a token: Считанный символ: ]
-Next token is ']'
+Reading a token: ]
+Next token is '}'
 Reducing stack by rule 50, NUMBER -> EXP
-State now 0 3 162 163 164 165 166 66 8 9 141 19 53 54
-Entering state 57 
-Next token is ']'
-Reducing stack by rule 48, EXP -> EXP1
-State now 0 3 162 163 164 165 166 66 8 9 141 19 53 54
-Entering state 55 
-Next token is ']'
-Shifting token ']', Entering state 56 
-Reducing stack by rule 38, VARORFUNC '[' EXP1 ']' -> VAR
+?enei naiaioeea: 0
+State now 0 3 162 163 164 165 166 66 8 9 141 19 53 85
+Entering state 114 
+Next token is '}'
+Reducing stack by rule 103, /* empty */ -> LST
+State now 0 3 162 163 164 165 166 66 8 9 141 19 53 85 114
+Entering state 115 
+Next token is '}'
+Reducing stack by rule 99, EXP LST -> LFIELDLIST1
+State now 0 3 162 163 164 165 166 66 8 9 141 19 53 85
+Entering state 113 
+Reducing stack by rule 94, LFIELDLIST1 -> LFIELDLIST
+State now 0 3 162 163 164 165 166 66 8 9 141 19 53 85
+Entering state 88 
+Next token is '}'
+Reducing stack by rule 90, LFIELDLIST -> FIELDLIST
+State now 0 3 162 163 164 165 166 66 8 9 141 19 53 85
+Entering state 86 
+Next token is '}'
+Shifting token '}', Entering state 87 
+Reducing stack by rule 89, '{' FIELDLIST '}' -> TABLE_CONSTRUCTOR
+State now 0 3 162 163 164 165 166 66 8 9 141 19 53
+Entering state 201 
+Reducing stack by rule 79, TABLE_CONSTRUCTOR -> ARGS
+State now 0 3 162 163 164 165 166 66 8 9 141 19 53
+Entering state 193 
+Reducing stack by rule 76, VARORFUNC ARGS -> FUNCTION_CALL
 State now 0 3 162 163 164 165 166 66 8 9 141 19
-Entering state 50 
-Reading a token: Считанный символ: ;
+Entering state 58 
+Reading a token: ;
 Next token is ';'
-Reducing stack by rule 52, VAR -> EXP
+Reducing stack by rule 55, FUNCTION_CALL -> EXP
 State now 0 3 162 163 164 165 166 66 8 9 141 19
 Entering state 20 
 Next token is ';'
@@ -647,33 +694,12 @@ Entering state 6
 Reducing stack by rule 3, CHUNK STAT COMMA -> CHUNK
 State now 0 3 162 163 164 165 166
 Entering state 66 
-Reading a token: Считанный символ:  
-Считанный символ: -
-Считанный символ:  
-Считанный символ: 3
-Считанный символ:  
-Считанный символ: +
-Считанный символ:  
-Считанный символ: 7
-Считанный символ:  
-Считанный символ: +
-Считанный символ:  
-Считанный символ: 1
-Считанный символ:  
-Считанный символ: =
-Считанный символ:  
-Считанный символ: 1
-Считанный символ: 1
-Считанный символ: 
-Считанный символ: 
-
-Считанный символ: 	
-Считанный символ: r
+Reading a token: comment begin
+comment end
+returnT
 Next token is returnT
 Shifting token returnT, Entering state 139 
-Reading a token: Считанный символ:  
-Считанный символ: y
-Идентификатор опознан: y
+Reading a token: Identifer y
 Next token is identifer
 Shifting token identifer, Entering state 52 
 Reducing stack by rule 108, identifer -> NAME
@@ -682,7 +708,7 @@ Entering state 51
 Reducing stack by rule 37, NAME -> VAR
 State now 0 3 162 163 164 165 166 66 139
 Entering state 50 
-Reading a token: Считанный символ: ;
+Reading a token: ;
 Next token is ';'
 Reducing stack by rule 52, VAR -> EXP
 State now 0 3 162 163 164 165 166 66 139
@@ -703,10 +729,8 @@ Entering state 6
 Reducing stack by rule 3, CHUNK STAT COMMA -> CHUNK
 State now 0 3 162 163 164 165 166
 Entering state 66 
-Reading a token: Считанный символ: 
-Считанный символ: 
-
-Считанный символ: e
+Reading a token: eol
+end
 Next token is end
 Reducing stack by rule 7, CHUNK -> BLOCK
 State now 0 3 162 163 164 165 166

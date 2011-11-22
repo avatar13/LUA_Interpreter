@@ -1,13 +1,12 @@
 @echo off
-rem 2>report.txt означает что 2 - поток stderr перенаправлен в report.txt
-rem LUA_Interpreter.exe test.txt 2>report.txt OK
+LUA_Interpreter.exe test.txt 2>report.txt
 LUA_Interpreter.exe tests/array.txt 2>tests/arrayReport.txt
 rem tests/buble_sort.txt ошибка в коде, ќпределение функции не может быть без аргуметов (хот€бы пустых) 4.0 version
 
 rem (видимо мы дл€ разных версий пишем=) € дл€ 4.0, там где мы смотрели грамматику 5.1. „естно скажу дл€ 4.0 писать грамматику проще.)
 LUA_Interpreter.exe tests/cycles.txt 2>tests/cyclesReport.txt
 rem LUA_Interpreter.exe tests/if.txt 2>report.txt ошибка тво€ после if ..., должен быть then ...
-rem LUA_Interpreter.exe tests/empty_func.txt 2>tests/empty_funcReport.txt
+LUA_Interpreter.exe tests/empty_func.txt 2>tests/empty_funcReport.txt
 LUA_Interpreter.exe tests/math.txt 2>tests/mathReport.txt
 LUA_Interpreter.exe tests/math_priority.txt 2>tests/math_priorityReport.txt
 LUA_Interpreter.exe tests/print.txt 2>tests/printReport.txt

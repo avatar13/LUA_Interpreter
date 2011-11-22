@@ -2,7 +2,9 @@
 // Copyright (c) Wayne Kelly, QUT 2005-2009
 // (see accompanying GPPGcopyright.rtf)
 #define EXPORT_GPPG
+#if DEBUG
 #define TRACE_ACTIONS
+#endif
 
 using System;
 using System.Text;
