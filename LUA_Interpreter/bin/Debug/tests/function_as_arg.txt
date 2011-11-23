@@ -1,0 +1,10 @@
+function giveme_str()
+  return "Hello!";
+end
+
+function lol(str)
+  print(str);
+end
+
+
+lol(giveme_str());

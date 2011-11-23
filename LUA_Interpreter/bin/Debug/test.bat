@@ -18,4 +18,9 @@ rem LUA_Interpreter.exe tests/table.txt 2>report.txt тут не пон€тно '' - дл€ сим
 rem кароче так и не пон€л пошел сериал смотреть=) а дл€ чего же тогда ""??? сам не знаю тут как в c# или 'abc' and "abc" - строки????
 rem Ќа будущее сделай в 1 бат тестовике, так удобнее провер€ть или сюда добавь
 
+rem LUA_Interpreter.exe tests/elseif.txt 2>tests/elseif.txt там был файл с отчетом по ошибке
+LUA_Interpreter.exe tests/few_ops_in_line.txt 2>tests/few_ops_in_lineReport.txt
+LUA_Interpreter.exe tests/function_as_arg.txt 2>tests/function_as_argReport.txt
+LUA_Interpreter.exe tests/single_oper_block.txt 2>tests/single_oper_blockReport.txt
+LUA_Interpreter.exe tests/value_in_args.txt 2>tests/value_in_argsReport.txt
 

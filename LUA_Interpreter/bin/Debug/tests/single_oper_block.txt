@@ -1,0 +1,10 @@
+function abc()
+  	a = 1;
+	b = 3;
+	if (a<b) then
+		while a<b do
+			a = a + 1;
+			print("Next is"..a);
+		end
+	end
+end

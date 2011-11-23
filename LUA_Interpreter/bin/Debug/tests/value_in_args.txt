@@ -1,0 +1,5 @@
+function lol(str)
+  abc = str;
+end
+
+lol("Hello world!");
