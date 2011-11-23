@@ -81,16 +81,22 @@ State now 0 3 162 163 164 165 166 66 8 9
 Entering state 53 
 Next token is '('
 Shifting token '(', Entering state 197 
-Reading a token: Digit:49
+Reading a token: Digit:4
 Next token is digit
 Shifting token digit, Entering state 48 
 Reducing stack by rule 111, digit -> NUMBER
 State now 0 3 162 163 164 165 166 66 8 9 53 197
 Entering state 44 
+Reading a token: Digit:9
+Next token is digit
+Shifting token digit, Entering state 45 
+Reducing stack by rule 109, NUMBER digit -> NUMBER
+State now 0 3 162 163 164 165 166 66 8 9 53 197
+Entering state 44 
 Reading a token: )
 Next token is ')'
 Reducing stack by rule 50, NUMBER -> EXP
-?enei naiaioeea: 0
+Число семантика: 49
 State now 0 3 162 163 164 165 166 66 8 9 53 197
 Entering state 141 
 Next token is ')'
@@ -152,16 +158,22 @@ State now 0 3 162 163 164 165 166 66
 Entering state 8 
 Next token is '='
 Shifting token '=', Entering state 9 
-Reading a token: Digit:12
+Reading a token: Digit:1
 Next token is digit
 Shifting token digit, Entering state 48 
 Reducing stack by rule 111, digit -> NUMBER
 State now 0 3 162 163 164 165 166 66 8 9
 Entering state 44 
+Reading a token: Digit:2
+Next token is digit
+Shifting token digit, Entering state 45 
+Reducing stack by rule 109, NUMBER digit -> NUMBER
+State now 0 3 162 163 164 165 166 66 8 9
+Entering state 44 
 Reading a token: +
 Next token is '+'
 Reducing stack by rule 50, NUMBER -> EXP
-?enei naiaioeea: 0
+Число семантика: 12
 State now 0 3 162 163 164 165 166 66 8 9
 Entering state 141 
 Next token is '+'
@@ -175,7 +187,7 @@ Entering state 44
 Reading a token: ;
 Next token is ';'
 Reducing stack by rule 50, NUMBER -> EXP
-?enei naiaioeea: 0
+Число семантика: 4
 State now 0 3 162 163 164 165 166 66 8 9 141 19
 Entering state 20 
 Next token is ';'

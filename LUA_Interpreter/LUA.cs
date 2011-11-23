@@ -4,7 +4,7 @@
 
 // GPPG version 1.3.5.190
 // Machine:  AVATAR-ПК
-// DateTime: 22.11.2011 4:41:13
+// DateTime: 24.11.2011 2:33:19
 // UserName: Avatar
 // Input file <Grammar_LUA.y>
 
@@ -385,16 +385,16 @@ public class Parser: ShiftReduceParser<ValueType, LexLocation>
     switch (action)
     {
       case 50: // EXP -> NUMBER
-{Console.Error.WriteLine("?enei naiaioeea: {0}", ValueStack[ValueStack.Depth-1].d);}
+{Console.Error.WriteLine("„исло семантика: {0}", ValueStack[ValueStack.Depth-1].d);}
         break;
       case 108: // NAME -> identifer
 { ids[ids_index] = ValueStack[ValueStack.Depth-1].s; ids_index++; CurrentSemanticValue.s = ValueStack[ValueStack.Depth-1].s; }
         break;
       case 109: // NUMBER -> NUMBER, digit
-{ if (_baseNumber == 0) {CurrentSemanticValue.d = ValueStack[ValueStack.Depth-2].d * 10 + ValueStack[ValueStack.Depth-1].i;} else {CurrentSemanticValue.d = ValueStack[ValueStack.Depth-2].d + ValueStack[ValueStack.Depth-1].i * _baseNumber; _baseNumber*=0.1;} }
+{ if (_baseNumber == 0) {CurrentSemanticValue.d = ValueStack[ValueStack.Depth-2].d * 10 + ValueStack[ValueStack.Depth-1].i;} else {_baseNumber*=0.1; CurrentSemanticValue.d = ValueStack[ValueStack.Depth-2].d + ValueStack[ValueStack.Depth-1].i * _baseNumber; } }
         break;
       case 110: // NUMBER -> NUMBER, '.', digit
-{ _baseNumber = 0.1;CurrentSemanticValue.d = ValueStack[ValueStack.Depth-3].d + ValueStack[ValueStack.Depth-2].d * _baseNumber;}
+{ if (_baseNumber != 0) {YYError();} else {_baseNumber = 0.1;CurrentSemanticValue.d = ValueStack[ValueStack.Depth-3].d + ValueStack[ValueStack.Depth-1].i * _baseNumber;}}
         break;
       case 111: // NUMBER -> digit
 { CurrentSemanticValue.d = ValueStack[ValueStack.Depth-1].i; _baseNumber = 0; }

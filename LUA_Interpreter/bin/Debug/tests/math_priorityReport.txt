@@ -58,7 +58,7 @@ Entering state 44
 Reading a token: +
 Next token is '+'
 Reducing stack by rule 50, NUMBER -> EXP
-?enei naiaioeea: 0
+Число семантика: 5
 State now 0 3 162 163 164 165 166 66 8 9
 Entering state 141 
 Next token is '+'
@@ -75,7 +75,7 @@ Entering state 44
 Reading a token: *
 Next token is '*'
 Reducing stack by rule 50, NUMBER -> EXP
-?enei naiaioeea: 0
+Число семантика: 4
 State now 0 3 162 163 164 165 166 66 8 9 141 19 101
 Entering state 102 
 Next token is '*'
@@ -89,7 +89,7 @@ Entering state 44
 Reading a token: +
 Next token is '+'
 Reducing stack by rule 50, NUMBER -> EXP
-?enei naiaioeea: 0
+Число семантика: 2
 State now 0 3 162 163 164 165 166 66 8 9 141 19 101 102 13
 Entering state 14 
 Next token is '+'
@@ -107,7 +107,7 @@ Entering state 44
 Reading a token: *
 Next token is '*'
 Reducing stack by rule 50, NUMBER -> EXP
-?enei naiaioeea: 0
+Число семантика: 2
 State now 0 3 162 163 164 165 166 66 8 9 141 19 101 102 19
 Entering state 20 
 Next token is '*'
@@ -121,7 +121,7 @@ Entering state 44
 Reading a token: )
 Next token is ')'
 Reducing stack by rule 50, NUMBER -> EXP
-?enei naiaioeea: 0
+Число семантика: 5
 State now 0 3 162 163 164 165 166 66 8 9 141 19 101 102 19 20 13
 Entering state 14 
 Next token is ')'
@@ -149,7 +149,7 @@ Entering state 44
 Reading a token: ;
 Next token is ';'
 Reducing stack by rule 50, NUMBER -> EXP
-?enei naiaioeea: 0
+Число семантика: 6
 State now 0 3 162 163 164 165 166 66 8 9 141 19 20 15
 Entering state 16 
 Next token is ';'
