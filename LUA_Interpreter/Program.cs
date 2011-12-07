@@ -14,7 +14,9 @@ namespace LUA_Interpreter
     {
         static void Main(string[] args)
         {
-            Parser parser = new Parser();
+            IdentiferTable table = new IdentiferTable();
+            Parser parser = new Parser(table);
+            
             
             System.IO.FileStream fs;
             if (args.Length > 0)                
@@ -25,6 +27,7 @@ namespace LUA_Interpreter
             parser.Scanner = new Scanner(fs);
 #if DEBUG            
             Console.WriteLine("Тест {0} прошел:{1}", args[0], parser.Parse());
+            table.PrintTable();
 #endif
         }
     }

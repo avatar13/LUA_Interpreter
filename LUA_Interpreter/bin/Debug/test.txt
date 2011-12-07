@@ -5,3 +5,7 @@ function a (...)
      f = 0.789;
      return 1
 end
+
+function lola(xyz)
+	return 2
+end

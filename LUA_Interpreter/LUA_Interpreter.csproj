@@ -66,6 +66,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IdentiferTable.cs" />
     <Compile Include="LUA.cs" />
     <Compile Include="luaLex.cs" />
     <Compile Include="Program.cs" />

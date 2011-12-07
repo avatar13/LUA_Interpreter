@@ -13,12 +13,12 @@ Shifting token functionT, Entering state 162
 Reading a token: Identifer lol
 Next token is identifer
 Shifting token identifer, Entering state 52 
-Reducing stack by rule 108, identifer -> NAME
+Reducing stack by rule 110, identifer -> NAME
 State now 0 3 162
-Entering state 177 
+Entering state 179 
 Reading a token: (
 Next token is '('
-Reducing stack by rule 31, NAME -> FUNCNAME
+Reducing stack by rule 33, NAME -> FUNCNAME
 State now 0 3 162
 Entering state 163 
 Next token is '('
@@ -26,27 +26,30 @@ Shifting token '(', Entering state 164
 Reading a token: Identifer a
 Next token is identifer
 Shifting token identifer, Entering state 52 
-Reducing stack by rule 108, identifer -> NAME
+Reducing stack by rule 110, identifer -> NAME
 State now 0 3 162 163 164
-Entering state 171 
-Reducing stack by rule 44, /* empty */ -> NAME_LIST
-State now 0 3 162 163 164 171
-Entering state 172 
+Entering state 173 
+Reducing stack by rule 46, /* empty */ -> NAME_LIST
+State now 0 3 162 163 164 173
+Entering state 174 
 Reading a token: )
 Next token is ')'
-Reducing stack by rule 87, /* empty */ -> SMTH_OPT
-State now 0 3 162 163 164 171 172
-Entering state 173 
-Reducing stack by rule 85, NAME NAME_LIST SMTH_OPT -> PARLIST1
+Reducing stack by rule 89, /* empty */ -> SMTH_OPT
+State now 0 3 162 163 164 173 174
+Entering state 175 
+Reducing stack by rule 87, NAME NAME_LIST SMTH_OPT -> PARLIST1
 State now 0 3 162 163 164
-Entering state 169 
-Reducing stack by rule 23, PARLIST1 -> PL_OPT
+Entering state 171 
+Reducing stack by rule 25, PARLIST1 -> PL_OPT
 State now 0 3 162 163 164
 Entering state 165 
 Next token is ')'
 Shifting token ')', Entering state 166 
-Reducing stack by rule 4, /* empty */ -> CHUNK
+Reducing stack by rule 19, /* empty */ -> Anon@1
 State now 0 3 162 163 164 165 166
+Entering state 167 
+Reducing stack by rule 4, /* empty */ -> CHUNK
+State now 0 3 162 163 164 165 166 167
 Entering state 66 
 Reading a token: eol
 returnT
@@ -55,42 +58,45 @@ Shifting token returnT, Entering state 139
 Reading a token: Identifer a
 Next token is identifer
 Shifting token identifer, Entering state 52 
-Reducing stack by rule 108, identifer -> NAME
-State now 0 3 162 163 164 165 166 66 139
+Reducing stack by rule 110, identifer -> NAME
+State now 0 3 162 163 164 165 166 167 66 139
 Entering state 51 
-Reducing stack by rule 37, NAME -> VAR
-State now 0 3 162 163 164 165 166 66 139
+Reducing stack by rule 39, NAME -> VAR
+State now 0 3 162 163 164 165 166 167 66 139
 Entering state 50 
 Reading a token: ;
 Next token is ';'
-Reducing stack by rule 52, VAR -> EXP
-State now 0 3 162 163 164 165 166 66 139
+Reducing stack by rule 54, VAR -> EXP
+State now 0 3 162 163 164 165 166 167 66 139
 Entering state 141 
 Next token is ';'
-Reducing stack by rule 46, EXP -> EXPLIST1
-State now 0 3 162 163 164 165 166 66 139
+Reducing stack by rule 48, EXP -> EXPLIST1
+State now 0 3 162 163 164 165 166 167 66 139
 Entering state 140 
 Next token is ';'
 Reducing stack by rule 15, returnT EXPLIST1 -> STAT
-State now 0 3 162 163 164 165 166 66
+State now 0 3 162 163 164 165 166 167 66
 Entering state 5 
 Next token is ';'
 Shifting token ';', Entering state 7 
 Reducing stack by rule 5, ';' -> COMMA
-State now 0 3 162 163 164 165 166 66 5
+State now 0 3 162 163 164 165 166 167 66 5
 Entering state 6 
 Reducing stack by rule 3, CHUNK STAT COMMA -> CHUNK
-State now 0 3 162 163 164 165 166
+State now 0 3 162 163 164 165 166 167
 Entering state 66 
 Reading a token: eol
 end
 Next token is end
 Reducing stack by rule 7, CHUNK -> BLOCK
-State now 0 3 162 163 164 165 166
-Entering state 167 
+State now 0 3 162 163 164 165 166 167
+Entering state 168 
+Reducing stack by rule 20, /* empty */ -> Anon@2
+State now 0 3 162 163 164 165 166 167 168
+Entering state 169 
 Next token is end
-Shifting token end, Entering state 168 
-Reducing stack by rule 19, functionT FUNCNAME '(' PL_OPT ')' BLOCK end -> STAT
+Shifting token end, Entering state 170 
+Reducing stack by rule 21, functionT FUNCNAME '(' PL_OPT ')' Anon@1 BLOCK Anon@2 end -> STAT
 State now 0 3
 Entering state 5 
 Reading a token: Next token is EOF
