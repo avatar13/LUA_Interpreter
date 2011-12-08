@@ -28,6 +28,7 @@ namespace LUA_Interpreter
 #if DEBUG            
             Console.WriteLine("Тест {0} прошел:{1}", args[0], parser.Parse());
             table.PrintTable();
+            Console.WriteLine("---------------------------------------------------");
 #endif
         }
     }
