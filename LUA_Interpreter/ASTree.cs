@@ -26,6 +26,7 @@ namespace LUA_Interpreter
         public const int NUMBER = 3;
         public const int ASSIGN = 4;
         public const int EXPLIST = 5;
+        public const int CHUNK = 6;
 
         public Tree<Node> Root;
 
