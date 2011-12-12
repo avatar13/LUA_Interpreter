@@ -15,7 +15,8 @@ namespace LUA_Interpreter
         static void Main(string[] args)
         {
             IdentiferTable table = new IdentiferTable();
-            Parser parser = new Parser(table);
+            ASTree tree = new ASTree();
+            Parser parser = new Parser(table, tree);
             
             
             System.IO.FileStream fs;

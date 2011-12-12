@@ -20,13 +20,13 @@ namespace LUA_Interpreter
         public const int BLOCK_MARK_END = 7;
         //public const int THREAD = 8;
         
-        struct Identifer
+        public struct Identifer
         {
             public int type;
             public string name;
             public bool isArgument;
             public bool isGlobal;
-            //public void* data;
+            public Byte[]  data;
         };
 
         public IdentiferTable() 
@@ -35,7 +35,7 @@ namespace LUA_Interpreter
             m_reserved.Add("io");
             m_reserved.Add("select");
             m_reserved.Add("print");
-            m_reserved.Add("type");            
+            m_reserved.Add("type");                
         }
 
         List<Identifer> m_stack = new List<Identifer>();
@@ -44,7 +44,7 @@ namespace LUA_Interpreter
         public void AddIdentiferList(string names, string values, bool isGlobal = true)
         {        
             string[] nameT = names.Split(' ');            
-            //string[] valueT = values.Split(' ');
+            string[] valueT = values.Split(' ');
             foreach (string name in nameT)
             {
                 if (name.Length > 0)

@@ -1,11 +1,4 @@
-function a (...)
-     b = 2;
-     c = 123.456;
-     d = 12;
-     f = 0.789;
-     return 1
-end
-
-function lola(xyz)
-	return 2
-end
+b = 2;
+c = 123.456;
+d = 12;
+f = 0.789;
