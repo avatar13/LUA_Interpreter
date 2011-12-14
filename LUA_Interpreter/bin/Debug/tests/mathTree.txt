@@ -1,0 +1,38 @@
+STAT
+-CHUNK
+--FUNCTION
+---FUNCNAME
+---CHUNK
+----ASSIGN
+-----VARLIST
+------Id
+-----EXPLIST
+------FUNCTION_CALL
+-------ARGS
+--------EXPLIST
+---------NUMBER 49
+----ASSIGN
+-----VARLIST
+------Id
+-----EXPLIST
+------OperatorPlus
+-------NUMBER 12
+-------NUMBER 4
+----ASSIGN
+-----VARLIST
+------Id
+-----EXPLIST
+------FUNCTION_CALL
+-------ARGS
+--------EXPLIST
+---------Id
+----ASSIGN
+-----VARLIST
+------Id
+-----EXPLIST
+------OperatorPlus
+-------Id
+-------Id
+----RETURN
+-----EXPLIST
+------Id

@@ -1,4 +1,4 @@
-﻿#define DEBUG
+﻿#define DBG
 
 using System;
 using System.Collections.Generic;
@@ -26,10 +26,12 @@ namespace LUA_Interpreter
                 return;
             
             parser.Scanner = new Scanner(fs);
-#if DEBUG            
+#if DBG
             Console.WriteLine("Тест {0} прошел:{1}", args[0], parser.Parse());
             table.PrintTable();
             Console.WriteLine("---------------------------------------------------");
+            string str = args[0].Remove(args[0].Length - 4);
+            tree.DrawTree(str.Insert(str.Length, "Tree.txt"));
 #endif
         }
     }

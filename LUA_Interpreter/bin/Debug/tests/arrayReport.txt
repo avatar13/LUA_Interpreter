@@ -4,746 +4,725 @@ State now 0
 Entering state 3 
 Reading a token: functionT
 Next token is functionT
-Shifting token functionT, Entering state 174 
+Shifting token functionT, Entering state 162 
 Reading a token: Identifer TestArray
 Next token is identifer
 Shifting token identifer, Entering state 52 
-Reducing stack by rule 122, identifer -> NAME
-State now 0 3 174
-Entering state 191 
+Reducing stack by rule 108, identifer -> NAME
+State now 0 3 162
+Entering state 177 
 Reading a token: (
 Next token is '('
-Reducing stack by rule 45, NAME -> FUNCNAME
-State now 0 3 174
-Entering state 175 
+Reducing stack by rule 31, NAME -> FUNCNAME
+State now 0 3 162
+Entering state 163 
 Next token is '('
-Shifting token '(', Entering state 176 
+Shifting token '(', Entering state 164 
 Reading a token: )
 Next token is ')'
-Reducing stack by rule 38, /* empty */ -> PL_OPT
-State now 0 3 174 175 176
-Entering state 177 
+Reducing stack by rule 24, /* empty */ -> PL_OPT
+State now 0 3 162 163 164
+Entering state 165 
 Next token is ')'
-Shifting token ')', Entering state 178 
-Reducing stack by rule 31, /* empty */ -> Anon@13
-State now 0 3 174 175 176 177 178
-Entering state 179 
+Shifting token ')', Entering state 166 
 Reducing stack by rule 4, /* empty */ -> CHUNK
-State now 0 3 174 175 176 177 178 179
+State now 0 3 162 163 164 165 166
 Entering state 66 
 Reading a token: eol
 Identifer arr
 Next token is identifer
 Shifting token identifer, Entering state 52 
-Reducing stack by rule 122, identifer -> NAME
-State now 0 3 174 175 176 177 178 179 66
+Reducing stack by rule 108, identifer -> NAME
+State now 0 3 162 163 164 165 166 66
 Entering state 51 
-Reducing stack by rule 51, NAME -> VAR
-State now 0 3 174 175 176 177 178 179 66
+Reducing stack by rule 37, NAME -> VAR
+State now 0 3 162 163 164 165 166 66
 Entering state 67 
 Reading a token: =
 Next token is '='
-Reducing stack by rule 50, /* empty */ -> VAR_LIST
-State now 0 3 174 175 176 177 178 179 66 67
+Reducing stack by rule 36, /* empty */ -> VAR_LIST
+State now 0 3 162 163 164 165 166 66 67
 Entering state 68 
 Next token is '='
-Reducing stack by rule 48, VAR VAR_LIST -> VARLIST1
-State now 0 3 174 175 176 177 178 179 66
+Reducing stack by rule 34, VAR VAR_LIST -> VARLIST1
+State now 0 3 162 163 164 165 166 66
 Entering state 8 
 Next token is '='
 Shifting token '=', Entering state 9 
 Reading a token: {
 Next token is '{'
-Shifting token '{', Entering state 89 
+Shifting token '{', Entering state 85 
 Reading a token: Digit:1
 Next token is digit
 Shifting token digit, Entering state 48 
-Reducing stack by rule 125, digit -> NUMBER
-State now 0 3 174 175 176 177 178 179 66 8 9 89
+Reducing stack by rule 111, digit -> NUMBER
+State now 0 3 162 163 164 165 166 66 8 9 85
 Entering state 44 
 Reading a token: ,
 Next token is ','
-Reducing stack by rule 64, NUMBER -> EXP
-Number semantics: 1
-State now 0 3 174 175 176 177 178 179 66 8 9 89
-Entering state 118 
+Reducing stack by rule 50, NUMBER -> EXP
+State now 0 3 162 163 164 165 166 66 8 9 85
+Entering state 114 
 Next token is ','
-Reducing stack by rule 117, /* empty */ -> LST
-State now 0 3 174 175 176 177 178 179 66 8 9 89 118
-Entering state 119 
+Reducing stack by rule 103, /* empty */ -> LST
+State now 0 3 162 163 164 165 166 66 8 9 85 114
+Entering state 115 
 Next token is ','
-Shifting token ',', Entering state 120 
+Shifting token ',', Entering state 116 
 Reading a token: Digit:3
 Next token is digit
 Shifting token digit, Entering state 48 
-Reducing stack by rule 125, digit -> NUMBER
-State now 0 3 174 175 176 177 178 179 66 8 9 89 118 119 120
+Reducing stack by rule 111, digit -> NUMBER
+State now 0 3 162 163 164 165 166 66 8 9 85 114 115 116
 Entering state 44 
 Reading a token: ,
 Next token is ','
-Reducing stack by rule 64, NUMBER -> EXP
-Number semantics: 3
-State now 0 3 174 175 176 177 178 179 66 8 9 89 118 119 120
-Entering state 121 
+Reducing stack by rule 50, NUMBER -> EXP
+State now 0 3 162 163 164 165 166 66 8 9 85 114 115 116
+Entering state 117 
 Next token is ','
-Reducing stack by rule 116, LST ',' EXP -> LST
-State now 0 3 174 175 176 177 178 179 66 8 9 89 118
-Entering state 119 
+Reducing stack by rule 102, LST ',' EXP -> LST
+State now 0 3 162 163 164 165 166 66 8 9 85 114
+Entering state 115 
 Next token is ','
-Shifting token ',', Entering state 120 
+Shifting token ',', Entering state 116 
 Reading a token: Digit:5
 Next token is digit
 Shifting token digit, Entering state 48 
-Reducing stack by rule 125, digit -> NUMBER
-State now 0 3 174 175 176 177 178 179 66 8 9 89 118 119 120
+Reducing stack by rule 111, digit -> NUMBER
+State now 0 3 162 163 164 165 166 66 8 9 85 114 115 116
 Entering state 44 
 Reading a token: ,
 Next token is ','
-Reducing stack by rule 64, NUMBER -> EXP
-Number semantics: 5
-State now 0 3 174 175 176 177 178 179 66 8 9 89 118 119 120
-Entering state 121 
+Reducing stack by rule 50, NUMBER -> EXP
+State now 0 3 162 163 164 165 166 66 8 9 85 114 115 116
+Entering state 117 
 Next token is ','
-Reducing stack by rule 116, LST ',' EXP -> LST
-State now 0 3 174 175 176 177 178 179 66 8 9 89 118
-Entering state 119 
+Reducing stack by rule 102, LST ',' EXP -> LST
+State now 0 3 162 163 164 165 166 66 8 9 85 114
+Entering state 115 
 Next token is ','
-Shifting token ',', Entering state 120 
+Shifting token ',', Entering state 116 
 Reading a token: Digit:7
 Next token is digit
 Shifting token digit, Entering state 48 
-Reducing stack by rule 125, digit -> NUMBER
-State now 0 3 174 175 176 177 178 179 66 8 9 89 118 119 120
+Reducing stack by rule 111, digit -> NUMBER
+State now 0 3 162 163 164 165 166 66 8 9 85 114 115 116
 Entering state 44 
 Reading a token: ,
 Next token is ','
-Reducing stack by rule 64, NUMBER -> EXP
-Number semantics: 7
-State now 0 3 174 175 176 177 178 179 66 8 9 89 118 119 120
-Entering state 121 
+Reducing stack by rule 50, NUMBER -> EXP
+State now 0 3 162 163 164 165 166 66 8 9 85 114 115 116
+Entering state 117 
 Next token is ','
-Reducing stack by rule 116, LST ',' EXP -> LST
-State now 0 3 174 175 176 177 178 179 66 8 9 89 118
-Entering state 119 
+Reducing stack by rule 102, LST ',' EXP -> LST
+State now 0 3 162 163 164 165 166 66 8 9 85 114
+Entering state 115 
 Next token is ','
-Shifting token ',', Entering state 120 
+Shifting token ',', Entering state 116 
 Reading a token: Digit:9
 Next token is digit
 Shifting token digit, Entering state 48 
-Reducing stack by rule 125, digit -> NUMBER
-State now 0 3 174 175 176 177 178 179 66 8 9 89 118 119 120
+Reducing stack by rule 111, digit -> NUMBER
+State now 0 3 162 163 164 165 166 66 8 9 85 114 115 116
 Entering state 44 
 Reading a token: }
 Next token is '}'
-Reducing stack by rule 64, NUMBER -> EXP
-Number semantics: 9
-State now 0 3 174 175 176 177 178 179 66 8 9 89 118 119 120
-Entering state 121 
-Next token is '}'
-Reducing stack by rule 116, LST ',' EXP -> LST
-State now 0 3 174 175 176 177 178 179 66 8 9 89 118
-Entering state 119 
-Next token is '}'
-Reducing stack by rule 113, EXP LST -> LFIELDLIST1
-State now 0 3 174 175 176 177 178 179 66 8 9 89
+Reducing stack by rule 50, NUMBER -> EXP
+State now 0 3 162 163 164 165 166 66 8 9 85 114 115 116
 Entering state 117 
-Reducing stack by rule 108, LFIELDLIST1 -> LFIELDLIST
-State now 0 3 174 175 176 177 178 179 66 8 9 89
-Entering state 92 
 Next token is '}'
-Reducing stack by rule 104, LFIELDLIST -> FIELDLIST
-State now 0 3 174 175 176 177 178 179 66 8 9 89
-Entering state 90 
+Reducing stack by rule 102, LST ',' EXP -> LST
+State now 0 3 162 163 164 165 166 66 8 9 85 114
+Entering state 115 
 Next token is '}'
-Shifting token '}', Entering state 91 
-Reducing stack by rule 103, '{' FIELDLIST '}' -> TABLE_CONSTRUCTOR
-State now 0 3 174 175 176 177 178 179 66 8 9
+Reducing stack by rule 99, EXP LST -> LFIELDLIST1
+State now 0 3 162 163 164 165 166 66 8 9 85
+Entering state 113 
+Reducing stack by rule 94, LFIELDLIST1 -> LFIELDLIST
+State now 0 3 162 163 164 165 166 66 8 9 85
 Entering state 88 
-Reducing stack by rule 70, TABLE_CONSTRUCTOR -> EXP
-State now 0 3 174 175 176 177 178 179 66 8 9
-Entering state 149 
+Next token is '}'
+Reducing stack by rule 90, LFIELDLIST -> FIELDLIST
+State now 0 3 162 163 164 165 166 66 8 9 85
+Entering state 86 
+Next token is '}'
+Shifting token '}', Entering state 87 
+Reducing stack by rule 89, '{' FIELDLIST '}' -> TABLE_CONSTRUCTOR
+State now 0 3 162 163 164 165 166 66 8 9
+Entering state 84 
+Reducing stack by rule 56, TABLE_CONSTRUCTOR -> EXP
+State now 0 3 162 163 164 165 166 66 8 9
+Entering state 141 
 Reading a token: ;
 Next token is ';'
-Reducing stack by rule 60, EXP -> EXPLIST1
-State now 0 3 174 175 176 177 178 179 66 8 9
+Reducing stack by rule 46, EXP -> EXPLIST1
+State now 0 3 162 163 164 165 166 66 8 9
 Entering state 10 
 Next token is ';'
 Reducing stack by rule 8, VARLIST1 '=' EXPLIST1 -> STAT
-State now 0 3 174 175 176 177 178 179 66
+State now 0 3 162 163 164 165 166 66
 Entering state 5 
 Next token is ';'
 Shifting token ';', Entering state 7 
 Reducing stack by rule 5, ';' -> COMMA
-State now 0 3 174 175 176 177 178 179 66 5
+State now 0 3 162 163 164 165 166 66 5
 Entering state 6 
 Reducing stack by rule 3, CHUNK STAT COMMA -> CHUNK
-State now 0 3 174 175 176 177 178 179
+State now 0 3 162 163 164 165 166
 Entering state 66 
 Reading a token: eol
 Identifer arr2
 Next token is identifer
 Shifting token identifer, Entering state 52 
-Reducing stack by rule 122, identifer -> NAME
-State now 0 3 174 175 176 177 178 179 66
+Reducing stack by rule 108, identifer -> NAME
+State now 0 3 162 163 164 165 166 66
 Entering state 51 
-Reducing stack by rule 51, NAME -> VAR
-State now 0 3 174 175 176 177 178 179 66
+Reducing stack by rule 37, NAME -> VAR
+State now 0 3 162 163 164 165 166 66
 Entering state 67 
 Reading a token: =
 Next token is '='
-Reducing stack by rule 50, /* empty */ -> VAR_LIST
-State now 0 3 174 175 176 177 178 179 66 67
+Reducing stack by rule 36, /* empty */ -> VAR_LIST
+State now 0 3 162 163 164 165 166 66 67
 Entering state 68 
 Next token is '='
-Reducing stack by rule 48, VAR VAR_LIST -> VARLIST1
-State now 0 3 174 175 176 177 178 179 66
+Reducing stack by rule 34, VAR VAR_LIST -> VARLIST1
+State now 0 3 162 163 164 165 166 66
 Entering state 8 
 Next token is '='
 Shifting token '=', Entering state 9 
 Reading a token: {
 Next token is '{'
-Shifting token '{', Entering state 89 
+Shifting token '{', Entering state 85 
 Reading a token: {
 Next token is '{'
-Shifting token '{', Entering state 89 
+Shifting token '{', Entering state 85 
 Reading a token: Digit:2
 Next token is digit
 Shifting token digit, Entering state 48 
-Reducing stack by rule 125, digit -> NUMBER
-State now 0 3 174 175 176 177 178 179 66 8 9 89 89
+Reducing stack by rule 111, digit -> NUMBER
+State now 0 3 162 163 164 165 166 66 8 9 85 85
 Entering state 44 
 Reading a token: ,
 Next token is ','
-Reducing stack by rule 64, NUMBER -> EXP
-Number semantics: 2
-State now 0 3 174 175 176 177 178 179 66 8 9 89 89
-Entering state 118 
+Reducing stack by rule 50, NUMBER -> EXP
+State now 0 3 162 163 164 165 166 66 8 9 85 85
+Entering state 114 
 Next token is ','
-Reducing stack by rule 117, /* empty */ -> LST
-State now 0 3 174 175 176 177 178 179 66 8 9 89 89 118
-Entering state 119 
+Reducing stack by rule 103, /* empty */ -> LST
+State now 0 3 162 163 164 165 166 66 8 9 85 85 114
+Entering state 115 
 Next token is ','
-Shifting token ',', Entering state 120 
+Shifting token ',', Entering state 116 
 Reading a token: Digit:6
 Next token is digit
 Shifting token digit, Entering state 48 
-Reducing stack by rule 125, digit -> NUMBER
-State now 0 3 174 175 176 177 178 179 66 8 9 89 89 118 119 120
+Reducing stack by rule 111, digit -> NUMBER
+State now 0 3 162 163 164 165 166 66 8 9 85 85 114 115 116
 Entering state 44 
 Reading a token: }
 Next token is '}'
-Reducing stack by rule 64, NUMBER -> EXP
-Number semantics: 6
-State now 0 3 174 175 176 177 178 179 66 8 9 89 89 118 119 120
-Entering state 121 
-Next token is '}'
-Reducing stack by rule 116, LST ',' EXP -> LST
-State now 0 3 174 175 176 177 178 179 66 8 9 89 89 118
-Entering state 119 
-Next token is '}'
-Reducing stack by rule 113, EXP LST -> LFIELDLIST1
-State now 0 3 174 175 176 177 178 179 66 8 9 89 89
+Reducing stack by rule 50, NUMBER -> EXP
+State now 0 3 162 163 164 165 166 66 8 9 85 85 114 115 116
 Entering state 117 
-Reducing stack by rule 108, LFIELDLIST1 -> LFIELDLIST
-State now 0 3 174 175 176 177 178 179 66 8 9 89 89
-Entering state 92 
 Next token is '}'
-Reducing stack by rule 104, LFIELDLIST -> FIELDLIST
-State now 0 3 174 175 176 177 178 179 66 8 9 89 89
-Entering state 90 
+Reducing stack by rule 102, LST ',' EXP -> LST
+State now 0 3 162 163 164 165 166 66 8 9 85 85 114
+Entering state 115 
 Next token is '}'
-Shifting token '}', Entering state 91 
-Reducing stack by rule 103, '{' FIELDLIST '}' -> TABLE_CONSTRUCTOR
-State now 0 3 174 175 176 177 178 179 66 8 9 89
+Reducing stack by rule 99, EXP LST -> LFIELDLIST1
+State now 0 3 162 163 164 165 166 66 8 9 85 85
+Entering state 113 
+Reducing stack by rule 94, LFIELDLIST1 -> LFIELDLIST
+State now 0 3 162 163 164 165 166 66 8 9 85 85
 Entering state 88 
-Reducing stack by rule 70, TABLE_CONSTRUCTOR -> EXP
-State now 0 3 174 175 176 177 178 179 66 8 9 89
-Entering state 118 
+Next token is '}'
+Reducing stack by rule 90, LFIELDLIST -> FIELDLIST
+State now 0 3 162 163 164 165 166 66 8 9 85 85
+Entering state 86 
+Next token is '}'
+Shifting token '}', Entering state 87 
+Reducing stack by rule 89, '{' FIELDLIST '}' -> TABLE_CONSTRUCTOR
+State now 0 3 162 163 164 165 166 66 8 9 85
+Entering state 84 
+Reducing stack by rule 56, TABLE_CONSTRUCTOR -> EXP
+State now 0 3 162 163 164 165 166 66 8 9 85
+Entering state 114 
 Reading a token: ,
 Next token is ','
-Reducing stack by rule 117, /* empty */ -> LST
-State now 0 3 174 175 176 177 178 179 66 8 9 89 118
-Entering state 119 
+Reducing stack by rule 103, /* empty */ -> LST
+State now 0 3 162 163 164 165 166 66 8 9 85 114
+Entering state 115 
 Next token is ','
-Shifting token ',', Entering state 120 
+Shifting token ',', Entering state 116 
 Reading a token: {
 Next token is '{'
-Shifting token '{', Entering state 89 
+Shifting token '{', Entering state 85 
 Reading a token: Digit:4
 Next token is digit
 Shifting token digit, Entering state 48 
-Reducing stack by rule 125, digit -> NUMBER
-State now 0 3 174 175 176 177 178 179 66 8 9 89 118 119 120 89
+Reducing stack by rule 111, digit -> NUMBER
+State now 0 3 162 163 164 165 166 66 8 9 85 114 115 116 85
 Entering state 44 
 Reading a token: ,
 Next token is ','
-Reducing stack by rule 64, NUMBER -> EXP
-Number semantics: 4
-State now 0 3 174 175 176 177 178 179 66 8 9 89 118 119 120 89
-Entering state 118 
+Reducing stack by rule 50, NUMBER -> EXP
+State now 0 3 162 163 164 165 166 66 8 9 85 114 115 116 85
+Entering state 114 
 Next token is ','
-Reducing stack by rule 117, /* empty */ -> LST
-State now 0 3 174 175 176 177 178 179 66 8 9 89 118 119 120 89 118
-Entering state 119 
+Reducing stack by rule 103, /* empty */ -> LST
+State now 0 3 162 163 164 165 166 66 8 9 85 114 115 116 85 114
+Entering state 115 
 Next token is ','
-Shifting token ',', Entering state 120 
+Shifting token ',', Entering state 116 
 Reading a token: Digit:2
 Next token is digit
 Shifting token digit, Entering state 48 
-Reducing stack by rule 125, digit -> NUMBER
-State now 0 3 174 175 176 177 178 179 66 8 9 89 118 119 120 89 118 119 120
+Reducing stack by rule 111, digit -> NUMBER
+State now 0 3 162 163 164 165 166 66 8 9 85 114 115 116 85 114 115 116
 Entering state 44 
 Reading a token: }
 Next token is '}'
-Reducing stack by rule 64, NUMBER -> EXP
-Number semantics: 2
-State now 0 3 174 175 176 177 178 179 66 8 9 89 118 119 120 89 118 119 120
-Entering state 121 
-Next token is '}'
-Reducing stack by rule 116, LST ',' EXP -> LST
-State now 0 3 174 175 176 177 178 179 66 8 9 89 118 119 120 89 118
-Entering state 119 
-Next token is '}'
-Reducing stack by rule 113, EXP LST -> LFIELDLIST1
-State now 0 3 174 175 176 177 178 179 66 8 9 89 118 119 120 89
+Reducing stack by rule 50, NUMBER -> EXP
+State now 0 3 162 163 164 165 166 66 8 9 85 114 115 116 85 114 115 116
 Entering state 117 
-Reducing stack by rule 108, LFIELDLIST1 -> LFIELDLIST
-State now 0 3 174 175 176 177 178 179 66 8 9 89 118 119 120 89
-Entering state 92 
 Next token is '}'
-Reducing stack by rule 104, LFIELDLIST -> FIELDLIST
-State now 0 3 174 175 176 177 178 179 66 8 9 89 118 119 120 89
-Entering state 90 
+Reducing stack by rule 102, LST ',' EXP -> LST
+State now 0 3 162 163 164 165 166 66 8 9 85 114 115 116 85 114
+Entering state 115 
 Next token is '}'
-Shifting token '}', Entering state 91 
-Reducing stack by rule 103, '{' FIELDLIST '}' -> TABLE_CONSTRUCTOR
-State now 0 3 174 175 176 177 178 179 66 8 9 89 118 119 120
+Reducing stack by rule 99, EXP LST -> LFIELDLIST1
+State now 0 3 162 163 164 165 166 66 8 9 85 114 115 116 85
+Entering state 113 
+Reducing stack by rule 94, LFIELDLIST1 -> LFIELDLIST
+State now 0 3 162 163 164 165 166 66 8 9 85 114 115 116 85
 Entering state 88 
-Reducing stack by rule 70, TABLE_CONSTRUCTOR -> EXP
-State now 0 3 174 175 176 177 178 179 66 8 9 89 118 119 120
-Entering state 121 
+Next token is '}'
+Reducing stack by rule 90, LFIELDLIST -> FIELDLIST
+State now 0 3 162 163 164 165 166 66 8 9 85 114 115 116 85
+Entering state 86 
+Next token is '}'
+Shifting token '}', Entering state 87 
+Reducing stack by rule 89, '{' FIELDLIST '}' -> TABLE_CONSTRUCTOR
+State now 0 3 162 163 164 165 166 66 8 9 85 114 115 116
+Entering state 84 
+Reducing stack by rule 56, TABLE_CONSTRUCTOR -> EXP
+State now 0 3 162 163 164 165 166 66 8 9 85 114 115 116
+Entering state 117 
 Reading a token: ,
 Next token is ','
-Reducing stack by rule 116, LST ',' EXP -> LST
-State now 0 3 174 175 176 177 178 179 66 8 9 89 118
-Entering state 119 
+Reducing stack by rule 102, LST ',' EXP -> LST
+State now 0 3 162 163 164 165 166 66 8 9 85 114
+Entering state 115 
 Next token is ','
-Shifting token ',', Entering state 120 
+Shifting token ',', Entering state 116 
 Reading a token: {
 Next token is '{'
-Shifting token '{', Entering state 89 
+Shifting token '{', Entering state 85 
 Reading a token: Digit:1
 Next token is digit
 Shifting token digit, Entering state 48 
-Reducing stack by rule 125, digit -> NUMBER
-State now 0 3 174 175 176 177 178 179 66 8 9 89 118 119 120 89
+Reducing stack by rule 111, digit -> NUMBER
+State now 0 3 162 163 164 165 166 66 8 9 85 114 115 116 85
 Entering state 44 
 Reading a token: ,
 Next token is ','
-Reducing stack by rule 64, NUMBER -> EXP
-Number semantics: 1
-State now 0 3 174 175 176 177 178 179 66 8 9 89 118 119 120 89
-Entering state 118 
+Reducing stack by rule 50, NUMBER -> EXP
+State now 0 3 162 163 164 165 166 66 8 9 85 114 115 116 85
+Entering state 114 
 Next token is ','
-Reducing stack by rule 117, /* empty */ -> LST
-State now 0 3 174 175 176 177 178 179 66 8 9 89 118 119 120 89 118
-Entering state 119 
+Reducing stack by rule 103, /* empty */ -> LST
+State now 0 3 162 163 164 165 166 66 8 9 85 114 115 116 85 114
+Entering state 115 
 Next token is ','
-Shifting token ',', Entering state 120 
+Shifting token ',', Entering state 116 
 Reading a token: Digit:7
 Next token is digit
 Shifting token digit, Entering state 48 
-Reducing stack by rule 125, digit -> NUMBER
-State now 0 3 174 175 176 177 178 179 66 8 9 89 118 119 120 89 118 119 120
+Reducing stack by rule 111, digit -> NUMBER
+State now 0 3 162 163 164 165 166 66 8 9 85 114 115 116 85 114 115 116
 Entering state 44 
 Reading a token: }
 Next token is '}'
-Reducing stack by rule 64, NUMBER -> EXP
-Number semantics: 7
-State now 0 3 174 175 176 177 178 179 66 8 9 89 118 119 120 89 118 119 120
-Entering state 121 
-Next token is '}'
-Reducing stack by rule 116, LST ',' EXP -> LST
-State now 0 3 174 175 176 177 178 179 66 8 9 89 118 119 120 89 118
-Entering state 119 
-Next token is '}'
-Reducing stack by rule 113, EXP LST -> LFIELDLIST1
-State now 0 3 174 175 176 177 178 179 66 8 9 89 118 119 120 89
+Reducing stack by rule 50, NUMBER -> EXP
+State now 0 3 162 163 164 165 166 66 8 9 85 114 115 116 85 114 115 116
 Entering state 117 
-Reducing stack by rule 108, LFIELDLIST1 -> LFIELDLIST
-State now 0 3 174 175 176 177 178 179 66 8 9 89 118 119 120 89
-Entering state 92 
 Next token is '}'
-Reducing stack by rule 104, LFIELDLIST -> FIELDLIST
-State now 0 3 174 175 176 177 178 179 66 8 9 89 118 119 120 89
-Entering state 90 
+Reducing stack by rule 102, LST ',' EXP -> LST
+State now 0 3 162 163 164 165 166 66 8 9 85 114 115 116 85 114
+Entering state 115 
 Next token is '}'
-Shifting token '}', Entering state 91 
-Reducing stack by rule 103, '{' FIELDLIST '}' -> TABLE_CONSTRUCTOR
-State now 0 3 174 175 176 177 178 179 66 8 9 89 118 119 120
+Reducing stack by rule 99, EXP LST -> LFIELDLIST1
+State now 0 3 162 163 164 165 166 66 8 9 85 114 115 116 85
+Entering state 113 
+Reducing stack by rule 94, LFIELDLIST1 -> LFIELDLIST
+State now 0 3 162 163 164 165 166 66 8 9 85 114 115 116 85
 Entering state 88 
-Reducing stack by rule 70, TABLE_CONSTRUCTOR -> EXP
-State now 0 3 174 175 176 177 178 179 66 8 9 89 118 119 120
-Entering state 121 
+Next token is '}'
+Reducing stack by rule 90, LFIELDLIST -> FIELDLIST
+State now 0 3 162 163 164 165 166 66 8 9 85 114 115 116 85
+Entering state 86 
+Next token is '}'
+Shifting token '}', Entering state 87 
+Reducing stack by rule 89, '{' FIELDLIST '}' -> TABLE_CONSTRUCTOR
+State now 0 3 162 163 164 165 166 66 8 9 85 114 115 116
+Entering state 84 
+Reducing stack by rule 56, TABLE_CONSTRUCTOR -> EXP
+State now 0 3 162 163 164 165 166 66 8 9 85 114 115 116
+Entering state 117 
 Reading a token: }
 Next token is '}'
-Reducing stack by rule 116, LST ',' EXP -> LST
-State now 0 3 174 175 176 177 178 179 66 8 9 89 118
-Entering state 119 
+Reducing stack by rule 102, LST ',' EXP -> LST
+State now 0 3 162 163 164 165 166 66 8 9 85 114
+Entering state 115 
 Next token is '}'
-Reducing stack by rule 113, EXP LST -> LFIELDLIST1
-State now 0 3 174 175 176 177 178 179 66 8 9 89
-Entering state 117 
-Reducing stack by rule 108, LFIELDLIST1 -> LFIELDLIST
-State now 0 3 174 175 176 177 178 179 66 8 9 89
-Entering state 92 
-Next token is '}'
-Reducing stack by rule 104, LFIELDLIST -> FIELDLIST
-State now 0 3 174 175 176 177 178 179 66 8 9 89
-Entering state 90 
-Next token is '}'
-Shifting token '}', Entering state 91 
-Reducing stack by rule 103, '{' FIELDLIST '}' -> TABLE_CONSTRUCTOR
-State now 0 3 174 175 176 177 178 179 66 8 9
+Reducing stack by rule 99, EXP LST -> LFIELDLIST1
+State now 0 3 162 163 164 165 166 66 8 9 85
+Entering state 113 
+Reducing stack by rule 94, LFIELDLIST1 -> LFIELDLIST
+State now 0 3 162 163 164 165 166 66 8 9 85
 Entering state 88 
-Reducing stack by rule 70, TABLE_CONSTRUCTOR -> EXP
-State now 0 3 174 175 176 177 178 179 66 8 9
-Entering state 149 
+Next token is '}'
+Reducing stack by rule 90, LFIELDLIST -> FIELDLIST
+State now 0 3 162 163 164 165 166 66 8 9 85
+Entering state 86 
+Next token is '}'
+Shifting token '}', Entering state 87 
+Reducing stack by rule 89, '{' FIELDLIST '}' -> TABLE_CONSTRUCTOR
+State now 0 3 162 163 164 165 166 66 8 9
+Entering state 84 
+Reducing stack by rule 56, TABLE_CONSTRUCTOR -> EXP
+State now 0 3 162 163 164 165 166 66 8 9
+Entering state 141 
 Reading a token: ;
 Next token is ';'
-Reducing stack by rule 60, EXP -> EXPLIST1
-State now 0 3 174 175 176 177 178 179 66 8 9
+Reducing stack by rule 46, EXP -> EXPLIST1
+State now 0 3 162 163 164 165 166 66 8 9
 Entering state 10 
 Next token is ';'
 Reducing stack by rule 8, VARLIST1 '=' EXPLIST1 -> STAT
-State now 0 3 174 175 176 177 178 179 66
+State now 0 3 162 163 164 165 166 66
 Entering state 5 
 Next token is ';'
 Shifting token ';', Entering state 7 
 Reducing stack by rule 5, ';' -> COMMA
-State now 0 3 174 175 176 177 178 179 66 5
+State now 0 3 162 163 164 165 166 66 5
 Entering state 6 
 Reducing stack by rule 3, CHUNK STAT COMMA -> CHUNK
-State now 0 3 174 175 176 177 178 179
+State now 0 3 162 163 164 165 166
 Entering state 66 
 Reading a token: eol
 Identifer y
 Next token is identifer
 Shifting token identifer, Entering state 52 
-Reducing stack by rule 122, identifer -> NAME
-State now 0 3 174 175 176 177 178 179 66
+Reducing stack by rule 108, identifer -> NAME
+State now 0 3 162 163 164 165 166 66
 Entering state 51 
-Reducing stack by rule 51, NAME -> VAR
-State now 0 3 174 175 176 177 178 179 66
+Reducing stack by rule 37, NAME -> VAR
+State now 0 3 162 163 164 165 166 66
 Entering state 67 
 Reading a token: =
 Next token is '='
-Reducing stack by rule 50, /* empty */ -> VAR_LIST
-State now 0 3 174 175 176 177 178 179 66 67
+Reducing stack by rule 36, /* empty */ -> VAR_LIST
+State now 0 3 162 163 164 165 166 66 67
 Entering state 68 
 Next token is '='
-Reducing stack by rule 48, VAR VAR_LIST -> VARLIST1
-State now 0 3 174 175 176 177 178 179 66
+Reducing stack by rule 34, VAR VAR_LIST -> VARLIST1
+State now 0 3 162 163 164 165 166 66
 Entering state 8 
 Next token is '='
 Shifting token '=', Entering state 9 
 Reading a token: Identifer arr
 Next token is identifer
 Shifting token identifer, Entering state 52 
-Reducing stack by rule 122, identifer -> NAME
-State now 0 3 174 175 176 177 178 179 66 8 9
+Reducing stack by rule 108, identifer -> NAME
+State now 0 3 162 163 164 165 166 66 8 9
 Entering state 51 
-Reducing stack by rule 51, NAME -> VAR
-State now 0 3 174 175 176 177 178 179 66 8 9
+Reducing stack by rule 37, NAME -> VAR
+State now 0 3 162 163 164 165 166 66 8 9
 Entering state 50 
 Reading a token: [
 Next token is '{'
-Reducing stack by rule 54, VAR -> VARORFUNC
-State now 0 3 174 175 176 177 178 179 66 8 9
+Reducing stack by rule 40, VAR -> VARORFUNC
+State now 0 3 162 163 164 165 166 66 8 9
 Entering state 53 
 Next token is '{'
-Shifting token '{', Entering state 89 
+Shifting token '{', Entering state 85 
 Reading a token: Digit:2
 Next token is digit
 Shifting token digit, Entering state 48 
-Reducing stack by rule 125, digit -> NUMBER
-State now 0 3 174 175 176 177 178 179 66 8 9 53 89
+Reducing stack by rule 111, digit -> NUMBER
+State now 0 3 162 163 164 165 166 66 8 9 53 85
 Entering state 44 
 Reading a token: ]
 Next token is '}'
-Reducing stack by rule 64, NUMBER -> EXP
-Number semantics: 2
-State now 0 3 174 175 176 177 178 179 66 8 9 53 89
-Entering state 118 
+Reducing stack by rule 50, NUMBER -> EXP
+State now 0 3 162 163 164 165 166 66 8 9 53 85
+Entering state 114 
 Next token is '}'
-Reducing stack by rule 117, /* empty */ -> LST
-State now 0 3 174 175 176 177 178 179 66 8 9 53 89 118
-Entering state 119 
+Reducing stack by rule 103, /* empty */ -> LST
+State now 0 3 162 163 164 165 166 66 8 9 53 85 114
+Entering state 115 
 Next token is '}'
-Reducing stack by rule 113, EXP LST -> LFIELDLIST1
-State now 0 3 174 175 176 177 178 179 66 8 9 53 89
-Entering state 117 
-Reducing stack by rule 108, LFIELDLIST1 -> LFIELDLIST
-State now 0 3 174 175 176 177 178 179 66 8 9 53 89
-Entering state 92 
+Reducing stack by rule 99, EXP LST -> LFIELDLIST1
+State now 0 3 162 163 164 165 166 66 8 9 53 85
+Entering state 113 
+Reducing stack by rule 94, LFIELDLIST1 -> LFIELDLIST
+State now 0 3 162 163 164 165 166 66 8 9 53 85
+Entering state 88 
 Next token is '}'
-Reducing stack by rule 104, LFIELDLIST -> FIELDLIST
-State now 0 3 174 175 176 177 178 179 66 8 9 53 89
-Entering state 90 
+Reducing stack by rule 90, LFIELDLIST -> FIELDLIST
+State now 0 3 162 163 164 165 166 66 8 9 53 85
+Entering state 86 
 Next token is '}'
-Shifting token '}', Entering state 91 
-Reducing stack by rule 103, '{' FIELDLIST '}' -> TABLE_CONSTRUCTOR
-State now 0 3 174 175 176 177 178 179 66 8 9 53
-Entering state 215 
-Reducing stack by rule 93, TABLE_CONSTRUCTOR -> ARGS
-State now 0 3 174 175 176 177 178 179 66 8 9 53
-Entering state 207 
-Reducing stack by rule 90, VARORFUNC ARGS -> FUNCTION_CALL
-State now 0 3 174 175 176 177 178 179 66 8 9
+Shifting token '}', Entering state 87 
+Reducing stack by rule 89, '{' FIELDLIST '}' -> TABLE_CONSTRUCTOR
+State now 0 3 162 163 164 165 166 66 8 9 53
+Entering state 201 
+Reducing stack by rule 79, TABLE_CONSTRUCTOR -> ARGS
+State now 0 3 162 163 164 165 166 66 8 9 53
+Entering state 193 
+Reducing stack by rule 76, VARORFUNC ARGS -> FUNCTION_CALL
+State now 0 3 162 163 164 165 166 66 8 9
 Entering state 58 
 Reading a token: +
 Next token is '+'
-Reducing stack by rule 69, FUNCTION_CALL -> EXP
-State now 0 3 174 175 176 177 178 179 66 8 9
-Entering state 149 
+Reducing stack by rule 55, FUNCTION_CALL -> EXP
+State now 0 3 162 163 164 165 166 66 8 9
+Entering state 141 
 Next token is '+'
 Shifting token '+', Entering state 19 
 Reading a token: Identifer arr
 Next token is identifer
 Shifting token identifer, Entering state 52 
-Reducing stack by rule 122, identifer -> NAME
-State now 0 3 174 175 176 177 178 179 66 8 9 149 19
+Reducing stack by rule 108, identifer -> NAME
+State now 0 3 162 163 164 165 166 66 8 9 141 19
 Entering state 51 
-Reducing stack by rule 51, NAME -> VAR
-State now 0 3 174 175 176 177 178 179 66 8 9 149 19
+Reducing stack by rule 37, NAME -> VAR
+State now 0 3 162 163 164 165 166 66 8 9 141 19
 Entering state 50 
 Reading a token: [
 Next token is '{'
-Reducing stack by rule 54, VAR -> VARORFUNC
-State now 0 3 174 175 176 177 178 179 66 8 9 149 19
+Reducing stack by rule 40, VAR -> VARORFUNC
+State now 0 3 162 163 164 165 166 66 8 9 141 19
 Entering state 53 
 Next token is '{'
-Shifting token '{', Entering state 89 
+Shifting token '{', Entering state 85 
 Reading a token: Digit:4
 Next token is digit
 Shifting token digit, Entering state 48 
-Reducing stack by rule 125, digit -> NUMBER
-State now 0 3 174 175 176 177 178 179 66 8 9 149 19 53 89
+Reducing stack by rule 111, digit -> NUMBER
+State now 0 3 162 163 164 165 166 66 8 9 141 19 53 85
 Entering state 44 
 Reading a token: ]
 Next token is '}'
-Reducing stack by rule 64, NUMBER -> EXP
-Number semantics: 4
-State now 0 3 174 175 176 177 178 179 66 8 9 149 19 53 89
-Entering state 118 
+Reducing stack by rule 50, NUMBER -> EXP
+State now 0 3 162 163 164 165 166 66 8 9 141 19 53 85
+Entering state 114 
 Next token is '}'
-Reducing stack by rule 117, /* empty */ -> LST
-State now 0 3 174 175 176 177 178 179 66 8 9 149 19 53 89 118
-Entering state 119 
+Reducing stack by rule 103, /* empty */ -> LST
+State now 0 3 162 163 164 165 166 66 8 9 141 19 53 85 114
+Entering state 115 
 Next token is '}'
-Reducing stack by rule 113, EXP LST -> LFIELDLIST1
-State now 0 3 174 175 176 177 178 179 66 8 9 149 19 53 89
-Entering state 117 
-Reducing stack by rule 108, LFIELDLIST1 -> LFIELDLIST
-State now 0 3 174 175 176 177 178 179 66 8 9 149 19 53 89
-Entering state 92 
+Reducing stack by rule 99, EXP LST -> LFIELDLIST1
+State now 0 3 162 163 164 165 166 66 8 9 141 19 53 85
+Entering state 113 
+Reducing stack by rule 94, LFIELDLIST1 -> LFIELDLIST
+State now 0 3 162 163 164 165 166 66 8 9 141 19 53 85
+Entering state 88 
 Next token is '}'
-Reducing stack by rule 104, LFIELDLIST -> FIELDLIST
-State now 0 3 174 175 176 177 178 179 66 8 9 149 19 53 89
-Entering state 90 
+Reducing stack by rule 90, LFIELDLIST -> FIELDLIST
+State now 0 3 162 163 164 165 166 66 8 9 141 19 53 85
+Entering state 86 
 Next token is '}'
-Shifting token '}', Entering state 91 
-Reducing stack by rule 103, '{' FIELDLIST '}' -> TABLE_CONSTRUCTOR
-State now 0 3 174 175 176 177 178 179 66 8 9 149 19 53
-Entering state 215 
-Reducing stack by rule 93, TABLE_CONSTRUCTOR -> ARGS
-State now 0 3 174 175 176 177 178 179 66 8 9 149 19 53
-Entering state 207 
-Reducing stack by rule 90, VARORFUNC ARGS -> FUNCTION_CALL
-State now 0 3 174 175 176 177 178 179 66 8 9 149 19
+Shifting token '}', Entering state 87 
+Reducing stack by rule 89, '{' FIELDLIST '}' -> TABLE_CONSTRUCTOR
+State now 0 3 162 163 164 165 166 66 8 9 141 19 53
+Entering state 201 
+Reducing stack by rule 79, TABLE_CONSTRUCTOR -> ARGS
+State now 0 3 162 163 164 165 166 66 8 9 141 19 53
+Entering state 193 
+Reducing stack by rule 76, VARORFUNC ARGS -> FUNCTION_CALL
+State now 0 3 162 163 164 165 166 66 8 9 141 19
 Entering state 58 
 Reading a token: +
 Next token is '+'
-Reducing stack by rule 69, FUNCTION_CALL -> EXP
-State now 0 3 174 175 176 177 178 179 66 8 9 149 19
+Reducing stack by rule 55, FUNCTION_CALL -> EXP
+State now 0 3 162 163 164 165 166 66 8 9 141 19
 Entering state 20 
 Next token is '+'
-Reducing stack by rule 75, EXP '+' EXP -> EXP
-State now 0 3 174 175 176 177 178 179 66 8 9
-Entering state 149 
+Reducing stack by rule 61, EXP '+' EXP -> EXP
+State now 0 3 162 163 164 165 166 66 8 9
+Entering state 141 
 Next token is '+'
 Shifting token '+', Entering state 19 
 Reading a token: Identifer arr2
 Next token is identifer
 Shifting token identifer, Entering state 52 
-Reducing stack by rule 122, identifer -> NAME
-State now 0 3 174 175 176 177 178 179 66 8 9 149 19
+Reducing stack by rule 108, identifer -> NAME
+State now 0 3 162 163 164 165 166 66 8 9 141 19
 Entering state 51 
-Reducing stack by rule 51, NAME -> VAR
-State now 0 3 174 175 176 177 178 179 66 8 9 149 19
+Reducing stack by rule 37, NAME -> VAR
+State now 0 3 162 163 164 165 166 66 8 9 141 19
 Entering state 50 
 Reading a token: [
 Next token is '{'
-Reducing stack by rule 54, VAR -> VARORFUNC
-State now 0 3 174 175 176 177 178 179 66 8 9 149 19
+Reducing stack by rule 40, VAR -> VARORFUNC
+State now 0 3 162 163 164 165 166 66 8 9 141 19
 Entering state 53 
 Next token is '{'
-Shifting token '{', Entering state 89 
+Shifting token '{', Entering state 85 
 Reading a token: Digit:3
 Next token is digit
 Shifting token digit, Entering state 48 
-Reducing stack by rule 125, digit -> NUMBER
-State now 0 3 174 175 176 177 178 179 66 8 9 149 19 53 89
+Reducing stack by rule 111, digit -> NUMBER
+State now 0 3 162 163 164 165 166 66 8 9 141 19 53 85
 Entering state 44 
 Reading a token: ]
 Next token is '}'
-Reducing stack by rule 64, NUMBER -> EXP
-Number semantics: 3
-State now 0 3 174 175 176 177 178 179 66 8 9 149 19 53 89
-Entering state 118 
+Reducing stack by rule 50, NUMBER -> EXP
+State now 0 3 162 163 164 165 166 66 8 9 141 19 53 85
+Entering state 114 
 Next token is '}'
-Reducing stack by rule 117, /* empty */ -> LST
-State now 0 3 174 175 176 177 178 179 66 8 9 149 19 53 89 118
-Entering state 119 
+Reducing stack by rule 103, /* empty */ -> LST
+State now 0 3 162 163 164 165 166 66 8 9 141 19 53 85 114
+Entering state 115 
 Next token is '}'
-Reducing stack by rule 113, EXP LST -> LFIELDLIST1
-State now 0 3 174 175 176 177 178 179 66 8 9 149 19 53 89
-Entering state 117 
-Reducing stack by rule 108, LFIELDLIST1 -> LFIELDLIST
-State now 0 3 174 175 176 177 178 179 66 8 9 149 19 53 89
-Entering state 92 
+Reducing stack by rule 99, EXP LST -> LFIELDLIST1
+State now 0 3 162 163 164 165 166 66 8 9 141 19 53 85
+Entering state 113 
+Reducing stack by rule 94, LFIELDLIST1 -> LFIELDLIST
+State now 0 3 162 163 164 165 166 66 8 9 141 19 53 85
+Entering state 88 
 Next token is '}'
-Reducing stack by rule 104, LFIELDLIST -> FIELDLIST
-State now 0 3 174 175 176 177 178 179 66 8 9 149 19 53 89
-Entering state 90 
+Reducing stack by rule 90, LFIELDLIST -> FIELDLIST
+State now 0 3 162 163 164 165 166 66 8 9 141 19 53 85
+Entering state 86 
 Next token is '}'
-Shifting token '}', Entering state 91 
-Reducing stack by rule 103, '{' FIELDLIST '}' -> TABLE_CONSTRUCTOR
-State now 0 3 174 175 176 177 178 179 66 8 9 149 19 53
-Entering state 215 
-Reducing stack by rule 93, TABLE_CONSTRUCTOR -> ARGS
-State now 0 3 174 175 176 177 178 179 66 8 9 149 19 53
-Entering state 207 
-Reducing stack by rule 90, VARORFUNC ARGS -> FUNCTION_CALL
-State now 0 3 174 175 176 177 178 179 66 8 9 149 19
+Shifting token '}', Entering state 87 
+Reducing stack by rule 89, '{' FIELDLIST '}' -> TABLE_CONSTRUCTOR
+State now 0 3 162 163 164 165 166 66 8 9 141 19 53
+Entering state 201 
+Reducing stack by rule 79, TABLE_CONSTRUCTOR -> ARGS
+State now 0 3 162 163 164 165 166 66 8 9 141 19 53
+Entering state 193 
+Reducing stack by rule 76, VARORFUNC ARGS -> FUNCTION_CALL
+State now 0 3 162 163 164 165 166 66 8 9 141 19
 Entering state 58 
 Reading a token: [
 Next token is '{'
-Reducing stack by rule 55, FUNCTION_CALL -> VARORFUNC
-State now 0 3 174 175 176 177 178 179 66 8 9 149 19
+Reducing stack by rule 41, FUNCTION_CALL -> VARORFUNC
+State now 0 3 162 163 164 165 166 66 8 9 141 19
 Entering state 53 
 Next token is '{'
-Shifting token '{', Entering state 89 
+Shifting token '{', Entering state 85 
 Reading a token: Digit:1
 Next token is digit
 Shifting token digit, Entering state 48 
-Reducing stack by rule 125, digit -> NUMBER
-State now 0 3 174 175 176 177 178 179 66 8 9 149 19 53 89
+Reducing stack by rule 111, digit -> NUMBER
+State now 0 3 162 163 164 165 166 66 8 9 141 19 53 85
 Entering state 44 
 Reading a token: ]
 Next token is '}'
-Reducing stack by rule 64, NUMBER -> EXP
-Number semantics: 1
-State now 0 3 174 175 176 177 178 179 66 8 9 149 19 53 89
-Entering state 118 
+Reducing stack by rule 50, NUMBER -> EXP
+State now 0 3 162 163 164 165 166 66 8 9 141 19 53 85
+Entering state 114 
 Next token is '}'
-Reducing stack by rule 117, /* empty */ -> LST
-State now 0 3 174 175 176 177 178 179 66 8 9 149 19 53 89 118
-Entering state 119 
+Reducing stack by rule 103, /* empty */ -> LST
+State now 0 3 162 163 164 165 166 66 8 9 141 19 53 85 114
+Entering state 115 
 Next token is '}'
-Reducing stack by rule 113, EXP LST -> LFIELDLIST1
-State now 0 3 174 175 176 177 178 179 66 8 9 149 19 53 89
-Entering state 117 
-Reducing stack by rule 108, LFIELDLIST1 -> LFIELDLIST
-State now 0 3 174 175 176 177 178 179 66 8 9 149 19 53 89
-Entering state 92 
+Reducing stack by rule 99, EXP LST -> LFIELDLIST1
+State now 0 3 162 163 164 165 166 66 8 9 141 19 53 85
+Entering state 113 
+Reducing stack by rule 94, LFIELDLIST1 -> LFIELDLIST
+State now 0 3 162 163 164 165 166 66 8 9 141 19 53 85
+Entering state 88 
 Next token is '}'
-Reducing stack by rule 104, LFIELDLIST -> FIELDLIST
-State now 0 3 174 175 176 177 178 179 66 8 9 149 19 53 89
-Entering state 90 
+Reducing stack by rule 90, LFIELDLIST -> FIELDLIST
+State now 0 3 162 163 164 165 166 66 8 9 141 19 53 85
+Entering state 86 
 Next token is '}'
-Shifting token '}', Entering state 91 
-Reducing stack by rule 103, '{' FIELDLIST '}' -> TABLE_CONSTRUCTOR
-State now 0 3 174 175 176 177 178 179 66 8 9 149 19 53
-Entering state 215 
-Reducing stack by rule 93, TABLE_CONSTRUCTOR -> ARGS
-State now 0 3 174 175 176 177 178 179 66 8 9 149 19 53
-Entering state 207 
-Reducing stack by rule 90, VARORFUNC ARGS -> FUNCTION_CALL
-State now 0 3 174 175 176 177 178 179 66 8 9 149 19
+Shifting token '}', Entering state 87 
+Reducing stack by rule 89, '{' FIELDLIST '}' -> TABLE_CONSTRUCTOR
+State now 0 3 162 163 164 165 166 66 8 9 141 19 53
+Entering state 201 
+Reducing stack by rule 79, TABLE_CONSTRUCTOR -> ARGS
+State now 0 3 162 163 164 165 166 66 8 9 141 19 53
+Entering state 193 
+Reducing stack by rule 76, VARORFUNC ARGS -> FUNCTION_CALL
+State now 0 3 162 163 164 165 166 66 8 9 141 19
 Entering state 58 
 Reading a token: ;
 Next token is ';'
-Reducing stack by rule 69, FUNCTION_CALL -> EXP
-State now 0 3 174 175 176 177 178 179 66 8 9 149 19
+Reducing stack by rule 55, FUNCTION_CALL -> EXP
+State now 0 3 162 163 164 165 166 66 8 9 141 19
 Entering state 20 
 Next token is ';'
-Reducing stack by rule 75, EXP '+' EXP -> EXP
-State now 0 3 174 175 176 177 178 179 66 8 9
-Entering state 149 
+Reducing stack by rule 61, EXP '+' EXP -> EXP
+State now 0 3 162 163 164 165 166 66 8 9
+Entering state 141 
 Next token is ';'
-Reducing stack by rule 60, EXP -> EXPLIST1
-State now 0 3 174 175 176 177 178 179 66 8 9
+Reducing stack by rule 46, EXP -> EXPLIST1
+State now 0 3 162 163 164 165 166 66 8 9
 Entering state 10 
 Next token is ';'
 Reducing stack by rule 8, VARLIST1 '=' EXPLIST1 -> STAT
-State now 0 3 174 175 176 177 178 179 66
+State now 0 3 162 163 164 165 166 66
 Entering state 5 
 Next token is ';'
 Shifting token ';', Entering state 7 
 Reducing stack by rule 5, ';' -> COMMA
-State now 0 3 174 175 176 177 178 179 66 5
+State now 0 3 162 163 164 165 166 66 5
 Entering state 6 
 Reducing stack by rule 3, CHUNK STAT COMMA -> CHUNK
-State now 0 3 174 175 176 177 178 179
+State now 0 3 162 163 164 165 166
 Entering state 66 
 Reading a token: comment begin
 comment end
 returnT
 Next token is returnT
-Shifting token returnT, Entering state 147 
+Shifting token returnT, Entering state 139 
 Reading a token: Identifer y
 Next token is identifer
 Shifting token identifer, Entering state 52 
-Reducing stack by rule 122, identifer -> NAME
-State now 0 3 174 175 176 177 178 179 66 147
+Reducing stack by rule 108, identifer -> NAME
+State now 0 3 162 163 164 165 166 66 139
 Entering state 51 
-Reducing stack by rule 51, NAME -> VAR
-State now 0 3 174 175 176 177 178 179 66 147
+Reducing stack by rule 37, NAME -> VAR
+State now 0 3 162 163 164 165 166 66 139
 Entering state 50 
 Reading a token: ;
 Next token is ';'
-Reducing stack by rule 66, VAR -> EXP
-State now 0 3 174 175 176 177 178 179 66 147
-Entering state 149 
+Reducing stack by rule 52, VAR -> EXP
+State now 0 3 162 163 164 165 166 66 139
+Entering state 141 
 Next token is ';'
-Reducing stack by rule 60, EXP -> EXPLIST1
-State now 0 3 174 175 176 177 178 179 66 147
-Entering state 148 
+Reducing stack by rule 46, EXP -> EXPLIST1
+State now 0 3 162 163 164 165 166 66 139
+Entering state 140 
 Next token is ';'
-Reducing stack by rule 23, returnT EXPLIST1 -> STAT
-State now 0 3 174 175 176 177 178 179 66
+Reducing stack by rule 15, returnT EXPLIST1 -> STAT
+State now 0 3 162 163 164 165 166 66
 Entering state 5 
 Next token is ';'
 Shifting token ';', Entering state 7 
 Reducing stack by rule 5, ';' -> COMMA
-State now 0 3 174 175 176 177 178 179 66 5
+State now 0 3 162 163 164 165 166 66 5
 Entering state 6 
 Reducing stack by rule 3, CHUNK STAT COMMA -> CHUNK
-State now 0 3 174 175 176 177 178 179
+State now 0 3 162 163 164 165 166
 Entering state 66 
 Reading a token: eol
 end
 Next token is end
 Reducing stack by rule 7, CHUNK -> BLOCK
-State now 0 3 174 175 176 177 178 179
-Entering state 180 
-Reducing stack by rule 32, /* empty */ -> Anon@14
-State now 0 3 174 175 176 177 178 179 180
-Entering state 181 
+State now 0 3 162 163 164 165 166
+Entering state 167 
 Next token is end
-Shifting token end, Entering state 182 
-Reducing stack by rule 33, functionT FUNCNAME '(' PL_OPT ')' Anon@13 BLOCK Anon@14 end -> STAT
+Shifting token end, Entering state 168 
+Reducing stack by rule 19, functionT FUNCNAME '(' PL_OPT ')' BLOCK end -> STAT
 State now 0 3
 Entering state 5 
 Reading a token: Next token is EOF

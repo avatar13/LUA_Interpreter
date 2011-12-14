@@ -1,0 +1,22 @@
+STAT
+-CHUNK
+--FUNCTION
+---FUNCNAME
+---CHUNK
+----ASSIGN
+-----VARLIST
+------Id
+-----EXPLIST
+------NUMBER 4
+----ASSIGN
+-----VARLIST
+------Id
+-----EXPLIST
+------NUMBER 10
+----ASSIGN
+-----VARLIST
+------Id
+------Id
+------Id
+-----EXPLIST
+------NUMBER 9

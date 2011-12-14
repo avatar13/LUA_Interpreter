@@ -1,0 +1,23 @@
+STAT
+-CHUNK
+--FUNCTION
+---FUNCNAME
+---CHUNK
+----ASSIGN
+-----VARLIST
+------Id
+-----EXPLIST
+------OperatorPlus
+-------NUMBER 5
+-------OperatorDiv
+--------OperatorPlus
+---------OperatorMul
+----------NUMBER 4
+----------NUMBER 2
+---------OperatorMul
+----------NUMBER 2
+----------NUMBER 5
+--------NUMBER 6
+----RETURN
+-----EXPLIST
+------Id

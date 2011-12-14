@@ -1,0 +1,36 @@
+STAT
+-CHUNK
+--FUNCTION
+---FUNCNAME
+---CHUNK
+----ASSIGN
+-----VARLIST
+------Id
+-----EXPLIST
+------NUMBER 1
+----ASSIGN
+-----VARLIST
+------Id
+-----EXPLIST
+------NUMBER 3
+----IF
+-----IF_COND
+------Id
+-----CHUNK
+------WHILE
+-------Id
+-------CHUNK
+--------ASSIGN
+---------VARLIST
+----------Id
+---------EXPLIST
+----------OperatorPlus
+-----------Id
+-----------NUMBER 1
+--------FUNCTION_CALL
+---------Id
+---------ARGS
+----------EXPLIST
+-----------------------STRING
+------------Id
+-----ELSEIF_LIST

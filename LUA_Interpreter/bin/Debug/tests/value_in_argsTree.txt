@@ -1,0 +1,16 @@
+STAT
+-CHUNK
+--FUNCTION
+---FUNCNAME
+---PARLIST
+---CHUNK
+----ASSIGN
+-----VARLIST
+------Id
+-----EXPLIST
+------Id
+--FUNCTION_CALL
+---Id
+---ARGS
+----EXPLIST
+-----STRING
