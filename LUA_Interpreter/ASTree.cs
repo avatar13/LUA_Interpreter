@@ -55,6 +55,7 @@ namespace LUA_Interpreter
         public const int ELSEIF_LIST = 31;
         public const int ELSE = 32;
         public const int RETURN = 33;
+        public const int TABLE_CONSTRUCTOR = 34;
 
         public Tree<Node> Root;
 
@@ -128,6 +129,26 @@ namespace LUA_Interpreter
                 if (child != null)
                 {
                     nodelist.Add(child);
+                }
+            }
+            return nodelist;
+        }
+
+        public TreeNodeList<Node> CreateNodeList(TreeNode child, TreeNodeList<Node> nl)
+        {
+            TreeNodeList<Node> nodelist = new TreeNodeList<Node>();
+            if (child != null)
+            {
+                nodelist.Add(child);
+            }
+            if (nl != null)
+            {
+                foreach (TreeNode node in nl)
+                {
+                    if (node != null)
+                    {
+                        nodelist.Add(node);
+                    }
                 }
             }
             return nodelist;
@@ -298,6 +319,9 @@ namespace LUA_Interpreter
                     break;
                 case RETURN:
                     sw.WriteLine("RETURN");
+                    break;
+                case TABLE_CONSTRUCTOR:
+                    sw.WriteLine("TABLE_CONSTRUCTOR");
                     break;
             }
         }

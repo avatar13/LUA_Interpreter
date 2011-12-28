@@ -7,10 +7,26 @@ STAT
 -----VARLIST
 ------Id
 -----EXPLIST
+------TABLE_CONSTRUCTOR
+-------NUMBER 1
+-------NUMBER 3
+-------NUMBER 5
+-------NUMBER 7
+-------NUMBER 9
 ----ASSIGN
 -----VARLIST
 ------Id
 -----EXPLIST
+------TABLE_CONSTRUCTOR
+-------TABLE_CONSTRUCTOR
+--------NUMBER 2
+--------NUMBER 6
+-------TABLE_CONSTRUCTOR
+--------NUMBER 4
+--------NUMBER 2
+-------TABLE_CONSTRUCTOR
+--------NUMBER 1
+--------NUMBER 7
 ----ASSIGN
 -----VARLIST
 ------Id
@@ -19,11 +35,19 @@ STAT
 -------OperatorPlus
 --------FUNCTION_CALL
 ---------Id
+---------TABLE_CONSTRUCTOR
+----------NUMBER 2
 --------FUNCTION_CALL
 ---------Id
+---------TABLE_CONSTRUCTOR
+----------NUMBER 4
 -------FUNCTION_CALL
 --------FUNCTION_CALL
 ---------Id
+---------TABLE_CONSTRUCTOR
+----------NUMBER 3
+--------TABLE_CONSTRUCTOR
+---------NUMBER 1
 ----RETURN
 -----EXPLIST
 ------Id

@@ -7,6 +7,14 @@ STAT
 -----VARLIST
 ------Id
 -----EXPLIST
+------TABLE_CONSTRUCTOR
+-------NUMBER 1
+-------NUMBER 2
+-------NUMBER 3
+-------NUMBER 4
+-------NUMBER 7
+-------NUMBER 10
+-------NUMBER 15
 ----ASSIGN
 -----VARLIST
 ------Id
@@ -28,6 +36,8 @@ STAT
 ---------Id
 ---------FUNCTION_CALL
 ----------Id
+----------TABLE_CONSTRUCTOR
+-----------Id
 ------ASSIGN
 -------VARLIST
 --------Id
