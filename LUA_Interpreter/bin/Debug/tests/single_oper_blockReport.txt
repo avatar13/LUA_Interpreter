@@ -4,181 +4,181 @@ State now 0
 Entering state 3 
 Reading a token: functionT
 Next token is functionT
-Shifting token functionT, Entering state 162 
+Shifting token functionT, Entering state 158 
 Reading a token: Identifer abc
 Next token is identifer
 Shifting token identifer, Entering state 52 
-Reducing stack by rule 108, identifer -> NAME
-State now 0 3 162
-Entering state 177 
+Reducing stack by rule 106, identifer -> NAME
+State now 0 3 158
+Entering state 173 
 Reading a token: (
 Next token is '('
 Reducing stack by rule 31, NAME -> FUNCNAME
-State now 0 3 162
-Entering state 163 
+State now 0 3 158
+Entering state 159 
 Next token is '('
-Shifting token '(', Entering state 164 
+Shifting token '(', Entering state 160 
 Reading a token: )
 Next token is ')'
 Reducing stack by rule 24, /* empty */ -> PL_OPT
-State now 0 3 162 163 164
-Entering state 165 
+State now 0 3 158 159 160
+Entering state 161 
 Next token is ')'
-Shifting token ')', Entering state 166 
+Shifting token ')', Entering state 162 
 Reducing stack by rule 4, /* empty */ -> CHUNK
-State now 0 3 162 163 164 165 166
+State now 0 3 158 159 160 161 162
 Entering state 66 
 Reading a token: eol
 Identifer a
 Next token is identifer
 Shifting token identifer, Entering state 52 
-Reducing stack by rule 108, identifer -> NAME
-State now 0 3 162 163 164 165 166 66
+Reducing stack by rule 106, identifer -> NAME
+State now 0 3 158 159 160 161 162 66
 Entering state 51 
 Reducing stack by rule 37, NAME -> VAR
-State now 0 3 162 163 164 165 166 66
+State now 0 3 158 159 160 161 162 66
 Entering state 67 
 Reading a token: =
 Next token is '='
 Reducing stack by rule 36, /* empty */ -> VAR_LIST
-State now 0 3 162 163 164 165 166 66 67
+State now 0 3 158 159 160 161 162 66 67
 Entering state 68 
 Next token is '='
 Reducing stack by rule 34, VAR VAR_LIST -> VARLIST1
-State now 0 3 162 163 164 165 166 66
+State now 0 3 158 159 160 161 162 66
 Entering state 8 
 Next token is '='
 Shifting token '=', Entering state 9 
 Reading a token: Digit:1
 Next token is digit
 Shifting token digit, Entering state 48 
-Reducing stack by rule 111, digit -> NUMBER
-State now 0 3 162 163 164 165 166 66 8 9
+Reducing stack by rule 109, digit -> NUMBER
+State now 0 3 158 159 160 161 162 66 8 9
 Entering state 44 
 Reading a token: ;
 Next token is ';'
 Reducing stack by rule 50, NUMBER -> EXP
-State now 0 3 162 163 164 165 166 66 8 9
-Entering state 141 
+State now 0 3 158 159 160 161 162 66 8 9
+Entering state 137 
 Next token is ';'
 Reducing stack by rule 46, EXP -> EXPLIST1
-State now 0 3 162 163 164 165 166 66 8 9
+State now 0 3 158 159 160 161 162 66 8 9
 Entering state 10 
 Next token is ';'
 Reducing stack by rule 8, VARLIST1 '=' EXPLIST1 -> STAT
-State now 0 3 162 163 164 165 166 66
+State now 0 3 158 159 160 161 162 66
 Entering state 5 
 Next token is ';'
 Shifting token ';', Entering state 7 
 Reducing stack by rule 5, ';' -> COMMA
-State now 0 3 162 163 164 165 166 66 5
+State now 0 3 158 159 160 161 162 66 5
 Entering state 6 
 Reducing stack by rule 3, CHUNK STAT COMMA -> CHUNK
-State now 0 3 162 163 164 165 166
+State now 0 3 158 159 160 161 162
 Entering state 66 
 Reading a token: eol
 Identifer b
 Next token is identifer
 Shifting token identifer, Entering state 52 
-Reducing stack by rule 108, identifer -> NAME
-State now 0 3 162 163 164 165 166 66
+Reducing stack by rule 106, identifer -> NAME
+State now 0 3 158 159 160 161 162 66
 Entering state 51 
 Reducing stack by rule 37, NAME -> VAR
-State now 0 3 162 163 164 165 166 66
+State now 0 3 158 159 160 161 162 66
 Entering state 67 
 Reading a token: =
 Next token is '='
 Reducing stack by rule 36, /* empty */ -> VAR_LIST
-State now 0 3 162 163 164 165 166 66 67
+State now 0 3 158 159 160 161 162 66 67
 Entering state 68 
 Next token is '='
 Reducing stack by rule 34, VAR VAR_LIST -> VARLIST1
-State now 0 3 162 163 164 165 166 66
+State now 0 3 158 159 160 161 162 66
 Entering state 8 
 Next token is '='
 Shifting token '=', Entering state 9 
 Reading a token: Digit:3
 Next token is digit
 Shifting token digit, Entering state 48 
-Reducing stack by rule 111, digit -> NUMBER
-State now 0 3 162 163 164 165 166 66 8 9
+Reducing stack by rule 109, digit -> NUMBER
+State now 0 3 158 159 160 161 162 66 8 9
 Entering state 44 
 Reading a token: ;
 Next token is ';'
 Reducing stack by rule 50, NUMBER -> EXP
-State now 0 3 162 163 164 165 166 66 8 9
-Entering state 141 
+State now 0 3 158 159 160 161 162 66 8 9
+Entering state 137 
 Next token is ';'
 Reducing stack by rule 46, EXP -> EXPLIST1
-State now 0 3 162 163 164 165 166 66 8 9
+State now 0 3 158 159 160 161 162 66 8 9
 Entering state 10 
 Next token is ';'
 Reducing stack by rule 8, VARLIST1 '=' EXPLIST1 -> STAT
-State now 0 3 162 163 164 165 166 66
+State now 0 3 158 159 160 161 162 66
 Entering state 5 
 Next token is ';'
 Shifting token ';', Entering state 7 
 Reducing stack by rule 5, ';' -> COMMA
-State now 0 3 162 163 164 165 166 66 5
+State now 0 3 158 159 160 161 162 66 5
 Entering state 6 
 Reducing stack by rule 3, CHUNK STAT COMMA -> CHUNK
-State now 0 3 162 163 164 165 166
+State now 0 3 158 159 160 161 162
 Entering state 66 
 Reading a token: eol
 if
 Next token is ifT
-Shifting token ifT, Entering state 126 
+Shifting token ifT, Entering state 122 
 Reading a token: (
 Next token is '('
-Shifting token '(', Entering state 101 
+Shifting token '(', Entering state 94 
 Reading a token: Identifer a
 Next token is identifer
 Shifting token identifer, Entering state 52 
-Reducing stack by rule 108, identifer -> NAME
-State now 0 3 162 163 164 165 166 66 126 101
+Reducing stack by rule 106, identifer -> NAME
+State now 0 3 158 159 160 161 162 66 122 94
 Entering state 51 
 Reducing stack by rule 37, NAME -> VAR
-State now 0 3 162 163 164 165 166 66 126 101
+State now 0 3 158 159 160 161 162 66 122 94
 Entering state 50 
 Reading a token: <
 Next token is '<'
 Reducing stack by rule 52, VAR -> EXP
-State now 0 3 162 163 164 165 166 66 126 101
-Entering state 102 
+State now 0 3 158 159 160 161 162 66 122 94
+Entering state 95 
 Next token is '<'
 Shifting token '<', Entering state 27 
 Reading a token: Identifer b
 Next token is identifer
 Shifting token identifer, Entering state 52 
-Reducing stack by rule 108, identifer -> NAME
-State now 0 3 162 163 164 165 166 66 126 101 102 27
+Reducing stack by rule 106, identifer -> NAME
+State now 0 3 158 159 160 161 162 66 122 94 95 27
 Entering state 51 
 Reducing stack by rule 37, NAME -> VAR
-State now 0 3 162 163 164 165 166 66 126 101 102 27
+State now 0 3 158 159 160 161 162 66 122 94 95 27
 Entering state 50 
 Reading a token: )
 Next token is ')'
 Reducing stack by rule 52, VAR -> EXP
-State now 0 3 162 163 164 165 166 66 126 101 102 27
+State now 0 3 158 159 160 161 162 66 122 94 95 27
 Entering state 28 
 Next token is ')'
 Reducing stack by rule 65, EXP '<' EXP -> EXP
-State now 0 3 162 163 164 165 166 66 126 101
-Entering state 102 
+State now 0 3 158 159 160 161 162 66 122 94
+Entering state 95 
 Next token is ')'
-Shifting token ')', Entering state 103 
+Shifting token ')', Entering state 96 
 Reducing stack by rule 57, '(' EXP ')' -> EXP
-State now 0 3 162 163 164 165 166 66 126
+State now 0 3 158 159 160 161 162 66 122
 Entering state 57 
 Reading a token: then
 Next token is then
 Reducing stack by rule 48, EXP -> EXP1
-State now 0 3 162 163 164 165 166 66 126
-Entering state 127 
+State now 0 3 158 159 160 161 162 66 122
+Entering state 123 
 Next token is then
-Shifting token then, Entering state 128 
+Shifting token then, Entering state 124 
 Reducing stack by rule 4, /* empty */ -> CHUNK
-State now 0 3 162 163 164 165 166 66 126 127 128
+State now 0 3 158 159 160 161 162 66 122 123 124
 Entering state 66 
 Reading a token: eol
 whileT
@@ -187,238 +187,238 @@ Shifting token whileT, Entering state 76
 Reading a token: Identifer a
 Next token is identifer
 Shifting token identifer, Entering state 52 
-Reducing stack by rule 108, identifer -> NAME
-State now 0 3 162 163 164 165 166 66 126 127 128 66 76
+Reducing stack by rule 106, identifer -> NAME
+State now 0 3 158 159 160 161 162 66 122 123 124 66 76
 Entering state 51 
 Reducing stack by rule 37, NAME -> VAR
-State now 0 3 162 163 164 165 166 66 126 127 128 66 76
+State now 0 3 158 159 160 161 162 66 122 123 124 66 76
 Entering state 50 
 Reading a token: <
 Next token is '<'
 Reducing stack by rule 52, VAR -> EXP
-State now 0 3 162 163 164 165 166 66 126 127 128 66 76
+State now 0 3 158 159 160 161 162 66 122 123 124 66 76
 Entering state 57 
 Next token is '<'
 Shifting token '<', Entering state 27 
 Reading a token: Identifer b
 Next token is identifer
 Shifting token identifer, Entering state 52 
-Reducing stack by rule 108, identifer -> NAME
-State now 0 3 162 163 164 165 166 66 126 127 128 66 76 57 27
+Reducing stack by rule 106, identifer -> NAME
+State now 0 3 158 159 160 161 162 66 122 123 124 66 76 57 27
 Entering state 51 
 Reducing stack by rule 37, NAME -> VAR
-State now 0 3 162 163 164 165 166 66 126 127 128 66 76 57 27
+State now 0 3 158 159 160 161 162 66 122 123 124 66 76 57 27
 Entering state 50 
 Reading a token: doT
 Next token is doT
 Reducing stack by rule 52, VAR -> EXP
-State now 0 3 162 163 164 165 166 66 126 127 128 66 76 57 27
+State now 0 3 158 159 160 161 162 66 122 123 124 66 76 57 27
 Entering state 28 
 Next token is doT
 Reducing stack by rule 65, EXP '<' EXP -> EXP
-State now 0 3 162 163 164 165 166 66 126 127 128 66 76
+State now 0 3 158 159 160 161 162 66 122 123 124 66 76
 Entering state 57 
 Next token is doT
 Reducing stack by rule 48, EXP -> EXP1
-State now 0 3 162 163 164 165 166 66 126 127 128 66 76
+State now 0 3 158 159 160 161 162 66 122 123 124 66 76
 Entering state 77 
 Next token is doT
 Shifting token doT, Entering state 78 
 Reducing stack by rule 4, /* empty */ -> CHUNK
-State now 0 3 162 163 164 165 166 66 126 127 128 66 76 77 78
+State now 0 3 158 159 160 161 162 66 122 123 124 66 76 77 78
 Entering state 66 
 Reading a token: eol
 Identifer a
 Next token is identifer
 Shifting token identifer, Entering state 52 
-Reducing stack by rule 108, identifer -> NAME
-State now 0 3 162 163 164 165 166 66 126 127 128 66 76 77 78 66
+Reducing stack by rule 106, identifer -> NAME
+State now 0 3 158 159 160 161 162 66 122 123 124 66 76 77 78 66
 Entering state 51 
 Reducing stack by rule 37, NAME -> VAR
-State now 0 3 162 163 164 165 166 66 126 127 128 66 76 77 78 66
+State now 0 3 158 159 160 161 162 66 122 123 124 66 76 77 78 66
 Entering state 67 
 Reading a token: =
 Next token is '='
 Reducing stack by rule 36, /* empty */ -> VAR_LIST
-State now 0 3 162 163 164 165 166 66 126 127 128 66 76 77 78 66 67
+State now 0 3 158 159 160 161 162 66 122 123 124 66 76 77 78 66 67
 Entering state 68 
 Next token is '='
 Reducing stack by rule 34, VAR VAR_LIST -> VARLIST1
-State now 0 3 162 163 164 165 166 66 126 127 128 66 76 77 78 66
+State now 0 3 158 159 160 161 162 66 122 123 124 66 76 77 78 66
 Entering state 8 
 Next token is '='
 Shifting token '=', Entering state 9 
 Reading a token: Identifer a
 Next token is identifer
 Shifting token identifer, Entering state 52 
-Reducing stack by rule 108, identifer -> NAME
-State now 0 3 162 163 164 165 166 66 126 127 128 66 76 77 78 66 8 9
+Reducing stack by rule 106, identifer -> NAME
+State now 0 3 158 159 160 161 162 66 122 123 124 66 76 77 78 66 8 9
 Entering state 51 
 Reducing stack by rule 37, NAME -> VAR
-State now 0 3 162 163 164 165 166 66 126 127 128 66 76 77 78 66 8 9
+State now 0 3 158 159 160 161 162 66 122 123 124 66 76 77 78 66 8 9
 Entering state 50 
 Reading a token: +
 Next token is '+'
 Reducing stack by rule 52, VAR -> EXP
-State now 0 3 162 163 164 165 166 66 126 127 128 66 76 77 78 66 8 9
-Entering state 141 
+State now 0 3 158 159 160 161 162 66 122 123 124 66 76 77 78 66 8 9
+Entering state 137 
 Next token is '+'
 Shifting token '+', Entering state 19 
 Reading a token: Digit:1
 Next token is digit
 Shifting token digit, Entering state 48 
-Reducing stack by rule 111, digit -> NUMBER
-State now 0 3 162 163 164 165 166 66 126 127 128 66 76 77 78 66 8 9 141 19
+Reducing stack by rule 109, digit -> NUMBER
+State now 0 3 158 159 160 161 162 66 122 123 124 66 76 77 78 66 8 9 137 19
 Entering state 44 
 Reading a token: ;
 Next token is ';'
 Reducing stack by rule 50, NUMBER -> EXP
-State now 0 3 162 163 164 165 166 66 126 127 128 66 76 77 78 66 8 9 141 19
+State now 0 3 158 159 160 161 162 66 122 123 124 66 76 77 78 66 8 9 137 19
 Entering state 20 
 Next token is ';'
 Reducing stack by rule 61, EXP '+' EXP -> EXP
-State now 0 3 162 163 164 165 166 66 126 127 128 66 76 77 78 66 8 9
-Entering state 141 
+State now 0 3 158 159 160 161 162 66 122 123 124 66 76 77 78 66 8 9
+Entering state 137 
 Next token is ';'
 Reducing stack by rule 46, EXP -> EXPLIST1
-State now 0 3 162 163 164 165 166 66 126 127 128 66 76 77 78 66 8 9
+State now 0 3 158 159 160 161 162 66 122 123 124 66 76 77 78 66 8 9
 Entering state 10 
 Next token is ';'
 Reducing stack by rule 8, VARLIST1 '=' EXPLIST1 -> STAT
-State now 0 3 162 163 164 165 166 66 126 127 128 66 76 77 78 66
+State now 0 3 158 159 160 161 162 66 122 123 124 66 76 77 78 66
 Entering state 5 
 Next token is ';'
 Shifting token ';', Entering state 7 
 Reducing stack by rule 5, ';' -> COMMA
-State now 0 3 162 163 164 165 166 66 126 127 128 66 76 77 78 66 5
+State now 0 3 158 159 160 161 162 66 122 123 124 66 76 77 78 66 5
 Entering state 6 
 Reducing stack by rule 3, CHUNK STAT COMMA -> CHUNK
-State now 0 3 162 163 164 165 166 66 126 127 128 66 76 77 78
+State now 0 3 158 159 160 161 162 66 122 123 124 66 76 77 78
 Entering state 66 
 Reading a token: eol
 Identifer print
 Next token is identifer
 Shifting token identifer, Entering state 52 
-Reducing stack by rule 108, identifer -> NAME
-State now 0 3 162 163 164 165 166 66 126 127 128 66 76 77 78 66
+Reducing stack by rule 106, identifer -> NAME
+State now 0 3 158 159 160 161 162 66 122 123 124 66 76 77 78 66
 Entering state 51 
 Reducing stack by rule 37, NAME -> VAR
-State now 0 3 162 163 164 165 166 66 126 127 128 66 76 77 78 66
+State now 0 3 158 159 160 161 162 66 122 123 124 66 76 77 78 66
 Entering state 67 
 Reading a token: (
 Next token is '('
 Reducing stack by rule 40, VAR -> VARORFUNC
-State now 0 3 162 163 164 165 166 66 126 127 128 66 76 77 78 66
+State now 0 3 158 159 160 161 162 66 122 123 124 66 76 77 78 66
 Entering state 53 
 Next token is '('
-Shifting token '(', Entering state 197 
+Shifting token '(', Entering state 193 
 Reading a token: string "Next is"
 Next token is str
 Shifting token str, Entering state 49 
 Reducing stack by rule 51, str -> EXP
-State now 0 3 162 163 164 165 166 66 126 127 128 66 76 77 78 66 53 197
-Entering state 141 
+State now 0 3 158 159 160 161 162 66 122 123 124 66 76 77 78 66 53 193
+Entering state 137 
 Reading a token: ..
 Next token is doublePoint
 Shifting token doublePoint, Entering state 25 
 Reading a token: Identifer a
 Next token is identifer
 Shifting token identifer, Entering state 52 
-Reducing stack by rule 108, identifer -> NAME
-State now 0 3 162 163 164 165 166 66 126 127 128 66 76 77 78 66 53 197 141 25
+Reducing stack by rule 106, identifer -> NAME
+State now 0 3 158 159 160 161 162 66 122 123 124 66 76 77 78 66 53 193 137 25
 Entering state 51 
 Reducing stack by rule 37, NAME -> VAR
-State now 0 3 162 163 164 165 166 66 126 127 128 66 76 77 78 66 53 197 141 25
+State now 0 3 158 159 160 161 162 66 122 123 124 66 76 77 78 66 53 193 137 25
 Entering state 50 
 Reading a token: )
 Next token is ')'
 Reducing stack by rule 52, VAR -> EXP
-State now 0 3 162 163 164 165 166 66 126 127 128 66 76 77 78 66 53 197 141 25
+State now 0 3 158 159 160 161 162 66 122 123 124 66 76 77 78 66 53 193 137 25
 Entering state 26 
 Next token is ')'
 Reducing stack by rule 64, EXP doublePoint EXP -> EXP
-State now 0 3 162 163 164 165 166 66 126 127 128 66 76 77 78 66 53 197
-Entering state 141 
+State now 0 3 158 159 160 161 162 66 122 123 124 66 76 77 78 66 53 193
+Entering state 137 
 Next token is ')'
 Reducing stack by rule 46, EXP -> EXPLIST1
-State now 0 3 162 163 164 165 166 66 126 127 128 66 76 77 78 66 53 197
-Entering state 200 
+State now 0 3 158 159 160 161 162 66 122 123 124 66 76 77 78 66 53 193
+Entering state 196 
 Next token is ')'
 Reducing stack by rule 81, EXPLIST1 -> EXP_LIST_OPT
-State now 0 3 162 163 164 165 166 66 126 127 128 66 76 77 78 66 53 197
-Entering state 198 
+State now 0 3 158 159 160 161 162 66 122 123 124 66 76 77 78 66 53 193
+Entering state 194 
 Next token is ')'
-Shifting token ')', Entering state 199 
+Shifting token ')', Entering state 195 
 Reducing stack by rule 78, '(' EXP_LIST_OPT ')' -> ARGS
-State now 0 3 162 163 164 165 166 66 126 127 128 66 76 77 78 66 53
-Entering state 193 
+State now 0 3 158 159 160 161 162 66 122 123 124 66 76 77 78 66 53
+Entering state 189 
 Reducing stack by rule 76, VARORFUNC ARGS -> FUNCTION_CALL
-State now 0 3 162 163 164 165 166 66 126 127 128 66 76 77 78 66
+State now 0 3 158 159 160 161 162 66 122 123 124 66 76 77 78 66
 Entering state 72 
 Reading a token: ;
 Next token is ';'
 Reducing stack by rule 9, FUNCTION_CALL -> STAT
-State now 0 3 162 163 164 165 166 66 126 127 128 66 76 77 78 66
+State now 0 3 158 159 160 161 162 66 122 123 124 66 76 77 78 66
 Entering state 5 
 Next token is ';'
 Shifting token ';', Entering state 7 
 Reducing stack by rule 5, ';' -> COMMA
-State now 0 3 162 163 164 165 166 66 126 127 128 66 76 77 78 66 5
+State now 0 3 158 159 160 161 162 66 122 123 124 66 76 77 78 66 5
 Entering state 6 
 Reducing stack by rule 3, CHUNK STAT COMMA -> CHUNK
-State now 0 3 162 163 164 165 166 66 126 127 128 66 76 77 78
+State now 0 3 158 159 160 161 162 66 122 123 124 66 76 77 78
 Entering state 66 
 Reading a token: eol
 end
 Next token is end
 Reducing stack by rule 7, CHUNK -> BLOCK
-State now 0 3 162 163 164 165 166 66 126 127 128 66 76 77 78
+State now 0 3 158 159 160 161 162 66 122 123 124 66 76 77 78
 Entering state 79 
 Next token is end
 Shifting token end, Entering state 80 
 Reducing stack by rule 11, whileT EXP1 doT BLOCK end -> STAT
-State now 0 3 162 163 164 165 166 66 126 127 128 66
+State now 0 3 158 159 160 161 162 66 122 123 124 66
 Entering state 5 
 Reading a token: eol
 end
 Next token is end
 Reducing stack by rule 6, /* empty */ -> COMMA
-State now 0 3 162 163 164 165 166 66 126 127 128 66 5
+State now 0 3 158 159 160 161 162 66 122 123 124 66 5
 Entering state 6 
 Reducing stack by rule 3, CHUNK STAT COMMA -> CHUNK
-State now 0 3 162 163 164 165 166 66 126 127 128
+State now 0 3 158 159 160 161 162 66 122 123 124
 Entering state 66 
 Next token is end
 Reducing stack by rule 7, CHUNK -> BLOCK
-State now 0 3 162 163 164 165 166 66 126 127 128
-Entering state 129 
+State now 0 3 158 159 160 161 162 66 122 123 124
+Entering state 125 
 Reducing stack by rule 28, /* empty */ -> ELSEIF_LIST
-State now 0 3 162 163 164 165 166 66 126 127 128 129
-Entering state 130 
+State now 0 3 158 159 160 161 162 66 122 123 124 125
+Entering state 126 
 Next token is end
 Reducing stack by rule 30, /* empty */ -> ELSE_LIST
-State now 0 3 162 163 164 165 166 66 126 127 128 129 130
-Entering state 131 
+State now 0 3 158 159 160 161 162 66 122 123 124 125 126
+Entering state 127 
 Next token is end
-Shifting token end, Entering state 132 
+Shifting token end, Entering state 128 
 Reducing stack by rule 13, ifT EXP1 then BLOCK ELSEIF_LIST ELSE_LIST end -> STAT
-State now 0 3 162 163 164 165 166 66
+State now 0 3 158 159 160 161 162 66
 Entering state 5 
 Reading a token: eol
 end
 Next token is end
 Reducing stack by rule 6, /* empty */ -> COMMA
-State now 0 3 162 163 164 165 166 66 5
+State now 0 3 158 159 160 161 162 66 5
 Entering state 6 
 Reducing stack by rule 3, CHUNK STAT COMMA -> CHUNK
-State now 0 3 162 163 164 165 166
+State now 0 3 158 159 160 161 162
 Entering state 66 
 Next token is end
 Reducing stack by rule 7, CHUNK -> BLOCK
-State now 0 3 162 163 164 165 166
-Entering state 167 
+State now 0 3 158 159 160 161 162
+Entering state 163 
 Next token is end
-Shifting token end, Entering state 168 
+Shifting token end, Entering state 164 
 Reducing stack by rule 19, functionT FUNCNAME '(' PL_OPT ')' BLOCK end -> STAT
 State now 0 3
 Entering state 5 
