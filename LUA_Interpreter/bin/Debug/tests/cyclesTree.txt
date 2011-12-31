@@ -26,7 +26,9 @@ STAT
 -----EXPLIST
 ------NUMBER 1
 ----WHILE
------NUMBER 8
+-----LESS
+------Id
+------NUMBER 8
 -----CHUNK
 ------ASSIGN
 -------VARLIST

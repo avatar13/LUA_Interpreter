@@ -56,6 +56,16 @@ namespace LUA_Interpreter
         public const int ELSE = 32;
         public const int RETURN = 33;
         public const int TABLE_CONSTRUCTOR = 34;
+        public const int GREATER = 35;
+        public const int GREATER_EQUAL = 36;
+        public const int LESS = 37;
+        public const int LESS_EQUAL = 38;
+        public const int EQUAL = 39;
+        public const int NOT_EQUAL = 40;
+        public const int AND = 41;
+        public const int OR = 42;
+        public const int NOT = 43;
+        public const int UPVALUE = 44;
 
         public Tree<Node> Root;
 
@@ -322,6 +332,36 @@ namespace LUA_Interpreter
                     break;
                 case TABLE_CONSTRUCTOR:
                     sw.WriteLine("TABLE_CONSTRUCTOR");
+                    break;
+                case GREATER:
+                    sw.WriteLine("GREATER");
+                    break;
+                case GREATER_EQUAL:
+                    sw.WriteLine("GREATER_EQUAL");
+                    break;
+                case LESS:
+                    sw.WriteLine("LESS");
+                    break;
+                case LESS_EQUAL:
+                    sw.WriteLine("LESS_EQUAL");
+                    break;
+                case EQUAL:
+                    sw.WriteLine("EQUAL");
+                    break;
+                case NOT_EQUAL:
+                    sw.WriteLine("NOT_EQUAL");
+                    break;
+                case AND:
+                    sw.WriteLine("AND");
+                    break;
+                case OR:
+                    sw.WriteLine("OR");
+                    break;
+                case NOT:
+                    sw.WriteLine("NOT");
+                    break;
+                case UPVALUE:
+                    sw.WriteLine("UPVALUE");
                     break;
             }
         }

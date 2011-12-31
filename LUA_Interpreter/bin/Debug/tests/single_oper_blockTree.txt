@@ -15,10 +15,14 @@ STAT
 ------NUMBER 3
 ----IF
 -----IF_COND
-------Id
+------LESS
+-------Id
+-------Id
 -----CHUNK
 ------WHILE
--------Id
+-------LESS
+--------Id
+--------Id
 -------CHUNK
 --------ASSIGN
 ---------VARLIST
