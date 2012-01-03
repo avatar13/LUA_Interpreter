@@ -66,6 +66,11 @@ namespace LUA_Interpreter
         public const int OR = 42;
         public const int NOT = 43;
         public const int UPVALUE = 44;
+        public const int FOR_IN = 45;
+        public const int Id_Up = 46;
+        public const int FUNCNAME_UP = 47;
+        public const int FUNCNAME_IMPLICIT = 48;
+        public const int FUNCTION_CALL_IMPLICIT = 49;
 
         public Tree<Node> Root;
 
@@ -362,6 +367,21 @@ namespace LUA_Interpreter
                     break;
                 case UPVALUE:
                     sw.WriteLine("UPVALUE");
+                    break;
+                case FOR_IN:
+                    sw.WriteLine("FOR_IN");
+                    break;
+                case Id_Up:
+                    sw.WriteLine("Id_Up");
+                    break;
+                case FUNCNAME_UP:
+                    sw.WriteLine("FUNCNAME_UP");
+                    break;
+                case FUNCNAME_IMPLICIT:
+                    sw.WriteLine("FUNCNAME_IMPLICIT");
+                    break;
+                case FUNCTION_CALL_IMPLICIT:
+                    sw.WriteLine("FUNCTION_CALL_IMPLICIT");
                     break;
             }
         }

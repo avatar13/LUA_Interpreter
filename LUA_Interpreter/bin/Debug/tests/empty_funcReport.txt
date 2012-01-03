@@ -4,38 +4,38 @@ State now 0
 Entering state 3 
 Reading a token: functionT
 Next token is functionT
-Shifting token functionT, Entering state 158 
+Shifting token functionT, Entering state 154 
 Reading a token: Identifer lol
 Next token is identifer
 Shifting token identifer, Entering state 52 
-Reducing stack by rule 106, identifer -> NAME
-State now 0 3 158
-Entering state 173 
+Reducing stack by rule 104, identifer -> NAME
+State now 0 3 154
+Entering state 169 
 Reading a token: (
 Next token is '('
 Reducing stack by rule 31, NAME -> FUNCNAME
-State now 0 3 158
-Entering state 159 
+State now 0 3 154
+Entering state 155 
 Next token is '('
-Shifting token '(', Entering state 160 
+Shifting token '(', Entering state 156 
 Reading a token: )
 Next token is ')'
 Reducing stack by rule 24, /* empty */ -> PL_OPT
-State now 0 3 158 159 160
-Entering state 161 
+State now 0 3 154 155 156
+Entering state 157 
 Next token is ')'
-Shifting token ')', Entering state 162 
+Shifting token ')', Entering state 158 
 Reducing stack by rule 4, /* empty */ -> CHUNK
-State now 0 3 158 159 160 161 162
+State now 0 3 154 155 156 157 158
 Entering state 66 
 Reading a token: eol
 end
 Next token is end
 Reducing stack by rule 7, CHUNK -> BLOCK
-State now 0 3 158 159 160 161 162
-Entering state 163 
+State now 0 3 154 155 156 157 158
+Entering state 159 
 Next token is end
-Shifting token end, Entering state 164 
+Shifting token end, Entering state 160 
 Reducing stack by rule 19, functionT FUNCNAME '(' PL_OPT ')' BLOCK end -> STAT
 State now 0 3
 Entering state 5 

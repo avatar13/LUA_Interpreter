@@ -2,12 +2,16 @@ STAT
 -CHUNK
 --FUNCTION
 ---FUNCNAME
+----Id
 ---CHUNK
 ----ASSIGN
 -----VARLIST
 ------Id
 -----EXPLIST
 ------FUNCTION_CALL
+-------Id_Up
+--------Id
+--------Id
 -------ARGS
 --------EXPLIST
 ---------NUMBER 49
@@ -23,6 +27,9 @@ STAT
 ------Id
 -----EXPLIST
 ------FUNCTION_CALL
+-------Id_Up
+--------Id
+--------Id
 -------ARGS
 --------EXPLIST
 ---------Id
