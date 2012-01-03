@@ -7,6 +7,7 @@ using System.Text;
 using LUA_Interpreter;
 using LuaLex;
 using LuaSyntax;
+using System.Diagnostics;
 
 namespace LUA_Interpreter
 {
@@ -25,6 +26,8 @@ namespace LUA_Interpreter
             else
                 return;
             
+            string programName = args[0].Substring(0, args[0].Length - 4);
+
             parser.Scanner = new Scanner(fs);
 #if DBG
             Console.WriteLine("Тест {0} прошел:{1}", args[0], parser.Parse());
@@ -33,6 +36,21 @@ namespace LUA_Interpreter
             string str = args[0].Remove(args[0].Length - 4);
             tree.DrawTree(str.Insert(str.Length, "Tree.txt"));
 #endif
+
+            //TODO : Сдесь сделать генерацию кода в файл bin/<programName>.c
+
+            Process runner = new Process();
+            //compiller.StartInfo.Arguments = "-emit-llvm -c n.c -o n.bc";            
+            /*compiller.StartInfo.UseShellExecute = false;
+            compiller.StartInfo.RedirectStandardInput = true;
+            compiller.StartInfo.RedirectStandardError = true;
+            compiller.StartInfo.RedirectStandardOutput = true;
+            compiller.StartInfo.CreateNoWindow = true;*/
+            runner.StartInfo.WorkingDirectory = "bin";
+            runner.StartInfo.Arguments = programName;
+            runner.StartInfo.FileName = "run.bat";
+            runner.Start();
+            runner.WaitForExit();
         }
     }
 }
