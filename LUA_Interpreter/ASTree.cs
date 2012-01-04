@@ -126,6 +126,7 @@ namespace LUA_Interpreter
             Node n = new Node();
             n.type = type;
             TreeNode node = new TreeNode(n);
+            m_stack.Add(node);
             foreach(TreeNode c in ch)
             {
                 if (c != null)

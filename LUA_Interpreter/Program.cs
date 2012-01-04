@@ -35,9 +35,14 @@ namespace LUA_Interpreter
             Console.WriteLine("---------------------------------------------------");
             string str = args[0].Remove(args[0].Length - 4);
             tree.DrawTree(str.Insert(str.Length, "Tree.txt"));
+#else
+            if (!parser.Parse())
+            {
+                return;
+            }
 #endif
 
-            //TODO : Сдесь сделать генерацию кода в файл bin/<programName>.c
+            //TODO : Сдесь сделать генерацию кода в файл bin/<programName>.cpp
 
             Process runner = new Process();
             //compiller.StartInfo.Arguments = "-emit-llvm -c n.c -o n.bc";            

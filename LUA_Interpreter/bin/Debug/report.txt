@@ -1421,7 +1421,3 @@ Next token is EOF
 Shifting token EOF, Entering state 2 
 Reducing stack by rule 1, PROGRAM EOF -> $accept
 State now 0
-
-Unhandled Exception: System.ComponentModel.Win32Exception: The system cannot find the file specified
-   at System.Diagnostics.Process.StartWithShellExecuteEx(ProcessStartInfo startInfo)
-   at LUA_Interpreter.Program.Main(String[] args) in C:\LUAProject\LUA_Interpreter\Program.cs:line 41
