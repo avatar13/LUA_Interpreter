@@ -8,3 +8,8 @@ C:\LUAProject\LUA_Interpreter\bin\Debug\LUA_Interpreter.pdb
 C:\LUAProject\LUA_Interpreter\obj\Debug\ResolveAssemblyReference.cache
 C:\LUAProject\LUA_Interpreter\obj\Debug\LUA_Interpreter.exe
 C:\LUAProject\LUA_Interpreter\obj\Debug\LUA_Interpreter.pdb
+E:\progs_2012\LUA_Interpreter\LUA_Interpreter\obj\Debug\LUA_Interpreter.exe
+E:\progs_2012\LUA_Interpreter\LUA_Interpreter\obj\Debug\LUA_Interpreter.pdb
+E:\progs_2012\LUA_Interpreter\LUA_Interpreter\obj\Debug\ResolveAssemblyReference.cache
+E:\progs_2012\LUA_Interpreter\LUA_Interpreter\bin\Debug\LUA_Interpreter.exe
+E:\progs_2012\LUA_Interpreter\LUA_Interpreter\bin\Debug\LUA_Interpreter.pdb

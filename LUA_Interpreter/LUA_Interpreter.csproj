@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ASTree.cs" />
+    <Compile Include="CodeGenerator.cs" />
     <Compile Include="IdentiferTable.cs" />
     <Compile Include="LUA.cs" />
     <Compile Include="luaLex.cs" />

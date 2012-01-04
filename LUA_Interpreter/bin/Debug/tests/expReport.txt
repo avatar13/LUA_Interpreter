@@ -1,0 +1,145 @@
+Entering state 0 
+Reducing stack by rule 4, /* empty */ -> CHUNK
+State now 0
+Entering state 3 
+Reading a token: Identifer str1
+Next token is identifer
+Shifting token identifer, Entering state 52 
+Reducing stack by rule 104, identifer -> NAME
+State now 0 3
+Entering state 51 
+Reducing stack by rule 37, NAME -> VAR
+State now 0 3
+Entering state 67 
+Reading a token: ,
+Next token is ','
+Reducing stack by rule 36, /* empty */ -> VAR_LIST
+State now 0 3 67
+Entering state 68 
+Next token is ','
+Shifting token ',', Entering state 69 
+Reading a token: Identifer str2
+Next token is identifer
+Shifting token identifer, Entering state 52 
+Reducing stack by rule 104, identifer -> NAME
+State now 0 3 67 68 69
+Entering state 51 
+Reducing stack by rule 37, NAME -> VAR
+State now 0 3 67 68 69
+Entering state 70 
+Reading a token: =
+Next token is '='
+Reducing stack by rule 35, VAR_LIST ',' VAR -> VAR_LIST
+State now 0 3 67
+Entering state 68 
+Next token is '='
+Reducing stack by rule 34, VAR VAR_LIST -> VARLIST1
+State now 0 3
+Entering state 8 
+Next token is '='
+Shifting token '=', Entering state 9 
+Reading a token: Digit:4
+Next token is digit
+Shifting token digit, Entering state 48 
+Reducing stack by rule 107, digit -> NUMBER
+State now 0 3 8 9
+Entering state 44 
+Reading a token: *
+Next token is '*'
+Reducing stack by rule 50, NUMBER -> EXP
+State now 0 3 8 9
+Entering state 133 
+Next token is '*'
+Shifting token '*', Entering state 13 
+Reading a token: (
+Next token is '('
+Shifting token '(', Entering state 94 
+Reading a token: Digit:5
+Next token is digit
+Shifting token digit, Entering state 48 
+Reducing stack by rule 107, digit -> NUMBER
+State now 0 3 8 9 133 13 94
+Entering state 44 
+Reading a token: +
+Next token is '+'
+Reducing stack by rule 50, NUMBER -> EXP
+State now 0 3 8 9 133 13 94
+Entering state 95 
+Next token is '+'
+Shifting token '+', Entering state 19 
+Reading a token: (
+Next token is '('
+Shifting token '(', Entering state 94 
+Reading a token: Digit:3
+Next token is digit
+Shifting token digit, Entering state 48 
+Reducing stack by rule 107, digit -> NUMBER
+State now 0 3 8 9 133 13 94 95 19 94
+Entering state 44 
+Reading a token: -
+Next token is '-'
+Reducing stack by rule 50, NUMBER -> EXP
+State now 0 3 8 9 133 13 94 95 19 94
+Entering state 95 
+Next token is '-'
+Shifting token '-', Entering state 21 
+Reading a token: Digit:1
+Next token is digit
+Shifting token digit, Entering state 48 
+Reducing stack by rule 107, digit -> NUMBER
+State now 0 3 8 9 133 13 94 95 19 94 95 21
+Entering state 44 
+Reading a token: )
+Next token is ')'
+Reducing stack by rule 50, NUMBER -> EXP
+State now 0 3 8 9 133 13 94 95 19 94 95 21
+Entering state 22 
+Next token is ')'
+Reducing stack by rule 62, EXP '-' EXP -> EXP
+State now 0 3 8 9 133 13 94 95 19 94
+Entering state 95 
+Next token is ')'
+Shifting token ')', Entering state 96 
+Reducing stack by rule 57, '(' EXP ')' -> EXP
+State now 0 3 8 9 133 13 94 95 19
+Entering state 20 
+Reading a token: )
+Next token is ')'
+Reducing stack by rule 61, EXP '+' EXP -> EXP
+State now 0 3 8 9 133 13 94
+Entering state 95 
+Next token is ')'
+Shifting token ')', Entering state 96 
+Reducing stack by rule 57, '(' EXP ')' -> EXP
+State now 0 3 8 9 133 13
+Entering state 14 
+Reading a token: ;
+Next token is ';'
+Reducing stack by rule 58, EXP '*' EXP -> EXP
+State now 0 3 8 9
+Entering state 133 
+Next token is ';'
+Reducing stack by rule 46, EXP -> EXPLIST1
+State now 0 3 8 9
+Entering state 10 
+Next token is ';'
+Reducing stack by rule 8, VARLIST1 '=' EXPLIST1 -> STAT
+State now 0 3
+Entering state 5 
+Next token is ';'
+Shifting token ';', Entering state 7 
+Reducing stack by rule 5, ';' -> COMMA
+State now 0 3 5
+Entering state 6 
+Reducing stack by rule 3, CHUNK STAT COMMA -> CHUNK
+State now 0
+Entering state 3 
+Reading a token: Next token is EOF
+Shifting token EOF, Entering state 4 
+Reducing stack by rule 2, CHUNK EOF -> PROGRAM
+State now 0
+Entering state 1 
+Next token is EOF
+Shifting token EOF, Entering state 2 
+Reducing stack by rule 1, PROGRAM EOF -> $accept
+State now 0
