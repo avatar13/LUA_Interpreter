@@ -1,7 +1,19 @@
-#include "Var.h"
-Var b(2);
-Var c(123,456);
-Var d(12);
-Var f(0,789);
-Var b("12");
-Var t((5+(5*5))-10);
+#include <stdio.h>
+#include "Var.h" 
+
+Var b;
+Var m;
+Var str;
+
+int main() 
+{
+b.setValue(22);
+m.setValue(33.92);
+str.setValue("hello world");
+b.printValue();
+m.printValue();
+str.printValue();
+//printf(b);
+	printf("not alone\n");
+return 1;
+}

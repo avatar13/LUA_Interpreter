@@ -42,11 +42,11 @@ namespace LUA_Interpreter
         public bool mask_string_req; //mask_string_req - строка с подстановкой аргументов(например, в printf)
         public string mask;
 
-        public FuncCallMask(string name, string templ)
+        public FuncCallMask(string name, string templ, bool mstreq)
         {
             funcname = name;
             mask = templ;
-            mask_string_req = false;
+            mask_string_req = mstreq;
         }
     }
 
@@ -102,6 +102,7 @@ namespace LUA_Interpreter
         public const int FUNCNAME_UP = 47;
         public const int FUNCNAME_IMPLICIT = 48;
         public const int FUNCTION_CALL_IMPLICIT = 49;
+        public const int LAST_STAGE = 1;
 
         public Tree<Node> Root;
 
@@ -110,60 +111,96 @@ namespace LUA_Interpreter
         private FuncObject curSubFunc;
         private Expression m_exp;
         TreeNode<Node> cur_node;
+        private short stage;
+        private List<string> global_vars;
 
         public CodeGenerator(ASTree tree)
         {
             m_tree = tree;
+            stage = 0;
+            global_vars = new List<string>();
         }
 
         public void Generate(string path)
         {
             StreamWriter sw = new StreamWriter(path);
-            sw.WriteLine("#include \"Var.h\"");
-            Root = m_tree.Root;
-            TransformTree(sw);
+            sw.WriteLine("#include \"Var.h\"\n");
+            global_vars.Clear();
+            for (stage = 0; stage < LAST_STAGE+1; stage++)
+            {
+                if(stage == 1) sw.WriteLine("\nint main() {");
+
+                Root = m_tree.Root;
+                TransformTree(sw);
+
+                if (stage == 0) PrintGlobalVars(sw);
+                if (stage == LAST_STAGE) sw.WriteLine("return 1;}");
+            }
+            sw.Close();
+        }
+
+        private void PrintGlobalVars(StreamWriter sw)
+        {
+            for (int c = 0; c < global_vars.Count; c++)
+            {
+                sw.WriteLine("Var {0}();", global_vars[c]);
+            }
         }
 
         public void TransformTree(StreamWriter sw)
         {
             int level = 1;
             TransformChild(Root, ref sw, level);
-            sw.Close();
         }
 
         public void TransformChild(TreeNode<Node> par, ref StreamWriter sw, int level)
         {
-            //sw.WriteLine(par.Value.type);
             if(PrintStringValue(par, level, ref sw))
                 for (int i = 0; i < par.Children.Count; i++)
                 {
-                    //for (int c = 0; c < level; c++)
-                        //sw.Write('-');
-
                     TransformChild(par.Children[i], ref sw, level + 1);
                 }
+        }
+
+        private string IntToStrC(double num)
+        {
+            string str = String.Format("{0}", num);
+            str = str.Replace(',', '.');
+            return str;
         }
 
         public void GetAssignElem(TreeNode<Node> tn, ref StreamWriter sw)
         {
             TreeNode<Node> vn = tn.Children[0];
             TreeNode<Node> en = tn.Children[1];
-            //Console.WriteLine("{0} | {1}", vn.Value.type, en.Value.type);
-            for(int c = 0; c < vn.Children.Count; c++)
+            if (stage == 0)
             {
-                m_exp.leftArg.Add(vn.Children[c].Value.dataS);
-            }
-            for(int c = 0; c < en.Children.Count; c++)
-            {
-                if (en.Children[c].Value.type == STRING)
-                    m_exp.rightArg = en.Children[c].Value.dataS;
-                else if (en.Children[c].Value.type == NUMBER)
-                    m_exp.rightArg = String.Format("{0}", en.Children[c].Value.dataN);
-                else
+                for (int c = 0; c < vn.Children.Count; c++)
                 {
-                    //System.Diagnostics.Debug.WriteLine(String.Format("{0}", en.Children[c].Value.type));
-                    int level = 0;
-                    m_exp.rightArg = BuildExpressionString(en.Children[0], level);
+                    if (!global_vars.Contains(vn.Children[c].Value.dataS))
+                    {
+                        global_vars.Add(vn.Children[c].Value.dataS);
+                    }
+                }
+            }
+            else if (stage == 1)
+            {
+                for (int c = 0; c < vn.Children.Count; c++)
+                {
+                    m_exp.leftArg.Add(vn.Children[c].Value.dataS);
+                }
+                for (int c = 0; c < en.Children.Count; c++)
+                {
+                    if (en.Children[c].Value.type == STRING)
+                        m_exp.rightArg = en.Children[c].Value.dataS;
+                    else if (en.Children[c].Value.type == NUMBER)
+                        m_exp.rightArg = IntToStrC(en.Children[c].Value.dataN);
+                    else
+                    {
+                        //System.Diagnostics.Debug.WriteLine(String.Format("{0}", en.Children[c].Value.type));
+                        int level = 0;
+                        m_exp.rightArg = BuildExpressionString(en.Children[0], level);
+                    }
                 }
             }
         }
@@ -201,7 +238,7 @@ namespace LUA_Interpreter
         public string CheckOperNode(TreeNode<Node> tn, int level)
         {
             if(tn.Value.type == NUMBER)
-                return String.Format("{0}", tn.Value.dataN);
+                return IntToStrC(tn.Value.dataN);
             else if (tn.Value.type == STRING)
                 return tn.Value.dataS;
 
@@ -243,10 +280,10 @@ namespace LUA_Interpreter
             FuncCallMask fc_mask = new FuncCallMask();
 
             // Стандартные функции
-            if (lua_fn == "print") return new FuncCallMask("printf", "s*");
+            if (lua_fn == "print") return new FuncCallMask("printf", "*", true);
             //-----------------------------------------------------------------
 
-            return new FuncCallMask(lua_fn, null);
+            return new FuncCallMask(lua_fn, null, false);
         }
 
         private int GetCurTypeID(string mask, ref int pos)
@@ -297,10 +334,10 @@ namespace LUA_Interpreter
 
                 for (int c = 0, mask_pos = 0; c < argn.Children.Count; c++)
                 {
-                    cur_type = GetCurTypeID(fc_mask.mask, ref mask_pos);
+                    //cur_type = GetCurTypeID(fc_mask.mask, ref mask_pos);
 
-                    if (cur_type != argn.Children[c].Value.type)
-                        throw new Exception("Invalid function argument!");
+                    /*if (cur_type != argn.Children[c].Value.type)
+                        throw new Exception("Invalid function argument!");*/
 
                     if (arg_str != "")
                     {
@@ -308,7 +345,7 @@ namespace LUA_Interpreter
                     }
                     if (argn.Children[c].Value.type == NUMBER)
                     {
-                        arg_str += String.Format("{0}", argn.Children[c].Value.dataN);
+                        arg_str += IntToStrC(argn.Children[c].Value.dataN);
                     }
                     else if (argn.Children[c].Value.type == STRING)
                     {
@@ -339,7 +376,6 @@ namespace LUA_Interpreter
             switch (n.type)
             {
                 case STAT:
-                    //sw.WriteLine("STAT");
                     break;
                 case VARLIST:
                     //sw.WriteLine("VARLIST");
@@ -356,145 +392,107 @@ namespace LUA_Interpreter
                         m_exp = new Expression();
                         m_exp.leftArg = new List<string>();
                         GetAssignElem(tn, ref sw);
-                        for (int c = 0; c < m_exp.leftArg.Count; c++)
-                        {
-                            sw.WriteLine("Var {0}({1});", m_exp.leftArg[c], m_exp.rightArg);
-                        }
+                        if (stage == 1)
+                            for (int c = 0; c < m_exp.leftArg.Count; c++)
+                            {
+                                sw.WriteLine("{0}.setValue({1});", m_exp.leftArg[c], m_exp.rightArg);
+                            }
                         return false;
                     }
                     break;
                 case EXPLIST:
-                    sw.WriteLine("EXPLIST");
                     break;
                 case CHUNK:
-                    //sw.WriteLine("CHUNK");
                     break;
                 case STRING:
-                    sw.WriteLine("STRING", n.dataS);
                     break;
                 case OperatorMinus:
-                    sw.WriteLine("OperatorMinus");
                     break;
                 case OperatorPlus:
-                    sw.WriteLine("OperatorPlus");
                     break;
                 case OperatorMod:
-                    sw.WriteLine("OperatorMod");
                     break;
                 case OperatorDiv:
-                    sw.WriteLine("OperatorDiv");
                     break;
                 case OperatorMul:
-                    sw.WriteLine("OperatorMul");
                     break;
                 case EXP:
-                    sw.WriteLine("EXP");
                     break;
                 case FUNCTION:
-                    sw.WriteLine("FUNCTION");
                     break;
                 case FUNCNAME:
-                    sw.WriteLine("FUNCNAME");
                     break;
                 case PARLIST:
-                    sw.WriteLine("PARLIST");
                     break;
                 case DO:
-                    sw.WriteLine("DO");
                     break;
                 case WHILE:
-                    sw.WriteLine("WHILE");
                     break;
                 case FUNCTION_CALL:
                     {
-                        //sw.WriteLine("FUNCTION_CALL");
-                        BuildFunction(tn, ref sw);
-                        return false;
+                        if (stage == 1)
+                        {
+                            //sw.WriteLine("FUNCTION_CALL");
+                            BuildFunction(tn, ref sw);
+                            return false;
+                        }
                     }
                     break;
                 case ARGS:
-                    sw.WriteLine("ARGS");
                     break;
                 case ASSIGN_LOCAL:
-                    sw.WriteLine("ASSIGN_LOCAL");
                     break;
                 case BREAK:
-                    sw.WriteLine("BREAK");
                     break;
                 case REPEAT:
-                    sw.WriteLine("REPEAT");
                     break;
                 case UNTIL_COND:
-                    sw.WriteLine("UNTIL_COND");
                     break;
                 case IF:
-                    sw.WriteLine("IF");
                     break;
                 case IF_COND:
-                    sw.WriteLine("IF_COND");
                     break;
                 case FOR:
-                    sw.WriteLine("FOR");
                     break;
                 case STEP:
-                    sw.WriteLine("STEP");
                     break;
                 case ELSEIF_LIST:
-                    sw.WriteLine("ELSEIF_LIST");
                     break;
                 case ELSE:
-                    sw.WriteLine("ELSE");
                     break;
                 case RETURN:
-                    sw.WriteLine("RETURN");
                     break;
                 case TABLE_CONSTRUCTOR:
-                    sw.WriteLine("TABLE_CONSTRUCTOR");
                     break;
                 case GREATER:
-                    sw.WriteLine("GREATER");
                     break;
                 case GREATER_EQUAL:
-                    sw.WriteLine("GREATER_EQUAL");
                     break;
                 case LESS:
-                    sw.WriteLine("LESS");
                     break;
                 case LESS_EQUAL:
-                    sw.WriteLine("LESS_EQUAL");
                     break;
                 case EQUAL:
-                    sw.WriteLine("EQUAL");
                     break;
                 case NOT_EQUAL:
-                    sw.WriteLine("NOT_EQUAL");
                     break;
                 case AND:
-                    sw.WriteLine("AND");
                     break;
                 case OR:
-                    sw.WriteLine("OR");
                     break;
                 case NOT:
-                    sw.WriteLine("NOT");
                     break;
                 case UPVALUE:
-                    sw.WriteLine("UPVALUE");
                     break;
                 case FOR_IN:
-                    sw.WriteLine("FOR_IN");
                     break;
                 case Id_Up:
-                    sw.WriteLine("Id_Up");
                     break;
                 case FUNCNAME_UP:
-                    sw.WriteLine("FUNCNAME_UP");
                     break;
                 case FUNCNAME_IMPLICIT:
-                    sw.WriteLine("FUNCNAME_IMPLICIT");
                     break;
                 case FUNCTION_CALL_IMPLICIT:
-                    sw.WriteLine("FUNCTION_CALL_IMPLICIT");
                     break;
             }
             return true;
