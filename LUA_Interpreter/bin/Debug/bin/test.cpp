@@ -1,6 +1,4 @@
 #include "Var.h"
-STAT
-CHUNK
 Var b(2);
 Var c(123,456);
 Var d(12);

@@ -339,7 +339,7 @@ namespace LUA_Interpreter
             switch (n.type)
             {
                 case STAT:
-                    sw.WriteLine("STAT");
+                    //sw.WriteLine("STAT");
                     break;
                 case VARLIST:
                     //sw.WriteLine("VARLIST");
@@ -367,7 +367,7 @@ namespace LUA_Interpreter
                     sw.WriteLine("EXPLIST");
                     break;
                 case CHUNK:
-                    sw.WriteLine("CHUNK");
+                    //sw.WriteLine("CHUNK");
                     break;
                 case STRING:
                     sw.WriteLine("STRING", n.dataS);
