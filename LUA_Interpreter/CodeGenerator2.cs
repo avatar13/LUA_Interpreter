@@ -3,23 +3,33 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
-//alias of Identifer to simple use
-using Identifer = LUA_Interpreter.IdentiferTable.Identifer;
-using Tokens = LuaSyntax.Tokens;
 
 namespace LUA_Interpreter
 {
-    using TreeNode = LUA_Interpreter.TreeNode<Node>;
-    public struct Node
+    struct FuncObject
     {
-        public int type;
-        public string par;
-        //public Identifer idLink;        
-        public string dataS;
-        public double dataN;
-    };  
+        string fname;
+        int returnType;
+        string[] args;
+        object[] ops;
+    };
 
-    public class ASTree
+    public struct Expression
+    {
+        public int oper_code;
+        public List<string> leftArg;
+        public string rightArg;
+        public string result;
+        public int lvl;
+    };
+
+    public struct SimpleOper
+    {
+        public int lvl;
+        public Node node;
+    };
+
+    class CodeGenerator
     {
         public const int STAT = 0;
         public const int VARLIST = 1;
@@ -74,169 +84,53 @@ namespace LUA_Interpreter
 
         public Tree<Node> Root;
 
-        public List<TreeNode> m_stack = new List<TreeNode>();
+        private ASTree m_tree;
+        private bool mainFunc;
+        private FuncObject curSubFunc;
+        private Expression m_exp;
+        private List<SimpleOper> oper_list; 
 
-        public ASTree()
+        TreeNode<Node> cur_node;
+
+        public CodeGenerator(ASTree tree)
         {
-            Root = new Tree<Node>(new Node());
+            m_tree = tree;
+            oper_list = new List<SimpleOper>();
         }
 
-        public TreeNode<Node> CreateNode(int type, string val)
-        {
-            Node n = new Node();
-            n.type = type;
-            //n.idLink
-            n.dataS = val;
-            TreeNode<Node> node = new TreeNode<Node>(n);
-            m_stack.Add(node);
-            return node;
-        }
-
-        public TreeNode CreateNode(int type, double val)
-        {
-            Node n = new Node();
-            n.type = type;
-            n.dataN = val;
-            TreeNode node = new TreeNode(n);
-            m_stack.Add(node);
-            return node;
-        }
-
-        public TreeNode CreateNode(int type, TreeNodeList<Node> tnl)
-        {
-            Node n = new Node();
-            n.type = type;
-            TreeNode node = new TreeNode(n);
-            m_stack.Add(node);
-            if (tnl != null)
-            {
-                foreach (TreeNode tn in tnl)
-                {
-                    if (tn != null)
-                    {
-                        node.Children.Add(tn);
-                    }
-                }
-            }
-            return node;
-        }
-
-        public TreeNode CreateNode(int type, params TreeNode[] ch)
-        {
-            Node n = new Node();
-            n.type = type;
-            TreeNode node = new TreeNode(n);
-            m_stack.Add(node);
-            foreach(TreeNode c in ch)
-            {
-                if (c != null)
-                {
-                    node.Children.Add(c);
-                }
-            }
-            return node;
-        }
-
-        public TreeNodeList<Node> CreateNodeList(params TreeNode[] childs)
-        {
-            TreeNodeList<Node> nodelist = new TreeNodeList<Node>();
-            foreach (TreeNode child in childs)
-            {
-                if (child != null)
-                {
-                    nodelist.Add(child);
-                }
-            }
-            return nodelist;
-        }
-
-        public TreeNodeList<Node> CreateNodeList(TreeNode child, TreeNodeList<Node> nl)
-        {
-            TreeNodeList<Node> nodelist = new TreeNodeList<Node>();
-            if (child != null)
-            {
-                nodelist.Add(child);
-            }
-            if (nl != null)
-            {
-                foreach (TreeNode node in nl)
-                {
-                    if (node != null)
-                    {
-                        nodelist.Add(node);
-                    }
-                }
-            }
-            return nodelist;
-        }
-
-        public TreeNode<Node> AppendChild(TreeNode par, TreeNodeList<Node> childs)
-        {
-            if (par != null && childs != null)
-            {
-                foreach(TreeNode child in childs)
-                {
-                    par.Children.Add(child);
-                }
-                childs.Clear();
-            }
-            return par;
-        }
-
-        public TreeNodeList<Node> AppendNodeList(TreeNodeList<Node> nl, params TreeNode[] nodes)
-        {
-            if (nl == null)
-            {
-                return CreateNodeList(nodes);
-            }
-            foreach (TreeNode node in nodes)
-            {
-                if (node != null)
-                {
-                    nl.Add(node);
-                }
-            }
-            return nl;
-        }
-
-        public TreeNode<Node> AppendChild(int type, TreeNode n, TreeNode ch)
-        {
-            if (n == null)
-            {
-                n = CreateNode(type, ch);                
-            }
-            else
-            {
-                if (ch != null)
-                {
-                    n.Children.Add(ch);
-                }
-            }
-            return n;
-        }
-
-        public void DrawTree(string path)
+        public void Generate(string path)
         {
             StreamWriter sw = new StreamWriter(path);
+            sw.WriteLine("#include \"Var.h\"");
+            Root = m_tree.Root;
+            TransformTree(sw);
+        }
+
+        public void TransformTree(StreamWriter sw)
+        {
             int level = 1;
-            DrawChild(Root, ref sw, level);
+            TransformChild(Root, ref sw, level);
             sw.Close();
         }
 
-        public void DrawChild(TreeNode par, ref StreamWriter sw, int level)
+        public void TransformChild(TreeNode<Node> par, ref StreamWriter sw, int level)
         {
             //sw.WriteLine(par.Value.type);
-            PrintStringValue(par.Value, ref sw);
             for (int i = 0; i < par.Children.Count; i++)
             {
                 for (int c = 0; c < level; c++)
-                    sw.Write('-');
+                    //sw.Write('-');
 
-                DrawChild(par.Children[i], ref sw, level + 1);
+                TransformChild(par.Children[i], ref sw, level + 1);
             }
+
+            SimpleOper oper = oper_list[oper_list.Count - 1];
+
+            if(oper.lvl == level)
+                PrintStringValue(oper.node, level, ref sw);
         }
 
-        public void PrintStringValue(Node n, ref StreamWriter sw)
+        public void PrintStringValue(Node n, int lvl, ref StreamWriter sw)
         {
             switch (n.type)
             {

@@ -23,4 +23,5 @@ LUA_Interpreter.exe tests/few_ops_in_line.txt 2>tests/few_ops_in_lineReport.txt
 LUA_Interpreter.exe tests/function_as_arg.txt 2>tests/function_as_argReport.txt
 LUA_Interpreter.exe tests/single_oper_block.txt 2>tests/single_oper_blockReport.txt
 LUA_Interpreter.exe tests/value_in_args.txt 2>tests/value_in_argsReport.txt
+LUA_Interpreter.exe tests/exp.txt 2>tests/expReport.txt
 

@@ -1,0 +1,14 @@
+STAT
+-CHUNK
+--ASSIGN
+---VARLIST
+----Id
+----Id
+---EXPLIST
+----OperatorMul
+-----NUMBER 4
+-----OperatorPlus
+------NUMBER 5
+------OperatorMinus
+-------NUMBER 3
+-------NUMBER 1

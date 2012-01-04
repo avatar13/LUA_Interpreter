@@ -41,9 +41,10 @@ namespace LUA_Interpreter
                 return;
             }
 #endif
-
             //TODO : Сдесь сделать генерацию кода в файл bin/<programName>.cpp
 
+            CodeGenerator codegen = new CodeGenerator(tree);
+            codegen.Generate("prog.cpp");
             Process runner = new Process();
             //compiller.StartInfo.Arguments = "-emit-llvm -c n.c -o n.bc";            
             /*compiller.StartInfo.UseShellExecute = false;

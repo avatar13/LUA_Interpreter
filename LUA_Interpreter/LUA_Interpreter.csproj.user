@@ -11,7 +11,7 @@
     <VerifyUploadedFiles>false</VerifyUploadedFiles>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <StartArguments>test.txt</StartArguments>
+    <StartArguments>prog.txt</StartArguments>
     <StartAction>Project</StartAction>
     <StartProgram>
     </StartProgram>
