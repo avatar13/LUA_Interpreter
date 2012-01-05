@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include <string.h>
 
 class Var
@@ -15,27 +16,30 @@ public:
 	{		
 		m_type = UNDEF;		
 	}
-
-	//Var(int type, void * value);
+		
 	// нужно для операций. Перегрузка конструктора копирования
-	inline Var(int value)
+	Var(int value)
 	{
 		m_type = INT;
-		m_value = new int(value);
+		m_value = malloc(sizeof(int));
+		int * pI = (int *)m_value;
+		pI[0] = value;
 	}
 
-	inline Var(double value)
+	Var(double value)
 	{
 		m_type = DOUBLE;
-		m_value = new double(value);
+		m_value = malloc(sizeof(double));
+		double * pD = (double *)m_value;
+		pD[0] = value;
 	}
 
-	inline Var(const char * str)
+	Var(const char * str)
 	{
-		m_type = STRING;
-		//m_value = new char(str);
+		m_type = STRING;		
+		m_value = malloc(sizeof(char) * strlen(str));		
+		strcpy((char *)m_value, str);		
 	}
-	//Var(std::string const & str);
 
 	Var operator +(Var & other)
 	{
@@ -65,8 +69,7 @@ public:
 	Var operator ^(Var & other)
 	{
 		//return pow(toNumber(), other.toNumber());
-		//return Var("123");
-		//return "123";
+		//return Var("123");		
 		return Var("123");
 	}
 
@@ -86,24 +89,23 @@ public:
 			if (toNumber() < other.toNumber())
 			{
 				return toNumber();
-			}
-			return Var();
+			}			
 		}
 		else if(getType() == STRING && other.getType() == STRING)
 		{
-			/*if (string.compare()
+			if (toString() < other.toString())
 			{
+				return Var(1);
 			}
-			return Var();*/
 		}
 		else if (getType() == INT < other.getType() == INT)
 		{
 			if (toInt() < other.toInt())
 			{
 				return toInt();
-			}
-			return Var();
+			}			
 		}
+		return Var();
 	}
 
 	Var operator >(Var & other)
@@ -126,33 +128,50 @@ public:
 		}
 		else if(getType() == STRING && other.getType() == STRING)
 		{
+			if (strlen(toString()) > strlen(other.toString()))
+			{
+				return Var(1);
+			}
+		}
+		return Var();
+	}
 
+	//конкатенация ERROR
+	Var operator |(Var & other)
+	{
+		if (m_type == STRING && other.getType() == STRING)
+		{
+			char * temp = (char *)malloc(sizeof(char) * (strlen(toString()) + strlen(other.toString())));			
+			temp = strcpy(temp, toString());			
+			temp = strcat(temp, other.toString());			
+			temp[strlen(toString()) + strlen(other.toString())] = '\0';
+			Var v;
+			v.setValue(temp);			
+			free(temp);			
+			return v.toString();
 		}
 		else
 		{
+			return Var(0);
 		}
-	}
-
-	//конкатенация
-	Var operator |(Var & other)
-	{
-		//return string(toString() + other.toString());
-		return "";
 	}
 
 	//работа с метатаблицами	
 	Var & operator [](int const & index);
+	Var & operator [](const char * index);
 	Var & operator [](Var const & index);
 
 	Var operator ==(Var & other)
 	{
 		if (getType() == STRING && other.getType() == STRING)
 		{
-			/*if (toString().compare(other.toString()) == 0)
+			if (strcmp(toString(), other.toString()) == 0)
 			{
-				return toString();
-			}*/
-			return Var();
+				return Var(1);
+			}
+			Var p;
+			p.setDef();
+			return p;
 		}
 		else if (getType() == DOUBLE && other.getType() == DOUBLE)
 		{
@@ -171,66 +190,57 @@ public:
 			return Var();
 		}
 	}
-
-	//Var operator ~=(Var & other);
+		
 	Var operator >=(Var & other)
 	{
 		if (getType() == STRING && other.getType() == STRING)
 		{
-			/*if(toString().co)
+			if(toString() >= other.toString())
 			{
-			}
-			return Var();*/
+				return Var(1);
+			}			
 		}
 		else if (getType() == DOUBLE && other.getType() == DOUBLE)
 		{
 			if (toNumber() >= other.toNumber())
 			{
 				return toNumber();
-			}
-			return Var();
+			}			
 		}
 		else if (getType() == INT && other.getType() == INT)
 		{
 			if (toNumber() >= other.toNumber())
 			{
 				return toInt();
-			}
-			return Var();
+			}			
 		}
-		else
-		{
-		}
+		return Var();
 	}
 
 	Var operator <=(Var & other)
 	{
 		if (getType() == STRING && other.getType() == STRING)
 		{
-			/*if ()
+			if(strlen(toString()) <= strlen(other.toString()))
 			{
+				return Var(1);
 			}
-			return Var();*/
 		}
 		else if (getType() == DOUBLE && other.getType() == DOUBLE)
 		{
 			if (toNumber() <= other.toNumber())
 			{
 				return toNumber();
-			}
-			return Var();
+			}			
 		}
 		else if (getType() == INT && other.getType() == INT)
 		{
 			if (toInt() <= other.toInt())
 			{
 				return toInt();
-			}
-			return Var();
+			}			
 		}
-		else
-		{
-		}
+		return Var();
 	}
 
 	void setDef()
@@ -238,23 +248,58 @@ public:
 		m_type = DEF;
 	}
 
+	void setValue(Var value)
+	{
+		Destroy();
+		if (value.getType() == STRING)
+		{		
+			m_type = STRING;			
+			m_value = malloc(sizeof(char) * strlen(value.toString()));
+			memcpy(m_value, value.toString(), strlen(value.toString()));
+		}
+		else if (value.getType() == INT)
+		{
+			m_type = INT;
+			m_value = malloc(sizeof(int));
+			int * pI = (int*)m_value;
+			pI[0] = value.toInt();
+		}
+		else if (value.getType() == DOUBLE)
+		{
+			m_type = DOUBLE;
+			m_value = malloc(sizeof(double));
+			double * pD = (double*)m_value;
+			pD[0] = value.toNumber();
+		}
+		else if (value.getType() == TABLE)
+		{
+			m_type = TABLE;
+			//m_value = 		
+		}
+	}
+
 	void setValue(Var & value)
 	{
 		Destroy();
 		if (value.getType() == STRING)
 		{		
-			m_type = STRING;
-			//m_value = new string(*(string *)value.m_value);
+			m_type = STRING;			
+			m_value = malloc(sizeof(char) * strlen(value.toString()));
+			memcpy(m_value, value.toString(), strlen(value.toString()));
 		}
 		else if (value.getType() == INT)
 		{
 			m_type = INT;
-			m_value = new int(*(int *)value.m_value);		
+			m_value = malloc(sizeof(int));
+			int * pI = (int*)m_value;
+			pI[0] = value.toInt();
 		}
 		else if (value.getType() == DOUBLE)
 		{
 			m_type = DOUBLE;
-			m_value = new double(*(double *)value.m_value);
+			m_value = malloc(sizeof(double));
+			double * pD = (double*)m_value;
+			pD[0] = value.toNumber();
 		}
 		else if (value.getType() == TABLE)
 		{
@@ -285,11 +330,11 @@ public:
 	{
 		Destroy();
 		m_value = malloc(sizeof(char) * strlen(value));
-		char * str = (char *)m_value;		
-		memcpy(str, value, strlen(value));	
+		char * str = (char *)m_value;			
+		strcpy(str, value);
 		m_type = STRING;
 	}
-
+	
 	void printValue()
 	{
 		if (m_type == INT)
@@ -307,6 +352,59 @@ public:
 			puts((char *)m_value);
 		}
 	}
+	
+	char * toString()
+	{
+		if (m_type == INT)
+		{
+			//char str[20];
+			//return itoa(*(int *)m_value, str, 10);
+		}
+		else if (m_type == DOUBLE)
+		{
+		}
+		else if (m_type == STRING)
+		{
+			return (char *)m_value;
+		}
+		return Var("").toString();		
+	}
+
+	int toInt()
+	{
+		if (m_type == STRING)
+		{
+			return atoi((char *)m_value);
+		}
+		else if (m_type == DOUBLE)
+		{
+			return int(*(double *)m_value);
+		}
+		else if (m_type == INT)
+		{
+			int * pI = (int *)m_value;
+			return pI[0];
+		}
+		return 0;
+	}
+
+	double toNumber()
+	{
+		if (m_type == STRING)
+		{
+			return atof((char *) m_value);
+		}
+		else if(m_type == INT)
+		{
+			return double(*(int *)m_value);
+		}
+		else if (m_type == DOUBLE)
+		{
+			double * pD = (double *)m_value;
+			return pD[0];
+		}
+		return 0;
+	}
 
 	~Var(void)
 	{		
@@ -320,11 +418,9 @@ private:
 	}
 
 	void Destroy()
-	{
-		printf("%d\n", m_type);
+	{		
 		if (m_type == UNDEF || m_type == DEF)
-		{
-			printf("NOTHING TO DELETE\n");
+		{			
 			return;
 		}
 		else if (m_type == INT)
@@ -333,7 +429,7 @@ private:
 		}	
 		else if (m_type == STRING)
 		{
-			//free(()m_value);
+			free((char *)m_value);
 		}
 		else if (m_type == DOUBLE)
 		{			
@@ -341,22 +437,10 @@ private:
 		}
 		else if (m_type == TABLE)
 		{
-			//delete ( *)m_value;
+			//free(()m_value);
 		}
 	}
 
-	//std::string toString();
-	int toInt()
-	{
-		return 1;
-	}
-
-	double toNumber()
-	{
-		return 2;
-	}
-
-	
 	int m_type;
 	void* m_value;
 };

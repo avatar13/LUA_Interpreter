@@ -36,3 +36,13 @@ STAT
 -------NUMBER 5
 -------NUMBER 5
 -----NUMBER 10
+--FUNCTION_CALL
+---Id
+---ARGS
+----EXPLIST
+-----Id
+--FUNCTION
+---FUNCNAME
+----Id
+---PARLIST
+----Id

@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.IO;
 //alias of Identifer to simple use
-using Identifer = LUA_Interpreter.IdentiferTable.Identifer;
 using Tokens = LuaSyntax.Tokens;
 
 namespace LUA_Interpreter

@@ -1,19 +1,20 @@
-#include <stdio.h>
-#include "Var.h" 
+#include "Var.h"
+
+Var lol(str)
+{}
 
 Var b;
-Var m;
-Var str;
+Var c;
+Var d;
+Var f;
+Var t;
 
-int main() 
-{
-b.setValue(22);
-m.setValue(33.92);
-str.setValue("hello world");
-b.printValue();
-m.printValue();
-str.printValue();
-//printf(b);
-	printf("not alone\n");
-return 1;
-}
+int main() {
+b.setValue(2);
+c.setValue(123.456);
+d.setValue(12);
+f.setValue(0.789);
+b.setValue("12");
+t.setValue((5+(5*5))-10);
+printf("%s", t.toString());
+return 1;}

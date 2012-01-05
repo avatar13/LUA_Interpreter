@@ -46,7 +46,8 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <DefineConstants>
+    </DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
@@ -68,7 +69,6 @@
   <ItemGroup>
     <Compile Include="ASTree.cs" />
     <Compile Include="CodeGenerator.cs" />
-    <Compile Include="IdentiferTable.cs" />
     <Compile Include="LUA.cs" />
     <Compile Include="luaLex.cs" />
     <Compile Include="Program.cs" />

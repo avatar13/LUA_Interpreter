@@ -4,7 +4,7 @@
 
 // GPPG version 1.3.5.190
 // Machine:  AVATAR-èä
-// DateTime: 04.01.2012 9:25:35
+// DateTime: 05.01.2012 12:07:35
 // UserName: Avatar
 // Input file <Grammar_LUA.y>
 
@@ -42,8 +42,7 @@ public abstract class ScanBase : AbstractScanner<ValueType,LexLocation> {
 }
 
 public class Parser: ShiftReduceParser<ValueType, LexLocation>
-{
-	IdentiferTable m_table;
+{	
 	double _baseNumber = 0;
 	ASTree m_tree;
 #pragma warning disable 649
@@ -612,7 +611,7 @@ public class Parser: ShiftReduceParser<ValueType, LexLocation>
 {CurrentSemanticValue.TN = m_tree.CreateNode(ASTree.PARLIST, m_tree.CreateNode(ASTree.Id, "..."));}
         break;
       case 83: // PARLIST1 -> NAME, NAME_LIST, SMTH_OPT
-{ TreeNode<Node> n = m_tree.CreateNode(ASTree.PARLIST, ValueStack[ValueStack.Depth-3].s); n = m_tree.AppendChild(n, ValueStack[ValueStack.Depth-2].TNL); CurrentSemanticValue.TN = m_tree.AppendChild(ASTree.PARLIST, n, ValueStack[ValueStack.Depth-1].TN);}
+{ TreeNode<Node> n = m_tree.CreateNode(ASTree.PARLIST, m_tree.CreateNode(ASTree.Id, ValueStack[ValueStack.Depth-3].s)); n = m_tree.AppendChild(n, ValueStack[ValueStack.Depth-2].TNL); CurrentSemanticValue.TN = m_tree.AppendChild(ASTree.PARLIST, n, ValueStack[ValueStack.Depth-1].TN);}
         break;
       case 84: // SMTH_OPT -> ',', SMTH
 {CurrentSemanticValue.TN = m_tree.CreateNode(ASTree.Id, "...");}
@@ -700,6 +699,6 @@ public class Parser: ShiftReduceParser<ValueType, LexLocation>
   }
 
 
-public Parser(IdentiferTable table, ASTree tree) : base(null) { m_table = table; m_tree = tree;}
+public Parser(ASTree tree) : base(null) { m_tree = tree;}
 }
 }

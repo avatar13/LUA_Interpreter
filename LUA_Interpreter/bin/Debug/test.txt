@@ -4,3 +4,7 @@ d = 12;
 f = 0.789;
 b = "12";
 t = 5 + 5 * 5 - 10;
+
+write(t);
+function lol(str)
+end

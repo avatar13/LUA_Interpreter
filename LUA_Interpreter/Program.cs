@@ -1,4 +1,4 @@
-﻿#define DBG
+﻿//#define DBG
 
 using System;
 using System.Collections.Generic;
@@ -14,10 +14,9 @@ namespace LUA_Interpreter
     class Program
     {
         static void Main(string[] args)
-        {
-            IdentiferTable table = new IdentiferTable();
+        {            
             ASTree tree = new ASTree();
-            Parser parser = new Parser(table, tree);
+            Parser parser = new Parser(tree);
             
             
             System.IO.FileStream fs;
@@ -30,8 +29,7 @@ namespace LUA_Interpreter
 
             parser.Scanner = new Scanner(fs);
 #if DBG
-            Console.WriteLine("Тест {0} прошел:{1}", args[0], parser.Parse());
-            table.PrintTable();
+            Console.WriteLine("Тест {0} прошел:{1}", args[0], parser.Parse());            
             Console.WriteLine("---------------------------------------------------");
             string str = args[0].Remove(args[0].Length - 4);
             tree.DrawTree(str.Insert(str.Length, "Tree.txt"));

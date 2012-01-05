@@ -1,0 +1,5 @@
+C:\LUAProject\LUA_Interpreter\bin\Release\LUA_Interpreter.exe
+C:\LUAProject\LUA_Interpreter\bin\Release\LUA_Interpreter.pdb
+C:\LUAProject\LUA_Interpreter\obj\Release\ResolveAssemblyReference.cache
+C:\LUAProject\LUA_Interpreter\obj\Release\LUA_Interpreter.exe
+C:\LUAProject\LUA_Interpreter\obj\Release\LUA_Interpreter.pdb
