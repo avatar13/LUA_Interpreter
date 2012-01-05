@@ -141,7 +141,6 @@ namespace LUA_Interpreter
                 Root = m_tree.Root;
                 TransformTree(sw, ref stage);
 
-                if (stage == 0) PrintGlobalVars(sw);
                 if (stage == LAST_STAGE) sw.WriteLine("return 1;}");
             }
             sw.Close();
@@ -264,7 +263,10 @@ namespace LUA_Interpreter
             else if ((tn.Value.type == STRING) || (tn.Value.type == Id))
             {
                 if (arg_type == -1) arg_type = STRING;
-                return tn.Value.dataS;
+                if (tn.Value.type == Id)
+                    return tn.Value.dataS + ".toInt()";
+                else
+                    return tn.Value.dataS;
             }
 
             return BuildExpressionString(tn, level, ref arg_type);
@@ -569,12 +571,13 @@ namespace LUA_Interpreter
 
             }
 
-            expr += String.Format("; {0} = {0} + {1}", tn.Children[0].Value.dataS
+            expr += String.Format("; {0}.setValue({0}.toInt() + {1})", tn.Children[0].Value.dataS
                                     , tn.Children[3].Children[0].Value.dataN);
             expr += ")";
             sw.WriteLine(expr);
 
-            PrintChunk(tn.Children[4], ref sw);
+            if(tn.Children.Count >= 5)
+                PrintChunk(tn.Children[4], ref sw);
         }
 
         public void PrintRep(TreeNode<Node> tn, ref StreamWriter sw)
@@ -676,6 +679,12 @@ namespace LUA_Interpreter
                             {
                                 sw.WriteLine("{0}.setValue({1});", m_exp.leftArg[c], m_exp.rightArg);
                             }
+
+                        if (stage == 0)
+                        {
+                            PrintGlobalVars(sw);
+                            global_vars.Clear();
+                        }
                         return false;
                     }
                     break;
