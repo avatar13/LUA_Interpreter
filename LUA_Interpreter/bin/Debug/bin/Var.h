@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+//#include "array.h"
 
 class Var
 {
@@ -136,7 +137,7 @@ public:
 		return Var();
 	}
 
-	//конкатенация ERROR
+	//конкатенация
 	Var operator |(Var & other)
 	{
 		if (m_type == STRING && other.getType() == STRING)
@@ -274,7 +275,7 @@ public:
 		else if (value.getType() == TABLE)
 		{
 			m_type = TABLE;
-			//m_value = 		
+			//m_value =	
 		}
 	}
 
@@ -310,11 +311,11 @@ public:
 
 	void setValue(int const & value)
 	{		
-		Destroy();	
+		Destroy();		
 		m_value = malloc(sizeof(int));
 		int * pI = (int *)m_value;
 		pI[0] = value;		
-		m_type = INT;
+		m_type = INT;		
 	}
 
 	void setValue(double const & value)
@@ -334,18 +335,23 @@ public:
 		strcpy(str, value);
 		m_type = STRING;
 	}
+
+	void setValue(int const arr[])
+	{
+
+	}
 	
 	void printValue()
 	{
 		if (m_type == INT)
 		{
 			int * val = (int *)m_value;
-			printf("Value: %d\n", *val);
+			printf("Value: %d", *val);
 		}
 		else if (m_type == DOUBLE)
 		{
 			double * val = (double *)m_value;
-			printf("Value: %f\n", *val);
+			printf("Value: %f", *val);
 		}
 		else if (m_type == STRING)
 		{
@@ -356,12 +362,24 @@ public:
 	char * toString()
 	{
 		if (m_type == INT)
-		{
-			//char str[20];
-			//return itoa(*(int *)m_value, str, 10);
+		{			
+			char * str = (char *)malloc(sizeof(char) * 20);
+			int *pI = (int *)m_value;
+			sprintf(str, "%d", pI[0]);
+			Destroy();
+			m_value = (void *)str;			
+			m_type = STRING;
+			return (char *)m_value;
 		}
 		else if (m_type == DOUBLE)
 		{
+			char * str = (char *)malloc(sizeof(char) * 20);
+			double * pD = (double *)m_value;			
+			sprintf(str, "%f", pD[0]);
+			Destroy();
+			m_value = (void *)str;
+			m_type = STRING;
+			return (char *)m_value;
 		}
 		else if (m_type == STRING)
 		{
@@ -415,6 +433,11 @@ private:
 	int getType()
 	{
 		return m_type;
+	}
+
+	void ConvertToString(int i)
+	{
+		
 	}
 
 	void Destroy()

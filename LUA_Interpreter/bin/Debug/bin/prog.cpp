@@ -3,7 +3,7 @@
 Var i;
 Var EvenAndOdd()
 {
-for(i.setValue(0); i<10; i.setValue(i + 1))
+for(i.setValue(0); 10; i.setValue(i + 1))
 {
 if((i%2)==0)
 {

@@ -1,5 +1,4 @@
-﻿//#define DBG
-
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +15,7 @@ namespace LUA_Interpreter
         static void Main(string[] args)
         {            
             ASTree tree = new ASTree();
-            Parser parser = new Parser(tree);
+            Parser parser = new Parser(tree);            
             
             
             System.IO.FileStream fs;
@@ -28,7 +27,7 @@ namespace LUA_Interpreter
             string programName = args[0].Substring(0, args[0].Length - 4);
 
             parser.Scanner = new Scanner(fs);
-#if DBG
+#if DEBUG
             Console.WriteLine("Тест {0} прошел:{1}", args[0], parser.Parse());            
             Console.WriteLine("---------------------------------------------------");
             string str = args[0].Remove(args[0].Length - 4);
