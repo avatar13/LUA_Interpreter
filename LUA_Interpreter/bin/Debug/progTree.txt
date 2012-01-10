@@ -1,9 +1,0 @@
-STAT
--CHUNK
---ASSIGN
----VARLIST
-----Id_Up
------Id
------NUMBER 0
----EXPLIST
-----NUMBER 3

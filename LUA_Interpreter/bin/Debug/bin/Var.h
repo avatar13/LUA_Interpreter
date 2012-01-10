@@ -79,12 +79,20 @@ public:
 	}
 	*/
 	Var operator +(Var other)
-	{		
+	{
+		if (m_type == INT && other.getType() == INT)
+		{
+			return toInt() * other.toInt();
+		}
 		return toNumber() + other.toNumber();
 	}
 
 	Var operator -(Var & other)
 	{
+		if (m_type == INT && other.getType() == INT)
+		{
+			return toInt() * other.toInt();
+		}
 		return toNumber() - other.toNumber();
 	}
 
